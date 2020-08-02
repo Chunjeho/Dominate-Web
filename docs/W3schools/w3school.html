@@ -6,6 +6,10 @@
 
     <style media="screen">
 
+      /* html{
+        border: 2px solid red
+      } */
+
       body {
         border: 0px solid red; /*fit body tag*/
         margin: 0;
@@ -38,12 +42,12 @@
         border: 0px solid red;
         background-color:  #4CAF50;
         height: 58px;
-        width: 100%;
         box-shadow: 5px 10px 10px -10px #888888;
       }
       ._navigation-class{
         font-size: 18px;
         color: white;
+        font-weight: 400;
         /* display: flex; */
       }
       ._navigation-word{
@@ -52,6 +56,7 @@
         text-align: center;
         line-height: 58px;
         position: absolute;
+        border: 0px solid red
       }
       ._navigation-word1{
         left: 0;
@@ -90,6 +95,68 @@
         background-color: white;
         color: black
       }
+      ._main{
+        position: relative;
+        width: 100%;
+        height: 1000px;
+        border: 2px solid red;
+      }
+      ._main-aside{
+        position: absolute;
+        width: 210px;
+        height: 1000px;
+        border: 2px solid blue;
+        padding-left: 20px;
+      }
+      ._main-main{
+        position: relative;
+        height: 1000px;
+        border: 2px solid black
+      }
+      ._main-aside-head{
+        font-size: 20px;
+        font-weight: 500;
+        border: 2px solid red
+      }
+      ._main-aside-contents{
+        font-size: 17px;
+        font-weight: 500;
+        border: 2px solid red;
+      }
+      ._main-main-content{
+        position: absolute;
+        top: 40px;
+        left: 230px;
+        border: 2px solid red;
+        width: 45%;
+      }
+      ._main-main-title{
+        text-align: center;
+        font-size: 80px;
+        font-weight: 400
+      }
+      ._main-main-description{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 400
+      }
+      ._main-main-goto{
+        border: 2px solid red;
+        align-content: space-between;
+      }
+      .button{
+        background-color: black;
+        border: none;
+        color: white;
+        text-align: center;
+        height: 40px;
+        font-size: 20px;
+      }
+      .button:hover {
+        background-color: white;
+        color: black
+      }
+
     </style>
   </head>
   <body>
@@ -108,6 +175,55 @@
         <span class="_navigation-icon _navigation-icon2"><a>2</a></span>
         <span class="_navigation-icon _navigation-icon3"><a>3</a></span>
       </nav>
+    </div>
+    <div class="_main">
+      <div class="_main-aside">
+
+        <h4 class="_main-aside-head">HTML and CSS</h4>
+        <div class="_main-aside-contents">
+          <nav>
+            <a>Learn HTML</a><br>
+            <a>Learn CSS</a><br>
+            <a>Learn Bootstrap</a><br>
+            <a>Learn W3.CSS</a><br>
+            <a>Learn Colors</a><br>
+            <a>Learn Icons</a><br>
+            <a>Learn Graphics</a><br>
+            <a>Learn How to</a><br>
+            <a>Learn Sass</a><br>
+          </nav>
+        </div>
+
+        <h4 class="_main-aside-head">Javascript</h4>
+        <div class="_main-aside-contents">
+          <nav>
+            <a>Learn JavaScropt</a><br>
+            <a>Learn jQuery</a><br>
+            <a>Learn React</a><br>
+            <a>Learn AngularJS</a><br>
+            <a>Learn JSON</a><br>
+            <a>Learn AJAX</a><br>
+            <a>Learn W3.JS</a><br>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="_main-main">
+        <div class="_main-main-content">
+          <div class="_main-main-title">
+            HTML
+          </div>
+          <div class="_main-main-description">
+            The language for building web pages
+          </div>
+          <div class="_main-main-goto">
+            <button class="button" type="button" name="LearnHtml">LEARN HTML</button>
+            <button class="button" type="button" name="HTMLReference">HTML REFERENCE</button>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </body>
