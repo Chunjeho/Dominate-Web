@@ -12,6 +12,7 @@
         <li><a href="index.php?id=CSS">CSS</a></li>
         <li><a href="index.php?id=JavaScript">JavaScript</a></li>
       </ol>
+      
       <h2>
         <?php
           echo $_GET['id'];
