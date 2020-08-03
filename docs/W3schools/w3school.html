@@ -102,7 +102,7 @@
       ._main{
         position: relative;
         width: 100%;
-        height: 1000px;
+        height: 100%;
         border: 0px solid red;
       }
       ._main-aside{
@@ -112,11 +112,15 @@
         border: 0px solid blue;
         padding-left: 20px;
         box-shadow: 1px 5px 5px 0px #888888;
+        background-color: white;
+        z-index: -1
       }
       ._main-main{
+        border: 0px solid black;
+        height: 500px;
         position: relative;
-        height: 1000px;
-        border: 0px solid black
+        z-index: -2;
+        background-color: white
       }
       ._main-aside-head{
         font-size: 20px;
@@ -191,9 +195,10 @@
       ._main-main-sample-body-code{
         border-left: 4px solid #4CAF50;
         background-color: white;
-        width: 370px;
-        height: 250px;
+        width: 350px;
         margin-top: 20px;
+        font-style: courier;
+        padding: 8px;
       }
       ._main-main-sample-body-button{
         background-color: #4CAF50;
@@ -204,6 +209,9 @@
         font-size: 18px;
         padding: 10px;
         margin-top: 20px
+      }
+      ._main-main-sample-body-code-tag{
+        color: brown;
       }
 
     </style>
@@ -278,7 +286,24 @@
               HTML Example:
             </div>
               <div class="_main-main-sample-body-code">
-                
+                <<span class="_main-main-sample-body-code-tag">!DOCTYPE</span><span style="color: red;"> html</span>>
+                <br>
+                <<span class="_main-main-sample-body-code-tag">html</span>>
+                <br>
+                <br>
+                <<span class="_main-main-sample-body-code-tag">title</span>>HTML Tutorial<<span class="_main-main-sample-body-code-tag">/title</span>>
+                <br>
+                <<span class="_main-main-sample-body-code-tag">body</span>>
+                <br>
+                <br>
+                <<span class="_main-main-sample-body-code-tag">h1</span>>This is a heading<<span class="_main-main-sample-body-code-tag">/h1</span>>
+                <br>
+                <<span class="_main-main-sample-body-code-tag">p</span>>This is a paragraph.<<span class="_main-main-sample-body-code-tag">/p</span>>
+                <br>
+                <br>
+                <<span class="_main-main-sample-body-code-tag">/body</span>>
+                <br>
+                <<span class="_main-main-sample-body-code-tag">/html</span>>
               </div>
               <button class="_main-main-sample-body-button" type="button" name="button">Try it Yourself >></button>
           </div>
