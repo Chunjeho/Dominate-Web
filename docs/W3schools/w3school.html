@@ -15,6 +15,10 @@
         margin: 0;
       }
 
+      /* * {
+        border: 1px solid red;
+      } */
+
       ._title{
         border: 0px solid red;
         position: relative;
@@ -99,62 +103,107 @@
         position: relative;
         width: 100%;
         height: 1000px;
-        border: 2px solid red;
+        border: 0px solid red;
       }
       ._main-aside{
         position: absolute;
         width: 210px;
         height: 1000px;
-        border: 2px solid blue;
+        border: 0px solid blue;
         padding-left: 20px;
+        box-shadow: 1px 5px 5px 0px #888888;
       }
       ._main-main{
         position: relative;
         height: 1000px;
-        border: 2px solid black
+        border: 0px solid black
       }
       ._main-aside-head{
         font-size: 20px;
         font-weight: 500;
-        border: 2px solid red
+        border: 0px solid red
       }
       ._main-aside-contents{
         font-size: 17px;
         font-weight: 500;
-        border: 2px solid red;
+        border: 0px solid red;
       }
       ._main-main-content{
-        position: absolute;
+        position: relative;
         top: 40px;
         left: 230px;
-        border: 2px solid red;
+        border: 0px solid red;
         width: 45%;
       }
       ._main-main-title{
         text-align: center;
         font-size: 80px;
-        font-weight: 400
+        font-weight: 400;
+        color: #555555;
       }
       ._main-main-description{
         text-align: center;
         font-size: 30px;
-        font-weight: 400
+        font-weight: 400;
+        color: #555555;
       }
       ._main-main-goto{
-        border: 2px solid red;
-        align-content: space-between;
+        border: 0px solid red;
+        width: 400px;
+        text-align: center;
+        margin: auto;
+        margin-top: 20px;
       }
       .button{
-        background-color: black;
+        background-color: #616161;
         border: none;
         color: white;
         text-align: center;
         height: 40px;
-        font-size: 20px;
+        font-size: 18px;
+        padding: 10px
       }
       .button:hover {
-        background-color: white;
+        background-color: #D9D9D9;
         color: black
+      }
+      ._main-main-sample-tempelate{
+        border: 0px solid red;
+        background-color: #f1f1f1;
+        position: absolute;
+        top: 40px;
+        right: 35px;
+        width: 410px;
+        height: 420px;
+        box-shadow: 0px 1px 5px 0px #888888;
+      }
+      ._main-main-sample-body{
+        border: 0px solid red;
+        text-align: left;
+        width: 370px;
+        margin: auto;
+        margin-top: 35px;
+      }
+      ._main-main-sample-title{
+        font-size: 25px;
+        font-weight: 500;
+      }
+      ._main-main-sample-body-code{
+        border-left: 4px solid #4CAF50;
+        background-color: white;
+        width: 370px;
+        height: 250px;
+        margin-top: 20px;
+      }
+      ._main-main-sample-body-button{
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        text-align: center;
+        height: 40px;
+        font-size: 18px;
+        padding: 10px;
+        margin-top: 20px
       }
 
     </style>
@@ -218,8 +267,20 @@
             The language for building web pages
           </div>
           <div class="_main-main-goto">
-            <button class="button" type="button" name="LearnHtml">LEARN HTML</button>
-            <button class="button" type="button" name="HTMLReference">HTML REFERENCE</button>
+              <button class="button" type="button" name="LearnHtml">LEARN HTML</button>
+              <button class="button" type="button" name="HTMLReference">HTML REFERENCE</button>
+          </div>
+        </div>
+
+        <div class="_main-main-sample-tempelate">
+          <div class="_main-main-sample-body">
+            <div class="_main-main-sample-title">
+              HTML Example:
+            </div>
+              <div class="_main-main-sample-body-code">
+                
+              </div>
+              <button class="_main-main-sample-body-button" type="button" name="button">Try it Yourself >></button>
           </div>
         </div>
       </div>
