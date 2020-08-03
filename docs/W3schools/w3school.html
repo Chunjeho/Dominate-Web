@@ -47,6 +47,7 @@
         background-color:  #4CAF50;
         height: 58px;
         box-shadow: 5px 10px 10px -10px #888888;
+        z-index: 2
       }
       ._navigation-class{
         font-size: 18px;
@@ -100,7 +101,7 @@
         color: black
       }
       ._main{
-        position: relative;
+        position: absolute;
         width: 100%;
         height: 100%;
         border: 0px solid red;
@@ -113,13 +114,12 @@
         padding-left: 20px;
         box-shadow: 1px 5px 5px 0px #888888;
         background-color: white;
-        z-index: -1
+        top: 128px;
+        z-index: 1
       }
       ._main-main{
         border: 0px solid black;
         height: 500px;
-        position: relative;
-        z-index: -2;
         background-color: white
       }
       ._main-aside-head{
@@ -233,39 +233,38 @@
         <span class="_navigation-icon _navigation-icon3"><a>3</a></span>
       </nav>
     </div>
-    <div class="_main">
-      <div class="_main-aside">
+    <div class="_main-aside">
 
-        <h4 class="_main-aside-head">HTML and CSS</h4>
-        <div class="_main-aside-contents">
-          <nav>
-            <a>Learn HTML</a><br>
-            <a>Learn CSS</a><br>
-            <a>Learn Bootstrap</a><br>
-            <a>Learn W3.CSS</a><br>
-            <a>Learn Colors</a><br>
-            <a>Learn Icons</a><br>
-            <a>Learn Graphics</a><br>
-            <a>Learn How to</a><br>
-            <a>Learn Sass</a><br>
-          </nav>
-        </div>
-
-        <h4 class="_main-aside-head">Javascript</h4>
-        <div class="_main-aside-contents">
-          <nav>
-            <a>Learn JavaScropt</a><br>
-            <a>Learn jQuery</a><br>
-            <a>Learn React</a><br>
-            <a>Learn AngularJS</a><br>
-            <a>Learn JSON</a><br>
-            <a>Learn AJAX</a><br>
-            <a>Learn W3.JS</a><br>
-          </nav>
-        </div>
-
+      <h4 class="_main-aside-head">HTML and CSS</h4>
+      <div class="_main-aside-contents">
+        <nav>
+          <a>Learn HTML</a><br>
+          <a>Learn CSS</a><br>
+          <a>Learn Bootstrap</a><br>
+          <a>Learn W3.CSS</a><br>
+          <a>Learn Colors</a><br>
+          <a>Learn Icons</a><br>
+          <a>Learn Graphics</a><br>
+          <a>Learn How to</a><br>
+          <a>Learn Sass</a><br>
+        </nav>
       </div>
 
+      <h4 class="_main-aside-head">Javascript</h4>
+      <div class="_main-aside-contents">
+        <nav>
+          <a>Learn JavaScropt</a><br>
+          <a>Learn jQuery</a><br>
+          <a>Learn React</a><br>
+          <a>Learn AngularJS</a><br>
+          <a>Learn JSON</a><br>
+          <a>Learn AJAX</a><br>
+          <a>Learn W3.JS</a><br>
+        </nav>
+      </div>
+
+    </div>
+    <div class="_main">
       <div class="_main-main">
         <div class="_main-main-content">
           <div class="_main-main-title">
