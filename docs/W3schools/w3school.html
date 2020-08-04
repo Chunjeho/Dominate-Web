@@ -108,10 +108,9 @@
       }
       ._main-aside{
         position: absolute;
-        width: 210px;
+        width: 230px;
         height: 1500px;
         border: 0px solid blue;
-        padding-left: 20px;
         box-shadow: 1px 5px 5px 0px #888888;
         background-color: white;
         top: 128px;
@@ -131,9 +130,13 @@
       ._main-aside-head{
         font-size: 20px;
         font-weight: 500;
-        border: 0px solid red
+        border: 0px solid red;
+        width: 214px;
+        padding-left: 16px;
       }
       ._main-aside-contents{
+        position: relative;
+        margin-top: -10px;
         font-size: 17px;
         font-weight: 500;
         border: 0px solid red;
@@ -269,6 +272,16 @@
       ._main-main-sample-body-code-styleValue{
         color: blue;
       }
+      ._main-aside-contents-link {
+        border: 0px solid red;
+        position: absolute;
+        width: 214px;
+        padding-left: 16px;
+      }
+      ._main-aside-contents-link:hover {
+        background-color: #bfbfbf;
+      }
+
 
     </style>
   </head>
@@ -294,28 +307,28 @@
       <h4 class="_main-aside-head">HTML and CSS</h4>
       <div class="_main-aside-contents">
         <nav>
-          <a>Learn HTML</a><br>
-          <a>Learn CSS</a><br>
-          <a>Learn Bootstrap</a><br>
-          <a>Learn W3.CSS</a><br>
-          <a>Learn Colors</a><br>
-          <a>Learn Icons</a><br>
-          <a>Learn Graphics</a><br>
-          <a>Learn How to</a><br>
-          <a>Learn Sass</a><br>
+          <a class="_main-aside-contents-link">Learn HTML</a><br>
+          <a class="_main-aside-contents-link">Learn CSS</a><br>
+          <a class="_main-aside-contents-link">Learn Bootstrap</a><br>
+          <a class="_main-aside-contents-link">Learn W3.CSS</a><br>
+          <a class="_main-aside-contents-link">Learn Colors</a><br>
+          <a class="_main-aside-contents-link">Learn Icons</a><br>
+          <a class="_main-aside-contents-link">Learn Graphics</a><br>
+          <a class="_main-aside-contents-link">Learn How to</a><br>
+          <a class="_main-aside-contents-link">Learn Sass</a><br>
         </nav>
       </div>
 
       <h4 class="_main-aside-head">Javascript</h4>
       <div class="_main-aside-contents">
         <nav>
-          <a>Learn JavaScropt</a><br>
-          <a>Learn jQuery</a><br>
-          <a>Learn React</a><br>
-          <a>Learn AngularJS</a><br>
-          <a>Learn JSON</a><br>
-          <a>Learn AJAX</a><br>
-          <a>Learn W3.JS</a><br>
+          <a class="_main-aside-contents-link">Learn JavaScropt</a><br>
+          <a class="_main-aside-contents-link">Learn jQuery</a><br>
+          <a class="_main-aside-contents-link">Learn React</a><br>
+          <a class="_main-aside-contents-link">Learn AngularJS</a><br>
+          <a class="_main-aside-contents-link">Learn JSON</a><br>
+          <a class="_main-aside-contents-link">Learn AJAX</a><br>
+          <a class="_main-aside-contents-link">Learn W3.JS</a><br>
         </nav>
       </div>
 
