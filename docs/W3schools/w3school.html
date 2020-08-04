@@ -109,7 +109,7 @@
       ._main-aside{
         position: absolute;
         width: 210px;
-        height: 1000px;
+        height: 1500px;
         border: 0px solid blue;
         padding-left: 20px;
         box-shadow: 1px 5px 5px 0px #888888;
@@ -121,6 +121,12 @@
         border: 0px solid black;
         height: 500px;
         background-color: white
+      }
+      ._main-main-css{
+        background-color: #f1f1f1;
+      }
+      ._main-main-js{
+        background-color: white;
       }
       ._main-aside-head{
         font-size: 20px;
@@ -139,6 +145,13 @@
         border: 0px solid red;
         width: 45%;
       }
+      ._main-main-content-css{
+        position: absolute;
+        top: 540px;
+        right: 0;
+        border: 0px solid red;
+        width: 45%;
+      }
       ._main-main-title{
         text-align: center;
         font-size: 80px;
@@ -153,7 +166,7 @@
       }
       ._main-main-goto{
         border: 0px solid red;
-        width: 400px;
+        width: 500px;
         text-align: center;
         margin: auto;
         margin-top: 20px;
@@ -181,12 +194,32 @@
         height: 420px;
         box-shadow: 0px 1px 5px 0px #888888;
       }
+      ._main-main-sample-tempelate-css{
+        border: 0px solid red;
+        background-color: #f1f1f1;
+        position: absolute;
+        top: 500px;
+        left: 230px;
+        width: 460px;
+        height: 460px;
+      }
+      ._main-main-sample-tempelate-js{
+        top: 1040px;
+        width: 440px;
+      }
       ._main-main-sample-body{
         border: 0px solid red;
         text-align: left;
         width: 370px;
         margin: auto;
         margin-top: 35px;
+      }
+      ._main-main-sample-body-css{
+        border: 0px solid red;
+        width: 420px;
+      }
+      ._main-main-sample-body-js{
+        width: 400px;
       }
       ._main-main-sample-title{
         font-size: 25px;
@@ -200,6 +233,14 @@
         font-style: courier;
         padding: 8px;
       }
+      ._main-main-sample-body-code-js{
+        width: 380px;
+        box-shadow: 0px 1px 5px 0px #888888;
+      }
+      ._main-main-sample-body-code-css{
+        width: 400px;
+        box-shadow: 0px 1px 5px 0px #888888;
+      }
       ._main-main-sample-body-button{
         background-color: #4CAF50;
         border: none;
@@ -208,10 +249,25 @@
         height: 40px;
         font-size: 18px;
         padding: 10px;
-        margin-top: 20px
+        margin-top: 20px;
+      }
+      ._main-main-sample-body-button:hover {
+        box-shadow: 0px 5px 10px 0px #888888;
       }
       ._main-main-sample-body-code-tag{
         color: brown;
+      }
+      ._main-main-sample-body-code-tagString{
+        color: brown;
+      }
+      ._main-main-sample-body-code-functionType{
+        color: blue;
+      }
+      ._main-main-sample-body-code-style{
+        color: red;
+      }
+      ._main-main-sample-body-code-styleValue{
+        color: blue;
       }
 
     </style>
@@ -285,6 +341,7 @@
               HTML Example:
             </div>
               <div class="_main-main-sample-body-code">
+
                 <<span class="_main-main-sample-body-code-tag">!DOCTYPE</span><span style="color: red;"> html</span>>
                 <br>
                 <<span class="_main-main-sample-body-code-tag">html</span>>
@@ -303,6 +360,99 @@
                 <<span class="_main-main-sample-body-code-tag">/body</span>>
                 <br>
                 <<span class="_main-main-sample-body-code-tag">/html</span>>
+
+              </div>
+              <button class="_main-main-sample-body-button" type="button" name="button">Try it Yourself >></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="_main-main _main-main-css">
+        <div class="_main-main-content-css">
+          <div class="_main-main-title">
+            CSS
+          </div>
+          <div class="_main-main-description">
+            The language for styling web pages
+          </div>
+          <div class="_main-main-goto">
+              <button class="button" type="button" name="LearnHtml">LEARN CSS</button>
+              <button class="button" type="button" name="HTMLReference">CSS REFERENCE</button>
+          </div>
+        </div>
+        <div class="_main-main-sample-tempelate-css">
+          <div class="_main-main-sample-body _main-main-sample-body-css">
+            <div class="_main-main-sample-title">
+              CSS Example:
+            </div>
+              <div class="_main-main-sample-body-code _main-main-sample-body-code-css">
+
+                <span class="_main-main-sample-body-code-tagString">body</span> {
+                <br>
+                  &nbsp;&nbsp;&nbsp;<span class="_main-main-sample-body-code-style">background-color</span>: <span class="_main-main-sample-body-code-styleValue">lightblue</span>;
+                <br>
+                }
+                <br>
+                <br>
+                <span class="_main-main-sample-body-code-tagString">h1</span> {
+                <br>
+                  &nbsp;&nbsp;&nbsp;<span class="_main-main-sample-body-code-style">color</span>: <span class="_main-main-sample-body-code-styleValue">white</span>;
+                <br>
+                  &nbsp;&nbsp;&nbsp;<span class="_main-main-sample-body-code-style">text-align</span>: <span class="_main-main-sample-body-code-styleValue">center</span>;
+                <br>
+                }
+                <br>
+                <br>
+                <span class="_main-main-sample-body-code-tagString">p</span> {
+                <br>
+                  &nbsp;&nbsp;&nbsp;<span class="_main-main-sample-body-code-style">font-family</span>: <span class="_main-main-sample-body-code-styleValue">verdana</span>;
+                <br>
+                  &nbsp;&nbsp;&nbsp;<span class="_main-main-sample-body-code-style">font-size</span>: <span class="_main-main-sample-body-code-styleValue">20px</span>;
+                <br>
+                }
+
+              </div>
+              <button class="_main-main-sample-body-button" type="button" name="button">Try it Yourself >></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="_main-main _main-main-js">
+        <div class="_main-main-content">
+          <div class="_main-main-title">
+            JavaScript
+          </div>
+          <div class="_main-main-description">
+            The language for programming web pages
+          </div>
+          <div class="_main-main-goto">
+              <button class="button" type="button" name="LearnHtml">LEARN JAVASCRIPT</button>
+              <button class="button" type="button" name="HTMLReference">JAVASCRIPT REFERENCE</button>
+          </div>
+        </div>
+        <div class="_main-main-sample-tempelate _main-main-sample-tempelate-js">
+          <div class="_main-main-sample-body _main-main-sample-body-js">
+            <div class="_main-main-sample-title">
+              Javascript Example:
+            </div>
+              <div class="_main-main-sample-body-code _main-main-sample-body-code-js">
+
+                <<span class="_main-main-sample-body-code-tagString">button</span> <span style="color: red">onclick</span><span class="_main-main-sample-body-code-functionType">="myFunction()"</span>>Click Me!<<span class="_main-main-sample-body-code-tagString">/button</span>>
+                <br>
+                <br>
+                <<span class="_main-main-sample-body-code-tagString">script</span>>
+                <br>
+                <span class="_main-main-sample-body-code-functionType">function</span> myFunction() {
+                <br>
+                &nbsp;&nbsp;&nbsp;<span class="_main-main-sample-body-code-functionType">var</span> x = document.getElementById(<span class="_main-main-sample-body-code-tagString">"demo"</span>);
+                <br>
+                &nbsp;&nbsp;&nbsp;x.style.fontSize = <span class="_main-main-sample-body-code-tagString">"25px"</span>;
+                <br>
+                &nbsp;&nbsp;&nbsp;x.style.color = <span class="_main-main-sample-body-code-tagString">"red"</span>;
+                <br>
+                }
+                <br>
+                <<span class="_main-main-sample-body-code-tagString">/script</span>>
               </div>
               <button class="_main-main-sample-body-button" type="button" name="button">Try it Yourself >></button>
           </div>
