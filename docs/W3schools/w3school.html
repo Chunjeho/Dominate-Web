@@ -7,7 +7,7 @@
     <style media="screen">
 
       /* html{
-        border: 2px solid red
+        border: 0px solid red
       } */
 
       body {
@@ -127,6 +127,15 @@
       ._main-main-js{
         background-color: white;
       }
+      ._main-main-sql{
+        background-color: #f1f1f1;
+        border: 0px solid red;
+        height: 350px;
+      }
+      ._main-main-programmingLanguages{
+        background-color: #616161;
+        border: 0px solid red;
+      }
       ._main-aside-head{
         font-size: 20px;
         font-weight: 500;
@@ -155,11 +164,31 @@
         border: 0px solid red;
         width: 45%;
       }
+      ._main-main-content-sql{
+        position: absolute;
+        top: 1540px;
+        right: 0;
+        border: 0px solid red;
+        width: 45%;
+      }
+      ._main-main-content-pL{
+        position: absolute;
+        top: 1890px;
+        border: 0px solid red;
+        background-color: #616161;
+        left: 230px;
+        width: 500px;
+      }
       ._main-main-title{
         text-align: center;
         font-size: 80px;
         font-weight: 400;
         color: #555555;
+      }
+      ._main-main-title-pL{
+        padding-top: 20px;
+        font-size: 40px;
+        color: black;
       }
       ._main-main-description{
         text-align: center;
@@ -167,12 +196,20 @@
         font-weight: 400;
         color: #555555;
       }
+      ._main-main-description-pL{
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
       ._main-main-goto{
         border: 0px solid red;
-        width: 500px;
+        /* width: 500px; */
         text-align: center;
         margin: auto;
         margin-top: 20px;
+      }
+      ._main-main-goto-pL{
+        padding-bottom: 20px;
       }
       .button{
         background-color: #616161;
@@ -197,6 +234,12 @@
         height: 420px;
         box-shadow: 0px 1px 5px 0px #888888;
       }
+      ._main-main-content-pL-python{
+        border: 0px solid blue;
+        background-color: white;
+        width: 450px;
+        margin: auto;
+      }
       ._main-main-sample-tempelate-css{
         border: 0px solid red;
         background-color: #f1f1f1;
@@ -206,9 +249,19 @@
         width: 460px;
         height: 460px;
       }
+      ._main-main-sample-tempelate-sql{
+        border: 0px solid red;
+        background-color: #f1f1f1;
+        position: absolute;
+        top: 1500px;
+        left: 230px;
+        width: 460px;
+        height: 350px;
+      }
       ._main-main-sample-tempelate-js{
         top: 1040px;
         width: 440px;
+        right: 20px;
       }
       ._main-main-sample-body{
         border: 0px solid red;
@@ -555,6 +608,56 @@
         </div>
       </div>
 
+      <div class="_main-main _main-main-sql">
+        <div class="_main-main-content-sql">
+          <div class="_main-main-title">
+            SQL
+          </div>
+          <div class="_main-main-description">
+            A language for accessing databases
+          </div>
+          <div class="_main-main-goto">
+              <button class="button" type="button" name="LearnHtml">LEARN SQL</button>
+              <button class="button" type="button" name="HTMLReference">SQL REFERENCE</button>
+          </div>
+        </div>
+      </div>
+      <div class="_main-main-sample-tempelate-sql">
+        <div class="_main-main-sample-body _main-main-sample-body-css">
+          <div class="_main-main-sample-title">
+            SQL Example:
+          </div>
+            <div class="_main-main-sample-body-code _main-main-sample-body-code-css">
+
+              <span class="_main-main-sample-body-code-functionType">SELECT</span> * <span class="_main-main-sample-body-code-functionType">FROM</span> Customers
+              <br>
+              <span class="_main-main-sample-body-code-functionType">WHERE</span> Country='<span class="_main-main-sample-body-code-tagString">Mexico</span>';
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+
+            </div>
+            <button class="_main-main-sample-body-button" type="button" name="button">Try it Yourself >></button>
+        </div>
+      </div>
+
+      <div class="_main-main _main-main-programmingLanguages">
+        <div class="_main-main-content-pL">
+          <div class="_main-main-content-pL-python">
+            <div class="_main-main-title _main-main-title-pL">
+              Python
+            </div>
+            <div class="_main-main-description _main-main-description-pL">
+              A programming language
+            </div>
+            <div class="_main-main-goto _main-main-goto-pL">
+                <button class="button" type="button" name="LearnHtml">LEARN PYTHON</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </body>
