@@ -10,4 +10,9 @@ Dominate web by **learning**, **building** and **cloning** websites!
 
 ## Building
 
+### Weather In Mars (Building; HTML, CSS)
+👉 https://chunjeho.github.io/Dominate-Web/WeatherInMars/main.html
+
+👉 HTML file is located in **docs/WeatherInMars/**
+
 ### Knowledge Archive Website (Not yet)
