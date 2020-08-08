@@ -1,0 +1,87 @@
+<html>
+    <style>
+        html{
+/*            border: 2px solid red;*/
+        }
+        body{
+/*            border: 2px solid blue;*/
+            margin: 0;
+            background-image: url("Images/MarsBackground2.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .mars{
+/*            border: 2px solid red;*/
+            margin: 0px;
+            font-size: 70px;
+            text-align: center;
+            color: white;
+            
+        }
+        .title{
+            position: relative;
+/*            border: 2px solid red;*/
+            top: 40px;
+            display: flex;
+            width: 100%;
+            margin: 0px;
+        }
+        .title-topic{
+            flex: 1;
+            text-align: center;
+            font-size: 25px;
+            letter-spacing: 3.14px;
+        }
+        .title-topic-boder{
+            border-right: 2px solid white;
+        }
+        .title-topic-a:hover{
+            color: darkgrey;
+        }
+        
+        .title-topic-a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        .content{
+            position: relative;
+/*            border: 2px solid red;*/
+            font-size: 80px;
+            text-align: center;
+            color: white;
+            letter-spacing: 4px;
+            font-weight: 100;
+        }
+        .content-description{
+            font-size: 40px;
+            letter-spacing: 4px;
+            color: white;
+            text-align: center;
+        }
+        .degree{
+            font-size: 50px;
+        }
+        .temp{
+            position: relative;
+            top: 100px;
+        }
+    </style>
+    <title>Mars</title>
+    <body>
+<!--        <div class="mars">_MARS_</div>-->
+        <div class = "title">
+        <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Temperature</a></span>
+            <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Wind</a></span>
+        <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Pressure</a></span>
+            <span class="title-topic"><a href="#" class="title-topic-a">Season</a></span>
+        </div>
+        <div class="temp">
+            <div class="content-description">Average_Temperature
+            </div> 
+        <div class="content">
+            -71<sup><span class="degree">&#8451;</span></sup>
+        </div>
+        </div>
+    </body>
+</html>
