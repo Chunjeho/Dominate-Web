@@ -1,20 +1,31 @@
 <html>
     <script>
-        const Http = new XMLHttpRequest();
-        const url='https://api.nasa.gov/insight_weather/?api_key=Wgcl7DC89dOjdeB4ZPPBADzO1mQa6bu03Y0QeixS&feedtype=json&ver=1.0'
+        var arr = [];
+        var sol;
+        var len;
+        function getTemperature(){
+            const Http = new XMLHttpRequest();
+        const url='https://api.nasa.gov/insight_weather/?api_key=Wgcl7DC89dOjdeB4ZPPBADzO1mQa6bu03Y0QeixS&feedtype=json&ver=1.0';
         Http.open("GET", url);
-        Http.send();
-        var sol = 0;
-        
         Http.onreadystatechange = function(){
-            if(this.readyState==4 && this.status==200){
-                sol = JSON.parse(Http.responseText)['sol_keys'];
-                sol = sol[sol.length-1]
-                console.log(JSON.parse(Http.responseText)[sol]["AT"]["av"]);
-                document.getElementById("av").innerHTML = JSON.parse(Http.responseText)[sol]["AT"]["av"];
+            if(Http.readyState == 4 && Http.status == 200){
+                console.log(JSON.parse(Http.responseText));
+                len = JSON.parse(Http.responseText)["sol_keys"].length;
+                sol = JSON.parse(Http.responseText)["sol_keys"][len-1];
+                av = JSON.parse(Http.responseText)[sol]["AT"]["av"];
+                mn = JSON.parse(Http.responseText)[sol]["AT"]["mn"];
+                mx = JSON.parse(Http.responseText)[sol]["AT"]["mx"];
                 document.getElementById("sol").innerHTML = sol;
+                document.getElementById("av").innerHTML = av;
+                document.getElementById("mn").innerHTML = mn;
+                document.getElementById("mx").innerHTML = mx;
+                
             }
+        };
+        Http.onreadystatechange();
+        Http.send();
         }
+        getTemperature();
     </script>
     <style>
         html{
@@ -27,19 +38,6 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-        }
-        .mars{
-            position: absolute;
-/*            border: 2px solid red;*/
-            font-size: 70px;
-            font-weight: 100;
-            text-align: left;
-            color: white;
-            height: 100px;
-            line-height: 100px;
-            letter-spacing: 8px;
-            left: 0px;
-            top: 60px;
         }
         .title{
             position: relative;
@@ -91,6 +89,7 @@
 /*            border: 2px solid red;*/
             height: 200px;
             transform: translate(0,-50%);
+            display: flex;
         }
         #av{
             font-size: 80px;
@@ -112,12 +111,33 @@
         <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Pressure</a></span>
             <span class="title-topic"><a href="#" class="title-topic-a">Season</a></span>
         </div>
+        <div style="position: absolute; top: 150px; left: 50%; transform: translate(-50%,0); font-size: 20px; letter-spacing: 6px; color: white; text-align: center">
+            <span style="color: white; font-size: 20px">&#9967;</span>Elysium Planitia, Mars
+            </div>
         <div class="temp">
-            <div class="content-description">Average_Temperature
+            <div style="flex: 1">
+                <div class="content-description">Average
             </div> 
         <div class="content">
             <span id = "av"></span><sup><span class="degree">&#8451;</span></sup>
         </div>
+            </div>
+            
+            <div style="flex: 1; border-left: 2px solid white">
+                <div class="content-description">Minimum
+            </div> 
+        <div class="content">
+            <span id = "mn"></span><sup><span class="degree">&#8451;</span></sup>
+        </div>
+            </div>
+            
+            <div style="flex: 1; border-left: 2px solid white">
+                <div class="content-description">Maximum
+            </div> 
+        <div class="content">
+            <span id = "mx"></span><sup><span class="degree">&#8451;</span></sup>
+        </div>
+            </div>
         </div>
     </body>
 </html>
