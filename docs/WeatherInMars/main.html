@@ -1,10 +1,49 @@
 <html>
     <script>
-        var arr = [];
-        var sol;
-        var len;
-        function getTemperature(){
-            const Http = new XMLHttpRequest();
+        function FtoC(F){
+            var C = (F-32)*5/9;
+            return C.toFixed(2);
+        };
+        function CtoF(C){
+            var F = (C*9/5)+32;
+            return F.toFixed(2);
+        };
+        function ChangeToFContent(from_idName, to_idName){
+            if(document.getElementById(from_idName) != null){
+                temp = document.getElementById(from_idName).textContent;
+             document.getElementById(from_idName).id = to_idName;
+            document.getElementById(to_idName).innerHTML = CtoF(temp);   
+            }
+        }
+        function ChangeToCContent(from_idName, to_idName){
+            if(document.getElementById(from_idName) != null){
+            temp = document.getElementById(from_idName).textContent;
+            document.getElementById(from_idName).id = to_idName;
+            document.getElementById(to_idName).innerHTML = FtoC(temp);
+            }
+        }
+        function ChangeToF(){
+              var _length = document.getElementsByClassName("content").length;
+
+              for(i=0;i<_length;i++){
+                  document.getElementsByClassName("degree")[i].innerHTML = '&#8457';
+              };
+            ChangeToFContent("cav", "fav");
+            ChangeToFContent("cmn", "fmn");
+            ChangeToFContent("cmx", "fmx");
+        };
+        function ChangeToC(){
+            var _length = document.getElementsByClassName("content").length;
+            
+          for(i=0;i<_length;i++){
+              document.getElementsByClassName("degree")[i].innerHTML = '&#8451;';
+          };
+            
+          ChangeToCContent("fav", "cav");
+          ChangeToCContent("fmn", "cmn");
+          ChangeToCContent("fmx", "cmx");
+        };
+        const Http = new XMLHttpRequest();
         const url='https://api.nasa.gov/insight_weather/?api_key=Wgcl7DC89dOjdeB4ZPPBADzO1mQa6bu03Y0QeixS&feedtype=json&ver=1.0';
         Http.open("GET", url);
         Http.onreadystatechange = function(){
@@ -16,16 +55,13 @@
                 mn = JSON.parse(Http.responseText)[sol]["AT"]["mn"];
                 mx = JSON.parse(Http.responseText)[sol]["AT"]["mx"];
                 document.getElementById("sol").innerHTML = sol;
-                document.getElementById("av").innerHTML = av;
-                document.getElementById("mn").innerHTML = mn;
-                document.getElementById("mx").innerHTML = mx;
-                
+                document.getElementById("cav").innerHTML = av.toFixed(2);
+                document.getElementById("cmn").innerHTML = mn.toFixed(2);
+                document.getElementById("cmx").innerHTML = mx.toFixed(2);
             }
         };
-        Http.onreadystatechange();
         Http.send();
-        }
-        getTemperature();
+        
     </script>
     <style>
         html{
@@ -91,7 +127,12 @@
             transform: translate(0,-50%);
             display: flex;
         }
-        #av{
+        #cav{
+            font-size: 80px;
+            letter-spacing: 5px;
+            font-weight: 100;
+        }
+        #fav{
             font-size: 80px;
             letter-spacing: 5px;
             font-weight: 100;
@@ -100,6 +141,35 @@
             border: 2px solid white;
             border-right: 4px solid white;
             border-left: 4px solid white;
+        }
+        .temp-change-button{
+            height: 100px; 
+            width: 100px; 
+            background-color: transparent; 
+            font-size: 40px; 
+            color: white;
+            border: none;
+            outline: none;
+        }
+        .temp-change-button:hover{
+            cursor: pointer;
+            color: darkgray
+        }
+        .temp-change-border{
+/*            border: 2px solid red; */
+            position: relative; 
+            top: 250px; 
+            height: 100px;
+            line-height: 100px; 
+            text-align: center; 
+            font-size: 40px; 
+            color: white;
+        }
+        .temp-change-content{
+/*            border: 2px solid red; */
+            display: flex; 
+            width: 180px; 
+            margin: auto;
         }
     </style>
     <title>Mars</title>
@@ -119,7 +189,7 @@
                 <div class="content-description">Average
             </div> 
         <div class="content">
-            <span id = "av"></span><sup><span class="degree">&#8451;</span></sup>
+            <span id = "cav"></span><sup><span class="degree">&#8451;</span></sup>
         </div>
             </div>
             
@@ -127,7 +197,7 @@
                 <div class="content-description">Minimum
             </div> 
         <div class="content">
-            <span id = "mn"></span><sup><span class="degree">&#8451;</span></sup>
+            <span id = "cmn"></span><sup><span class="degree">&#8451;</span></sup>
         </div>
             </div>
             
@@ -135,8 +205,18 @@
                 <div class="content-description">Maximum
             </div> 
         <div class="content">
-            <span id = "mx"></span><sup><span class="degree">&#8451;</span></sup>
+            <span id = "cmx"></span><sup><span class="degree">&#8451;</span></sup>
         </div>
+            </div>
+        </div>
+        <div class="temp-change-border">
+            <div class="temp-change-content">
+                <div style="flex: 1; border-right: 1px solid white">
+                <button class="temp-change-button" onclick="ChangeToC()">&#8451;</button>
+            </div>
+            <div style="flex: 1; border-left: 1px solid white">
+                <button class="temp-change-button" onclick="ChangeToF()">&#8457;</button>
+            </div>
             </div>
         </div>
     </body>
