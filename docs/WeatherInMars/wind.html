@@ -20,19 +20,19 @@
                 for(i=0;i<av.length;i++){
                     console.log(av[i]);
                     if(av[i] == '.'){
-                        av = av.substr(0, i+2);
+                        av = av.substr(0, i+3);
                     }
                 };
                 
                 for(i=0;i<mn.length;i++){
                     if(av[i] == '.'){
-                        mn = mn.substr(0, i+2);
+                        mn = mn.substr(0, i+3);
                     }
                 };
                 
                 for(i=0;i<mx.length;i++){
                     if(mx[i] == '.'){
-                        mx = mx.substr(0, i+2);
+                        mx = mx.substr(0, i+3);
                     }
                 };
                 
@@ -101,7 +101,7 @@
             color: white;
             text-align: center;
         }
-        .degree{
+        .speed{
             font-size: 50px;
         }
         .wind{
@@ -140,7 +140,7 @@
                 <div class="content-description">Average
             </div> 
         <div class="content">
-            <span id = "av"></span>
+            <span id = "av"></span><sup><span class="speed">m/s</span></sup>
         </div>
             </div>
             
@@ -148,7 +148,7 @@
                 <div class="content-description">Minimum
             </div> 
         <div class="content">
-            <span id = "mn"></span>
+            <span id = "mn"></span><sup><span class="speed">m/s</span></sup>
         </div>
             </div>
             
@@ -156,7 +156,7 @@
                 <div class="content-description">Maximum
             </div> 
         <div class="content">
-            <span id = "mx"></span>
+            <span id = "mx"></span><sup><span class="speed">m/s</span></sup>
         </div>
             </div>
         </div>
