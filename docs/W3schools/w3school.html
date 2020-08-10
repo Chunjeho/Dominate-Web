@@ -132,6 +132,13 @@
         border: 0px solid red;
         height: 350px;
       }
+      #_main-main-w3css{
+        position: absolute;
+        z-index: 3;
+        border: 0px solid red;
+        height: 350px;
+        display: flex;
+      }
       ._main-main-programmingLanguages{
         position: relative;
         background-color: #616161;
@@ -359,6 +366,13 @@
       }
       ._main-aside-contents-link:hover {
         background-color: #bfbfbf;
+      }
+      ._main-main-w3css-container{
+        position: relative;
+        border: 0px solid blue;
+        width: 300px;
+        height: 350px;
+        flex: 1;
       }
 
 
@@ -723,7 +737,56 @@
           </div>
         </div>
       </div>
+
+      <div id="_main-main-w3css">
+        <span class="_main-main-w3css-container">
+          <div class="" style="position: relative;top: 50%; transform: translate(0, -50%); border: 0px solid orange;">
+            <div class="_main-main-title _main-main-title-pL">
+              W3.CSS
+            </div>
+            <div class="_main-main-description _main-main-description-pL">
+              A modern CSS framework for faster and better responsive web pages
+            </div>
+            <div class="_main-main-goto _main-main-goto-pL">
+                <button class="button" type="button" name="LearnHtml">LEARN W3.CSS</button>
+            </div>
+          </div>
+        </span>
+        <span class="_main-main-w3css-container">
+          <div class="" style="position: relative;top: 50%; transform: translate(0, -50%); border: 0px solid orange;">
+            <div class="">
+              <div class="_main-main-title _main-main-title-pL" style="margin-bottom: 30px;">
+                Color Picker
+              </div>
+            </div>
+            <div class="">
+              <img src="Images/colorpicker.png" style="position:relative; left: 50%; transform:translate(-50%, 0)" alt="">
+            </div>
+          </div>
+        </span>
+        <span class="_main-main-w3css-container">
+          <div class="" style="position: relative;top: 50%; transform: translate(0, -50%); border: 0px solid orange;">
+            <div class="_main-main-title _main-main-title-pL">
+              Bootstrap
+            </div>
+            <div class="_main-main-description _main-main-description-pL">
+              A CSS framework for designing better web pages
+            </div>
+            <div class="_main-main-goto _main-main-goto-pL">
+                <button class="button" type="button" name="LearnHtml">LEARN BOOTSTRAP 3</button>
+                <button class="button" type="button" name="LearnHtml">LEARN BOOTSTRAP 4</button>
+            </div>
+          </div>
+        </span>
+      </div>
     </div>
 
   </body>
+  <script type="text/javascript">
+    var x = screen.width;
+    x = x-246;
+    x += "px";
+    document.getElementById("_main-main-w3css").style.width = x;
+    document.getElementById("_main-main-w3css").style.left = "230px";
+  </script>
 </html>
