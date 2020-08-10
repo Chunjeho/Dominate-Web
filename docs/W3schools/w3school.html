@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>W3Schools Online Web Tutorials</title>
-
     <style media="screen">
 
       /* html{
@@ -114,7 +113,8 @@
         box-shadow: 1px 5px 5px 0px #888888;
         background-color: white;
         top: 128px;
-        z-index: 1
+        z-index: 1;
+        display: block
       }
       ._main-main{
         border: 0px solid black;
@@ -135,7 +135,7 @@
       #_main-main-w3css{
         position: absolute;
         z-index: 3;
-        border: 2px solid red;
+        border: 0px solid red;
         height: 350px;
         display: flex;
       }
@@ -220,7 +220,7 @@
       }
       ._main-main-title-pL{
         padding-top: 20px;
-        font-size: 40px;
+        font-size: 2em;
         color: black;
       }
       ._main-main-description{
@@ -230,7 +230,7 @@
         color: #555555;
       }
       ._main-main-description-pL{
-        font-size: 20px;
+        font-size: 1.3em;
         padding-top: 20px;
         padding-bottom: 30px;
       }
@@ -250,7 +250,7 @@
         color: white;
         text-align: center;
         height: 40px;
-        font-size: 18px;
+        font-size: 1em;
         padding: 10px
       }
       .button:hover {
@@ -370,7 +370,6 @@
       ._main-main-w3css-container{
         position: relative;
         border: 0px solid blue;
-        width: 300px;
         height: 350px;
         flex: 1;
       }
@@ -774,19 +773,22 @@
             </div>
             <div class="_main-main-goto _main-main-goto-pL">
                 <button class="button" type="button" name="LearnHtml">LEARN BOOTSTRAP 3</button>
+                <div>
+                  &nbsp;
+                </div>
                 <button class="button" type="button" name="LearnHtml">LEARN BOOTSTRAP 4</button>
             </div>
           </div>
         </span>
       </div>
     </div>
-
   </body>
-  <script type="text/javascript">
+  <script>
     var x = screen.width;
-    x = x-246;
+    document.getElementsByClassName("_main-aside")[0].style.width = "230px";
+    x = x-238;
     x += "px";
     document.getElementById("_main-main-w3css").style.width = x;
-    document.getElementById("_main-main-w3css").style.left = "230px";
+    document.getElementById("_main-main-w3css").style.left = "238px";
   </script>
 </html>
