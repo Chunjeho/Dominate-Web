@@ -1,5 +1,18 @@
 <html>
     <script>
+        function showDate(){
+            var obj = JSON.parse(localStorage.getItem('marsWeather'));
+            var len = obj["sol_keys"].length;
+            var sol = obj["sol_keys"][len-1];
+            var date = obj[sol]["First_UTC"].substring(0,10);
+            
+            if(document.getElementById("sol").textContent == date){
+                document.getElementById("sol").innerHTML = "Sol "+sol;
+            }
+            else{
+             document.getElementById("sol").innerHTML = date;   
+            }
+        }
         function FtoC(F){
             var C = (F-32)*5/9;
             return C.toFixed(2);
@@ -49,12 +62,13 @@
         Http.onreadystatechange = function(){
             if(Http.readyState == 4 && Http.status == 200){
                 console.log(JSON.parse(Http.responseText));
+                localStorage.setItem('marsWeather', JSON.stringify(JSON.parse(Http.responseText)));
                 len = JSON.parse(Http.responseText)["sol_keys"].length;
                 sol = JSON.parse(Http.responseText)["sol_keys"][len-1];
                 av = JSON.parse(Http.responseText)[sol]["AT"]["av"];
                 mn = JSON.parse(Http.responseText)[sol]["AT"]["mn"];
                 mx = JSON.parse(Http.responseText)[sol]["AT"]["mx"];
-                document.getElementById("sol").innerHTML = sol;
+                document.getElementById("sol").innerHTML = "Sol "+sol;
                 document.getElementById("cav").innerHTML = av.toFixed(2);
                 document.getElementById("cmn").innerHTML = mn.toFixed(2);
                 document.getElementById("cmx").innerHTML = mx.toFixed(2);
@@ -74,6 +88,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            font-weight: 100
         }
         .title{
             position: relative;
@@ -99,6 +114,19 @@
         .title-topic-a{
             text-decoration: none;
             color: whitesmoke;
+        }
+        .title-topic-button{
+            text-decoration: none;
+            color: whitesmoke;
+            background-color: transparent;
+            flex: 1;
+            font-size: 25px;
+            outline-style: none;
+            border-left: 4px solid white;
+            border-right: 4px solid white;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            letter-spacing: 3.14px;
         }
         .content{
             position: relative;
@@ -137,11 +165,6 @@
             letter-spacing: 5px;
             font-weight: 100;
         }
-        .title-topic-sol{
-            border: 2px solid white;
-            border-right: 4px solid white;
-            border-left: 4px solid white;
-        }
         .temp-change-button{
             height: 100px; 
             width: 100px; 
@@ -150,6 +173,7 @@
             color: white;
             border: none;
             outline: none;
+            text-align: center;
         }
         .temp-change-button:hover{
             cursor: pointer;
@@ -177,12 +201,12 @@
         <div class = "title">
         <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Temperature</a></span>
             <span class="title-topic"><a href="wind.html" class="title-topic-a">Wind</a></span>
-            <span class="title-topic title-topic-boder title-topic-sol"><a href="#" class="title-topic-a">Sol <span id = "sol"></span></a></span>
+            <button class="title-topic-button" name = "sol" onclick="showDate()"><span id = "sol"></span></button>
         <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Pressure</a></span>
             <span class="title-topic"><a href="#" class="title-topic-a">Season</a></span>
         </div>
         <div style="position: absolute; top: 80px; left: 50%; transform: translate(-50%,0); font-size: 20px; letter-spacing: 6px; color: white; text-align: center">
-            <!--span style="color: white; font-size: 20px">&#9967;</span-->Elysium Planitia, Mars
+            Elysium Planitia, Mars
             </div>
         <div class="temp">
             <div style="flex: 1">

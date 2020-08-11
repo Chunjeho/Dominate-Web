@@ -1,5 +1,18 @@
 <html>
     <script>
+        function showDate(){
+            var obj = JSON.parse(localStorage.getItem('marsWeather'));
+            var len = obj["sol_keys"].length;
+            var sol = obj["sol_keys"][len-1];
+            var date = obj[sol]["First_UTC"].substring(0,10);
+            
+            if(document.getElementById("sol").textContent == date){
+                document.getElementById("sol").innerHTML = "Sol "+sol;
+            }
+            else{
+             document.getElementById("sol").innerHTML = date;   
+            }
+        }
         var arr = [];
         var sol;
         var len;
@@ -11,6 +24,7 @@
         Http.onreadystatechange = function(){
             if(Http.readyState == 4 && Http.status == 200){
                 console.log(JSON.parse(Http.responseText));
+                localStorage.setItem('marsWeather', JSON.stringify(JSON.parse(Http.responseText)));
                 len = JSON.parse(Http.responseText)["sol_keys"].length;
                 sol = JSON.parse(Http.responseText)["sol_keys"][len-1];
                 av = String(JSON.parse(Http.responseText)[sol]["HWS"]["av"]);
@@ -36,7 +50,7 @@
                     }
                 };
                 
-                document.getElementById("sol").innerHTML = sol;
+                document.getElementById("sol").innerHTML = "Sol " + sol;
                 document.getElementById("av").innerHTML = av;
                 document.getElementById("mn").innerHTML = mn;
                 document.getElementById("mx").innerHTML = mx;
@@ -59,6 +73,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            font-weight: 100;
         }
         .title{
             position: relative;
@@ -84,6 +99,19 @@
         .title-topic-a{
             text-decoration: none;
             color: whitesmoke;
+        }
+        .title-topic-button{
+            text-decoration: none;
+            color: whitesmoke;
+            background-color: transparent;
+            flex: 1;
+            font-size: 25px;
+            outline-style: none;
+            border-left: 4px solid white;
+            border-right: 4px solid white;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            letter-spacing: 3.14px;
         }
         .content{
             position: relative;
@@ -128,12 +156,12 @@
         <div class = "title">
         <span class="title-topic title-topic-boder"><a href="main.html" class="title-topic-a">Temperature</a></span>
             <span class="title-topic"><a href="#" class="title-topic-a">Wind</a></span>
-            <span class="title-topic title-topic-boder title-topic-sol"><a href="#" class="title-topic-a">Sol <span id = "sol"></span></a></span>
+            <button class="title-topic-button" name = "sol" onclick="showDate()"><span id = "sol"></span></button>
         <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Pressure</a></span>
             <span class="title-topic"><a href="#" class="title-topic-a">Season</a></span>
         </div>
         <div style="position: absolute; top: 80px; left: 50%; transform: translate(-50%,0); font-size: 20px; letter-spacing: 6px; color: white; text-align: center">
-            <!--span style="color: white; font-size: 20px">&#9967;</span-->Elysium Planitia, Mars
+            Elysium Planitia, Mars
             </div>
         <div class="wind">
             <div style="flex: 1">
