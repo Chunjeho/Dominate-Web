@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale:1.0">
     <title></title>
       <style>
           body{
@@ -14,7 +15,7 @@
               border: 2px solid green;
               height: 80px;
               display: grid;
-              
+
           }
           .topic-1{
               display: none;
@@ -55,7 +56,7 @@
               display: grid;
               grid-template-columns: 155px 155px 155px 155px 155px 1fr 80px 80px 80px
           }
-          
+
           @media(min-width: 1019px){
               .title{
                 grid-template-columns: 1fr 1fr;
@@ -67,7 +68,7 @@
                 grid-template-columns: 350px 1fr;
               }
           }
-          
+
           @media(max-width: 1063px){
               .topic4{
                   display: none;
@@ -77,7 +78,7 @@
               }
           }
           @media(max-width: 1018px){
-              
+
               .topic3{
                   display: none;
               }
@@ -111,7 +112,7 @@
                   order: 2;
               }
           }
-          @media(max-width: 765px){
+          @media(max-width: 765px ){
               .topic2{
                   display: none;
               }
@@ -124,11 +125,11 @@
               .topic-1{
                   display: inline;
               }
-              .navigation{
-                  grid-template-columns: 80px 1fr 80px 80px 80px;
-              }
               .navigator{
                   display: none;
+              }
+              .navigation{
+                  grid-template-columns: 80px 1fr 80px 80px 80px;
               }
               #grid{
                   grid-template-columns: 1fr;
@@ -213,7 +214,7 @@
                 <div class="content-box">
                     css
                 </div>
-            </div> 
+            </div>
             <div class="content-odd">
                 <div class="content-box">
                     js
@@ -221,7 +222,7 @@
                 <div class="example-box">
                     js example
                 </div>
-            </div> 
+            </div>
             <div class="content-even">
                 <div class="example-box">
                     sql example
