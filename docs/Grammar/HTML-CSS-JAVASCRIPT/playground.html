@@ -4,13 +4,20 @@
     <meta charset="utf-8">
     <title></title>
       <style>
+          body{
+              margin: 0px;
+          }
           div{
               border: 2px solid red;
           }
           .title{
               border: 2px solid green;
               height: 80px;
-              display: flex;
+              display: grid;
+              
+          }
+          .topic-1{
+              display: none;
           }
           #grid{
               position: relative;
@@ -22,13 +29,11 @@
               border: 2px solid blue;
               height: 400px;
               display: grid;
-              grid-template-columns: 1fr 350px;
           }
           .content-even{
               border: 2px solid blue;
               height: 400px;
               display: grid;
-              grid-template-columns: 350px 1fr;
           }
           .example-box{
               border: 2px solid pink;
@@ -38,19 +43,115 @@
           }
           .title-name{
               border: 2px solid yellow;
-              flex: 1;
               text-align: left;
           }
           .title-quote{
               border: 2px solid yellow;
-              flex: 1;
               text-align: right;
           }
           .navigation{
               border: 2px solid blue;
               height: 60px;
               display: grid;
-              grid-template-columns: 150px 150px 150px 150px 150px 1fr 80px 80px 80px
+              grid-template-columns: 155px 155px 155px 155px 155px 1fr 80px 80px 80px
+          }
+          
+          @media(min-width: 1019px){
+              .title{
+                grid-template-columns: 1fr 1fr;
+              }
+              .content-odd{
+                grid-template-columns: 1fr 350px;
+              }
+              .content-even{
+                grid-template-columns: 350px 1fr;
+              }
+          }
+          
+          @media(max-width: 1063px){
+              .topic4{
+                  display: none;
+              }
+              .navigation{
+                  grid-template-columns: 155px 155px 155px 155px 1fr 80px 80px 80px
+              }
+          }
+          @media(max-width: 1018px){
+              
+              .topic3{
+                  display: none;
+              }
+              .navigation{
+                  grid-template-columns: 155px 155px 155px 1fr 80px 80px 80px
+              }
+              .title{
+                  height: 100px;
+                  grid-template-rows: 1.5fr 1fr;
+              }
+              .title-name{
+                  text-align: center;
+                  line-height: 60px; /*2.5 : 100 = 1.5 : 60*/
+              }
+              .title-quote{
+                  text-align: center;
+                  line-height: 40px; /*2.5 : 100 = 1 : 40*/
+              }
+              .content-odd{
+                height: 800px;
+                grid-template-rows: 1fr 1fr;
+              }
+              .content-even{
+                height: 800px;
+                grid-template-rows: 1fr 1fr;
+              }
+              div.content-box{
+                  order: 1;
+              }
+              div.example-box{
+                  order: 2;
+              }
+          }
+          @media(max-width: 765px){
+              .topic2{
+                  display: none;
+              }
+              .topic1{
+                  display: none;
+              }
+              .topic0{
+                  display: none;
+              }
+              .topic-1{
+                  display: inline;
+              }
+              .navigation{
+                  grid-template-columns: 80px 1fr 80px 80px 80px;
+              }
+              .navigator{
+                  display: none;
+              }
+              #grid{
+                  grid-template-columns: 1fr;
+              }
+          }
+          @media(max-width: 600px){
+              .icon1{
+                  display: none;
+              }
+              .example-box{
+                  display: none;
+              }
+              .navigation{
+                  grid-template-columns: 80px 1fr 80px 80px;
+              }
+              .content-odd{
+                height: 400px;
+                grid-template-rows: 1fr;
+              }
+              .content-even{
+                height: 400px;
+                grid-template-rows: 1fr;
+              }
           }
       </style>
   </head>
@@ -64,35 +165,38 @@
         </div>
       </div>
       <div class="navigation">
-        <div class="topic">
+        <div class="topic topic-1">
+            menu-icon
+        </div>
+        <div class="topic topic0">
             TUTORIALS
         </div>
-        <div class="topic">
+        <div class="topic topic1">
             REFERENCES
         </div>
-        <div class="topic">
+        <div class="topic topic2">
             EXAMPLE
         </div>
-        <div class="topic">
+        <div class="topic topic3">
             EXERCISE
         </div>
-        <div class="topic">
+        <div class="topic topic4">
             CERTIFICATES
         </div>
         <div class="empty">
         </div>
-        <div class="icon">
+        <div class="icon icon1">
             dark-bright toggle
         </div>
-        <div class="icon">
+        <div class="icon icon2">
             translate icon
         </div>
-        <div class="icon">
+        <div class="icon icon3">
             search icon
         </div>
       </div>
       <div id="grid">
-        <div>Navigator</div>
+        <div class="navigator">Navigator</div>
         <div>
             <div class="content-odd">
                 <div class="content-box">
