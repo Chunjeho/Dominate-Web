@@ -65,13 +65,20 @@
                 localStorage.setItem('marsWeather', JSON.stringify(JSON.parse(Http.responseText)));
                 len = JSON.parse(Http.responseText)["sol_keys"].length;
                 sol = JSON.parse(Http.responseText)["sol_keys"][len-1];
-                av = JSON.parse(Http.responseText)[sol]["AT"]["av"];
-                mn = JSON.parse(Http.responseText)[sol]["AT"]["mn"];
-                mx = JSON.parse(Http.responseText)[sol]["AT"]["mx"];
+                if(JSON.parse(Http.responseText)["validity_checks"][sol]["AT"]["valid"] == true){
+                    av = JSON.parse(Http.responseText)[sol]["AT"]["av"].toFixed(2);
+                    mn = JSON.parse(Http.responseText)[sol]["AT"]["mn"].toFixed(2);
+                    mx = JSON.parse(Http.responseText)[sol]["AT"]["mx"].toFixed(2);
+                }
+                else{
+                    av = 'NaN';
+                    mn = 'NaN';
+                    mx = 'NaN';
+                }
                 document.getElementById("sol").innerHTML = "Sol "+sol;
-                document.getElementById("cav").innerHTML = av.toFixed(2);
-                document.getElementById("cmn").innerHTML = mn.toFixed(2);
-                document.getElementById("cmx").innerHTML = mx.toFixed(2);
+                document.getElementById("cav").innerHTML = av;
+                document.getElementById("cmn").innerHTML = mn;
+                document.getElementById("cmx").innerHTML = mx;
             }
         };
         Http.send();

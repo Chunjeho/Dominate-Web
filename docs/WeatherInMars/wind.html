@@ -27,9 +27,16 @@
                 localStorage.setItem('marsWeather', JSON.stringify(JSON.parse(Http.responseText)));
                 len = JSON.parse(Http.responseText)["sol_keys"].length;
                 sol = JSON.parse(Http.responseText)["sol_keys"][len-1];
-                av = String(JSON.parse(Http.responseText)[sol]["HWS"]["av"]);
-                mn = String(JSON.parse(Http.responseText)[sol]["HWS"]["mn"]);
-                mx = String(JSON.parse(Http.responseText)[sol]["HWS"]["mx"]);
+                if(JSON.parse(Http.responseText)["validity_checks"][sol]["HWS"]["valid"] == true){
+                    av = String(JSON.parse(Http.responseText)[sol]["HWS"]["av"]);
+                    mn = String(JSON.parse(Http.responseText)[sol]["HWS"]["mn"]);
+                    mx = String(JSON.parse(Http.responseText)[sol]["HWS"]["mx"]);
+                }
+                else{
+                    av = 'NaN';
+                    mn = 'NaN';
+                    mx = 'NaN';
+                }
                 
                 for(i=0;i<av.length;i++){
                     console.log(av[i]);
