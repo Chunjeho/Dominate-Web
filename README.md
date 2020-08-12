@@ -6,7 +6,7 @@ Dominate web by **learning**, **building** and **cloning** websites!
 ### W3schools.com (cloning; HTML, CSS)
 👉 https://chunjeho.github.io/Dominate-Web/Grammar/HTML-CSS-JAVASCRIPT/playground.html
 
-👉 HTML file is located in **docs/w3schools/**
+👉 HTML file is located in **docs/Grammar/HTML-CSS-JAVASCRIPT/**
 
 ## Building
 
