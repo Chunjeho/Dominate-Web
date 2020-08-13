@@ -30,6 +30,9 @@
               font-weight: 400;
               height: 53px;
               cursor: pointer;
+              background-color: transparent;
+              border: none;
+              outline: none;
           }
           .topic:hover{
               background-color: white;
@@ -69,6 +72,7 @@
           }
           .example-box{
               border: 2px solid pink;
+              padding: 16px;
           }
           .content-box{
               border: 2px solid black;
@@ -107,7 +111,7 @@
               border: 2px solid blue;
               height: 53px;
               display: grid;
-              grid-template-columns: 165px 175px 160px 170px 175px 1fr 53px 53px 53px;
+              grid-template-columns: 165px 180px 160px 170px 175px 1fr 53px 53px 53px;
           }
           .navigator{
               font-weight: 500;
@@ -125,9 +129,6 @@
           }
           .navigator-topic:hover{
               background-color: #ccc;
-          }
-          .caret-down{
-              font-size: 15px; 
           }
           .content-box-title{
               text-align: center;
@@ -159,7 +160,7 @@
               height: 45px;
               padding: 16px;
               font-size: 18px;
-              margin-top: 15px;
+              margin-top: 20px;
               margin-bottom: 15px;
               outline: none;
               border: none;
@@ -189,6 +190,39 @@
               background-color: white;
               color: black;
           }
+          .example-box-container{
+          }
+          .example-box-container{
+              padding: 16px;
+              padding-top: 32px;
+              background-color: #f1f1f1;
+          }
+          .example-box-title{
+              font-size: 25px;
+              margin-bottom: 16px;
+          }
+          .example-box-button{
+              font-size: 20px;
+              padding: 8px;
+              outline: none;
+              border: none;
+              background-color: #4CAF50;
+              color: white;
+              cursor: pointer;
+              margin-top: 16px;
+          }
+          .example-box-content{
+              padding: 8px;
+              background-color: white;
+              border-left: 4px solid #4CAF50;
+          }
+          .fa-sort-down{
+              vertical-align: super;
+          }
+          .fa-angle-double-right{
+              vertical-align: middle;
+              font-size: 13px;
+          }
           @media(min-width: 1036px){
               .title{
                 grid-template-columns: 1fr 1fr;
@@ -215,7 +249,7 @@
                   display: none;
               }
               .navigation{
-                  grid-template-columns: 165px 165px 165px 165px 1fr 53px 53px 53px
+                  grid-template-columns: 165px 180px 160px 170px 1fr 53px 53px 53px
               }
           }
           @media(max-width: 1035px){
@@ -224,7 +258,7 @@
                   display: none;
               }
               .navigation{
-                  grid-template-columns: 165px 165px 165px 1fr 53px 53px 53px
+                  grid-template-columns: 165px 180px 160px 1fr 53px 53px 53px
               }
               .title{
                   height: 100px;
@@ -241,11 +275,11 @@
                   transform: translate(-50%,0)
               }
               .content-odd{
-                height: 800px;
+                height: 650px;
                 grid-template-rows: 1fr 1.5fr;
               }
               .content-even{
-                height: 800px;
+                height: 650px;
                 grid-template-rows: 1fr 1.5fr;
               }
               div.content-box{
@@ -334,21 +368,21 @@
         <div class="topic topic-1">
             menu-icon
         </div>
-        <div class="topic topic0">
-            TUTORIALS <span class="caret-down">&#9660;</span>
-        </div>
-        <div class="topic topic1">
-            REFERENCES <span class="caret-down">&#9660;</span>
-        </div>
-        <div class="topic topic2">
-            EXAMPLES <span class="caret-down">&#9660;</span>
-        </div>
-        <div class="topic topic3">
-            EXERCISES <span class="caret-down">&#9660;</span>
-        </div>
-        <div class="topic topic4">
+        <button class="topic topic0">
+            TUTORIALS <i class="fas fa-sort-down"></i>
+        </button>
+        <button class="topic topic1">
+            REFERENCES <i class="fas fa-sort-down"></i>
+        </button>
+        <button class="topic topic2">
+            EXAMPLES <i class="fas fa-sort-down"></i>
+        </button>
+        <button class="topic topic3">
+            EXERCISES <i class="fas fa-sort-down"></i>
+        </button>
+        <button class="topic topic4">
             CERTIFICATES
-        </div>
+        </button>
         <div class="empty">
         </div>
         <div class="icon icon1">
@@ -464,12 +498,30 @@
                     </div>
                 </div>
                 <div class="example-box">
-                    html example
+                    <div class="example-box-container">
+                        <div class="example-box-title">
+                            HTML Example:
+                        </div>
+                        <div class="example-box-content example-box-content-html">
+                            html source code
+                        </div>
+                        <button class="example-box-button">
+                        Try it Yourself <i class="fas fa-angle-double-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="content-even">
                 <div class="example-box">
-                    css example
+                    <div class="example-box-title">
+                        CSS Example:
+                    </div>
+                    <div class="example-box-content example-box-content-css">
+                        css source code
+                    </div>
+                    <button class="example-box-button">
+                    Try it Yourself <i class="fas fa-angle-double-right"></i>
+                    </button>
                 </div>
                 <div class="content-box">
                     <div class="content-box-title content-box-title-p1">
@@ -498,13 +550,31 @@
                     </div>
                 </div>
                 <div class="example-box">
-                    js example
+                    <div class="example-box-container">
+                        <div class="example-box-title">
+                            JavaScript Example:
+                        </div>
+                        <div class="example-box-content example-box-content-html">
+                            js source code
+                        </div>
+                        <button class="example-box-button">
+                        Try it Yourself <i class="fas fa-angle-double-right"></i>
+                        </button>
+                    </div>
                 </div>
                 
             </div>
             <div class="content-even">
                 <div class="example-box">
-                    sql example
+                    <div class="example-box-title">
+                        SQL Example:
+                    </div>
+                    <div class="example-box-content example-box-content-css">
+                        sql source code
+                    </div>
+                    <button class="example-box-button">
+                    Try it Yourself <i class="fas fa-angle-double-right"></i>
+                    </button>
                 </div>
                 <div class="content-box">
                     <div class="content-box-title content-box-title-p1">
