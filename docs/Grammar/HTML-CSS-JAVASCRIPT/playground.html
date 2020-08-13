@@ -130,13 +130,26 @@
           }
           .content-box-title{
               text-align: center;
-              font-size: 80px;
               color: #555555;
+          }
+          .content-box-title-p1{
+              font-size: 80px;
+          }
+          .content-box-title-p2{
+              font-size: 35px;
+              margin-top: 20px;
           }
           .content-box-description{
               text-align: center;
-              font-size: 25px;
               color: #555555;
+          }
+          .content-box-description-p1{
+              font-size: 25px;
+          }
+          .content-box-description-p2{
+              font-size: 20px;
+              margin-top: 20px;
+              margin-bottom: 20px
           }
           .content-box-button{
               text-align: center;
@@ -146,6 +159,7 @@
               padding: 16px;
               font-size: 18px;
               margin-top: 15px;
+              margin-bottom: 15px;
               outline: none;
               border: none;
               background-color: #616161;
@@ -154,6 +168,24 @@
           }
           .content-box-button button:hover {
               background-color: #ccc;
+              color: black;
+          }
+          .programming{
+              border: 2px solid blue; 
+              background-color: gray; 
+              color: white; 
+              height: 600px;
+              display: grid;
+          }
+          .programming-up{
+              display: grid;
+          }
+          .programming-down{
+              display: grid;
+          }
+          .programming-content{
+              margin: 25px;
+              background-color: white;
               color: black;
           }
           @media(min-width: 1036px){
@@ -165,6 +197,15 @@
               }
               .content-even{
                 grid-template-columns: 1fr 1fr;
+              }
+              .programming{
+                  grid-template-rows: 1fr 1fr;
+              }
+              .programming-up{
+                  grid-template-columns: 1fr 1fr;
+              }
+              .programming-down{
+                  grid-template-columns: 1fr 1fr;
               }
           }
 
@@ -211,6 +252,15 @@
               }
               div.example-box{
                   order: 2;
+              }
+              .programming{
+                  height: 1200px;
+              }
+              .programming-up{
+                  grid-template-rows: 1fr 1fr;
+              }
+              .programming-down{
+                  grid-template-rows: 1fr 1fr;
               }
           }
           @media(max-width: 765px ){
@@ -401,10 +451,10 @@
         <div>
             <div class="content-odd">
                 <div class="content-box">
-                    <div class="content-box-title">
+                    <div class="content-box-title content-box-title-p1">
                     HTML
                     </div>
-                    <div class="content-box-description">
+                    <div class="content-box-description content-box-description-p1">
                     The language for building web pages
                     </div>
                     <div class="content-box-button">
@@ -421,10 +471,10 @@
                     css example
                 </div>
                 <div class="content-box">
-                    <div class="content-box-title">
+                    <div class="content-box-title content-box-title-p1">
                     CSS
                     </div>
-                    <div class="content-box-description">
+                    <div class="content-box-description content-box-description-p1">
                     The language for styling web pages
                     </div>
                     <div class="content-box-button">
@@ -435,10 +485,10 @@
             </div>
             <div class="content-odd">
                 <div class="content-box">
-                    <div class="content-box-title">
+                    <div class="content-box-title content-box-title-p1">
                     JavaScript
                     </div>
-                    <div class="content-box-description">
+                    <div class="content-box-description content-box-description-p1">
                     The language for programming web pages
                     </div>
                     <div class="content-box-button">
@@ -449,16 +499,17 @@
                 <div class="example-box">
                     js example
                 </div>
+                
             </div>
             <div class="content-even">
                 <div class="example-box">
                     sql example
                 </div>
                 <div class="content-box">
-                    <div class="content-box-title">
+                    <div class="content-box-title content-box-title-p1">
                     SQL
                     </div>
-                    <div class="content-box-description">
+                    <div class="content-box-description content-box-description-p1">
                     The language for accesing databases
                     </div>
                     <div class="content-box-button">
@@ -467,8 +518,55 @@
                     </div>
                 </div>
             </div>
-            <div style="border: 2px solid blue; background-color: gray; color: white; height: 500px">
-                programming language
+            <div class="programming">
+                <div class="programming-up">
+                    <div class="programming-content">
+                        <div class="content-box-title content-box-title-p2">
+                            Python
+                        </div>
+                        <div class="content-box-description content-box-description-p2">
+                            A programming language
+                        </div>
+                        <div class="content-box-button">
+                            <button>LEARN PYTHON</button>
+                        </div>
+                    </div>
+                     <div class="programming-content">
+                        <div class="content-box-title content-box-title-p2">
+                            PHP
+                        </div>
+                        <div class="content-box-description content-box-description-p2">
+                            A web server programming language
+                        </div>
+                        <div class="content-box-button">
+                            <button>LEARN PHP</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="programming-down">
+                    <div class="programming-content">
+                        <div class="content-box-title content-box-title-p2">
+                            jQuery
+                        </div>
+                        <div class="content-box-description content-box-description-p2">
+                            A JavaScript library for developing web pages
+                        </div>
+                        <div class="content-box-button">
+                            <button>LEARN jQuery</button>
+                        </div>
+                    </div>
+                     <div class="programming-content">
+                        <div class="content-box-title content-box-title-p2">
+                            Java
+                        </div>
+                        <div class="content-box-description content-box-description-p2">
+                            A programming language
+                        </div>
+                        <div class="content-box-button">
+                            <button>LEARN JAVA</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div style="border: 2px solid blue; height: 350px">
                 W3.CSS, Color Picker, Bootstrap 3, Bootstrap 4
