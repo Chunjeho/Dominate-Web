@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale:1">
+    <script src="https://kit.fontawesome.com/e22cbcb1b2.js" crossorigin="anonymous"></script>
     <title></title>
       <style>
           body{
@@ -18,27 +19,32 @@
           }
           .topic-1{
               display: none;
-              height: 55px;
+              height: 53px;
           }
           .topic{
               font-size: 17px;
               letter-spacing: 2.5px;
               text-align: center;
-              line-height: 55px;
+              line-height: 53px;
               color: white;
               font-weight: 400;
-              height: 55px;
+              height: 53px;
+              cursor: pointer;
           }
           .topic:hover{
               background-color: white;
               color: #555555;
           }
           .empty{
-              height: 55px;
+              height: 53px;
           }
           .icon{
               color: white;
-              height: 55px;
+              height: 53px;
+              font-size: 18px;
+              text-align: center;
+              line-height: 53px;
+              cursor: pointer
           }
           .icon:hover{
               background-color: white;
@@ -98,11 +104,58 @@
           .navigation{
               background-color: #4CAF50;
               border: 2px solid blue;
-              height: 55px;
+              height: 53px;
               display: grid;
-              grid-template-columns: 165px 165px 165px 165px 165px 1fr 80px 80px 80px
+              grid-template-columns: 165px 175px 160px 170px 175px 1fr 53px 53px 53px;
           }
-
+          .navigator{
+              font-weight: 500;
+          }
+          .navigator-title{
+              font-size: 20px;
+              padding-left: 16px;
+              padding-top: 16px;
+              padding-bottom: 16px;
+          }
+          .navigator-topic{
+              font-size: 17px;
+              padding-left: 16px;
+              cursor: pointer;
+          }
+          .navigator-topic:hover{
+              background-color: #ccc;
+          }
+          .caret-down{
+              font-size: 15px; 
+          }
+          .content-box-title{
+              text-align: center;
+              font-size: 80px;
+              color: #555555;
+          }
+          .content-box-description{
+              text-align: center;
+              font-size: 25px;
+              color: #555555;
+          }
+          .content-box-button{
+              text-align: center;
+          }
+          .content-box-button button{
+              height: 45px;
+              padding: 16px;
+              font-size: 18px;
+              margin-top: 15px;
+              outline: none;
+              border: none;
+              background-color: #616161;
+              color: white;
+              cursor: pointer;
+          }
+          .content-box-button button:hover {
+              background-color: #ccc;
+              color: black;
+          }
           @media(min-width: 1036px){
               .title{
                 grid-template-columns: 1fr 1fr;
@@ -115,12 +168,12 @@
               }
           }
 
-          @media(max-width: 1092px){
+          @media(max-width: 1110px){
               .topic4{
                   display: none;
               }
               .navigation{
-                  grid-template-columns: 165px 165px 165px 165px 1fr 80px 80px 80px
+                  grid-template-columns: 165px 165px 165px 165px 1fr 53px 53px 53px
               }
           }
           @media(max-width: 1035px){
@@ -129,7 +182,7 @@
                   display: none;
               }
               .navigation{
-                  grid-template-columns: 165px 165px 165px 1fr 80px 80px 80px
+                  grid-template-columns: 165px 165px 165px 1fr 53px 53px 53px
               }
               .title{
                   height: 100px;
@@ -177,7 +230,7 @@
                   display: none;
               }
               .navigation{
-                  grid-template-columns: 80px 1fr 80px 80px 80px;
+                  grid-template-columns: 53px 1fr 53px 53px 53px;
               }
               #grid{
                   grid-template-columns: 1fr;
@@ -191,7 +244,7 @@
                   display: none;
               }
               .navigation{
-                  grid-template-columns: 80px 1fr 80px 80px;
+                  grid-template-columns: 53px 1fr 53px 53px;
               }
               .content-odd{
                 height: 400px;
@@ -231,16 +284,16 @@
             menu-icon
         </div>
         <div class="topic topic0">
-            TUTORIALS
+            TUTORIALS <span class="caret-down">&#9660;</span>
         </div>
         <div class="topic topic1">
-            REFERENCES
+            REFERENCES <span class="caret-down">&#9660;</span>
         </div>
         <div class="topic topic2">
-            EXAMPLES
+            EXAMPLES <span class="caret-down">&#9660;</span>
         </div>
         <div class="topic topic3">
-            EXERCISES
+            EXERCISES <span class="caret-down">&#9660;</span>
         </div>
         <div class="topic topic4">
             CERTIFICATES
@@ -248,21 +301,116 @@
         <div class="empty">
         </div>
         <div class="icon icon1">
-            dark-bright toggle
+            <i class="fas fa-adjust"></i>
         </div>
         <div class="icon icon2">
-            translate icon
+            <i class="fas fa-globe-americas"></i>
         </div>
         <div class="icon icon3">
-            search icon
+            <i class="fas fa-search"></i>
         </div>
       </div>
       <div id="grid">
-        <div class="navigator">Navigator</div>
+        <div class="navigator">
+          <div class="navigator-title">
+            HTML and CSS
+          </div>
+          <div class="navigator-topic">Learn HTML</div>
+          <div class="navigator-topic">Learn CSS</div>
+          <div class="navigator-topic">Learn Bootstrap</div>
+          <div class="navigator-topic">Learn W3.CSS</div>
+          <div class="navigator-topic">Learn Colors</div>
+          <div class="navigator-topic">Learn Icons</div>
+          <div class="navigator-topic">Learn Graphics</div>
+          <div class="navigator-topic">Learn How to</div>
+          <div class="navigator-topic">Learn Sass</div>
+          <div class="navigator-title">
+              Javascript
+          </div>
+          <div class="navigator-topic">Learn JavaScropt</div>
+          <div class="navigator-topic">Learn jQuery</div>
+          <div class="navigator-topic">Learn React</div>
+          <div class="navigator-topic">Learn AngularJS</div>
+          <div class="navigator-topic">Learn JSON</div>
+          <div class="navigator-topic">Learn AJAX</div>
+          <div class="navigator-topic">Learn W3.JS</div>
+          <div class="navigator-title">
+              Sever Side
+          </div>
+          <div class="navigator-topic">Learn SQL</div>
+          <div class="navigator-topic">Learn PHP</div>
+          <div class="navigator-topic">Learn ASP</div>
+          <div class="navigator-topic">Learn Node.js</div>
+          <div class="navigator-topic">Learn Rasberry Pi</div>
+          <div class="navigator-title">Programming</div>
+          <div class="navigator-topic">Learn Python</div>
+          <div class="navigator-topic">Learn Java</div>
+          <div class="navigator-topic">Learn C++</div>
+          <div class="navigator-topic">Learn C#</div>
+          <div class="navigator-topic">Learn Machine Learning</div>
+          <div class="navigator-title">
+              Web Building
+          </div>
+          <div class="navigator-topic">Web Templates</div>
+          <div class="navigator-topic">Web Statistics</div>
+          <div class="navigator-topic">Web Certificates</div>
+          <div class="navigator-topic">Web Editor</div>
+          <div class="navigator-topic">Web Development</div>
+          <div class="navigator-topic">Test Your Typing Speed</div>
+          <div class="navigator-title">
+              XML Tutorials
+          </div>
+          <div class="navigator-topic">Learn XML</div>
+          <div class="navigator-topic">Learn XML AJAX</div>
+          <div class="navigator-topic">Learn XML DOM</div>
+          <div class="navigator-topic">Learn XML Schema</div>
+          <div class="navigator-topic">Learn XSLT</div>
+          <div class="navigator-topic">Learn XPath</div>
+          <div class="navigator-topic">Learn XQuery</div>
+          <div class="navigator-title">
+              References
+          </div>
+          <div class="navigator-topic">HTML Reference</div>
+          <div class="navigator-topic">CSS Reference</div>
+          <div class="navigator-topic">JS Reference</div>
+          <div class="navigator-topic">SQL Reference</div>
+          <div class="navigator-topic">PHP Reference</div>
+          <div class="navigator-topic">jQuery Reference</div>
+          <div class="navigator-topic">Python Reference</div>
+          <div class="navigator-topic">Bootstrap 3 Reference</div>
+          <div class="navigator-topic">Bootstrap 4 Reference</div>
+          <div class="navigator-topic">W3.CSS Reference</div>
+          <div class="navigator-topic">Java Reference</div>
+          <div class="navigator-topic">Angular Reference</div>
+          <div class="navigator-topic">Sass Reference</div>
+          <div class="navigator-topic">UTF-8 Reference</div>
+          <div class="navigator-title">
+              Exercises
+          </div>
+          <div class="navigator-topic">HTML Exercises</div>
+          <div class="navigator-topic">CSS Exercises</div>
+          <div class="navigator-topic">JS Exercises</div>
+          <div class="navigator-topic">SQL Exercises</div>
+          <div class="navigator-topic">PHP Exercises</div>
+          <div class="navigator-topic">Python Reference</div>
+          <div class="navigator-topic">Java Reference</div>
+          <div class="navigator-topic">C++ Reference</div>
+          <div class="navigator-topic">C# Reference</div>
+          <div class="navigator-topic">Bootstrap Exercises</div>
+        </div>
         <div>
             <div class="content-odd">
                 <div class="content-box">
-                    html
+                    <div class="content-box-title">
+                    HTML
+                    </div>
+                    <div class="content-box-description">
+                    The language for building web pages
+                    </div>
+                    <div class="content-box-button">
+                        <button>LEARN HTML</button>
+                        <button>HTML REFERENCE</button>
+                    </div>
                 </div>
                 <div class="example-box">
                     html example
@@ -273,12 +421,30 @@
                     css example
                 </div>
                 <div class="content-box">
-                    css
+                    <div class="content-box-title">
+                    CSS
+                    </div>
+                    <div class="content-box-description">
+                    The language for styling web pages
+                    </div>
+                    <div class="content-box-button">
+                        <button>LEARN CSS</button>
+                        <button>CSS REFERENCE</button>
+                    </div>
                 </div>
             </div>
             <div class="content-odd">
                 <div class="content-box">
-                    js
+                    <div class="content-box-title">
+                    JavaScript
+                    </div>
+                    <div class="content-box-description">
+                    The language for programming web pages
+                    </div>
+                    <div class="content-box-button">
+                        <button>LEARN JAVASCRIPT</button>
+                        <button>JAVASCRIPT REFERENCE</button>
+                    </div>
                 </div>
                 <div class="example-box">
                     js example
@@ -289,7 +455,16 @@
                     sql example
                 </div>
                 <div class="content-box">
-                    sql
+                    <div class="content-box-title">
+                    SQL
+                    </div>
+                    <div class="content-box-description">
+                    The language for accesing databases
+                    </div>
+                    <div class="content-box-button">
+                        <button>LEARN SQL</button>
+                        <button>SQL REFERENCE</button>
+                    </div>
                 </div>
             </div>
             <div style="border: 2px solid blue; background-color: gray; color: white; height: 500px">
