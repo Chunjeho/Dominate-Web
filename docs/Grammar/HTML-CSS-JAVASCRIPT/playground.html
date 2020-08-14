@@ -140,6 +140,18 @@
           .content-box-title-p2{
               font-size: 35px;
               margin-top: 20px;
+              color: black;
+          }
+          .content-box-title-p3{
+              font-size: 35px;
+              padding-top: 10px;
+              padding-bottom: 5px;
+              color: black;
+          }
+          .content-box-title-p4{
+              color: white;
+              font-size: 30px;
+              padding-top: 35px;
           }
           .content-box-description{
               text-align: center;
@@ -151,7 +163,23 @@
           .content-box-description-p2{
               font-size: 20px;
               margin-top: 20px;
-              margin-bottom: 20px
+              margin-bottom: 20px;
+              color: black;
+          }
+          .content-box-description-p3{
+              font-size: 20px;
+              padding-top: 10px;
+              color: black;
+          }
+          .content-box-description-p4{
+              font-size: 20px;
+              color: white;
+              padding-top: 20px;
+              padding-bottom: 20px;
+          }
+          .content-box-description-p3 img:hover{
+              opacity: 0.6;
+              cursor: pointer;
           }
           .content-box-button{
               text-align: center;
@@ -167,6 +195,10 @@
               background-color: #616161;
               color: white;
               cursor: pointer;
+          }
+          .content-box-button-p3 button{
+              margin-bottom: 0px;
+              margin-top: 15px;
           }
           .content-box-button button:hover {
               background-color: #ccc;
@@ -223,6 +255,46 @@
               vertical-align: middle;
               font-size: 13px;
           }
+          .extra{
+              border: 2px solid blue; 
+              height: 350px;
+              display: grid;
+          }
+          .extra-content{
+              padding: 16px;
+              padding-top: 50px;
+          }
+          .exercises{
+              border: 2px solid blue;
+              background-color: #616161;
+              height: 400px;
+          }
+          .exercises-buttons{
+              display: grid;
+              grid-template-rows: 1fr 1fr;
+              height: 200px;
+          }
+          .exercises-button{
+              text-align: center;
+              padding: 8px;
+          }
+          .exercises-button button{
+              text-align: center;
+              height: 50px;
+              width: 100%;
+              outline: none;
+              border: none;
+              background-color: #4CAF50;
+              color: white;
+              font-size: 16px;
+              cursor: pointer;
+          }
+          .exercises-buttons-up{
+              display: grid;
+          }
+          .exercises-buttons-down{
+              display: grid;
+          }
           @media(min-width: 1036px){
               .title{
                 grid-template-columns: 1fr 1fr;
@@ -242,8 +314,16 @@
               .programming-down{
                   grid-template-columns: 1fr 1fr;
               }
+              .extra{
+                  grid-template-columns: 1fr 1fr 1fr;
+              }
+              .exercises-buttons-up{
+                  grid-template-columns: 1fr 1fr 1fr;
+              }
+              .exercises-buttons-down{
+                  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+              }
           }
-
           @media(max-width: 1110px){
               .topic4{
                   display: none;
@@ -253,7 +333,6 @@
               }
           }
           @media(max-width: 1035px){
-
               .topic3{
                   display: none;
               }
@@ -297,6 +376,38 @@
               .programming-down{
                   grid-template-rows: 1fr 1fr;
               }
+              .extra{
+                  height: 950px;
+                  grid-template-rows: 1fr 1fr 1fr;
+              }
+              .exercises-button10{
+                  display: none;
+              }
+              .exercises-button9{
+                  display: none;
+              }
+              .exercises-buttons-up{
+                  grid-template-columns: 1fr 1fr 1fr;
+              }
+              .exercises-buttons-down{
+                  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+              }
+          }
+          @media(min-width: 821px){
+              .short{
+                  display: none;
+              }
+              .long{
+                  display: inline;
+              }
+          }
+          @media(max-width: 820px){
+              .short{
+                  display: inline;
+              }
+              .long{
+                  display: none;
+              }
           }
           @media(max-width: 765px ){
               .topic2{
@@ -338,6 +449,39 @@
               .content-even{
                 height: 400px;
                 grid-template-rows: 1fr;
+              }
+              .exercises{
+                  height: 700px;
+              }
+              .content-box-title-p4{
+                  padding-top: 70px;
+              }
+              .exercises-buttons{
+                  height: 400px;
+                  grid-template-rows: 3fr 2fr;
+              }
+              .exercises-button8{
+                  display: none;
+              }
+              .exercises-button7{
+                  display: none;
+              }
+              .exercises-button6{
+                  display: none;
+              }
+              .exercises-buttons-down{
+                  grid-template-rows: 1fr 1fr;
+                  grid-template-columns: none;
+              }
+              .exercises-buttons-up{
+                  grid-template-rows: 1fr 1fr 1fr;
+                  grid-template-columns: none;
+              }
+              .short{
+                  display: none;
+              }
+              .long{
+                  display: inline;
               }
           }
           @media(max-width: 534px){
@@ -503,7 +647,7 @@
                             HTML Example:
                         </div>
                         <div class="example-box-content example-box-content-html">
-                            html source code
+                            
                         </div>
                         <button class="example-box-button">
                         Try it Yourself <i class="fas fa-angle-double-right"></i>
@@ -639,11 +783,82 @@
                     </div>
                 </div>
             </div>
-            <div style="border: 2px solid blue; height: 350px">
-                W3.CSS, Color Picker, Bootstrap 3, Bootstrap 4
+            <div class="extra">
+                <div class="extra-content w3-css">
+                    <div class="content-box-title content-box-title-p3">
+                        W3.CSS
+                    </div>
+                    <div class="content-box-description content-box-description-p3">
+                        A modern CSS framework for faster and better responsive web pages
+                    </div>
+                    <div class="content-box-button">
+                        <button>LEARN W3.CSS</button>
+                    </div>
+                </div>
+                <div class="extra-content color-picker">
+                    <div class="content-box-title content-box-title-p3">
+                        Color Picker
+                    </div>
+                    <div class="content-box-description content-box-description-p3">
+                        <img src="Images/colorpicker.png">
+                    </div>
+                </div>
+                <div class="extra-content bootstrap">
+                    <div class="content-box-title content-box-title-p3">
+                        Bootstrap
+                    </div>
+                    <div class="content-box-description content-box-description-p3">
+                        A CSS framework for designing better web pages
+                    </div>
+                    <div class="content-box-button content-box-button-p3">
+                        <button>LEARN BOOTSTRAP 3</button>
+                        <button>LEARN BOOTSTRAP 4</button>
+                    </div>
+                </div>
             </div>
-            <div style="border: 2px solid blue;background-color: gray; color: white;height: 350px">
-                Exercises
+            <div class="exercises">
+                <div class="content-box-title content-box-title-p4">Exercises
+                </div>
+                <div class="content-box-description content-box-description-p4">
+                        Test yourself with exercises
+                </div>
+                <div class="exercises-buttons">
+                    <div class="exercises-buttons-up">
+                        <div class="exercises-button exercises-button1">
+                            <button>HTML Exercises</button>
+                        </div>
+                        <div class="exercises-button exercises-button2">
+                            <button>CSS Exercises</button>
+                        </div>
+                        <div class="exercises-button exercises-button3">
+                            <button class="long">JavaScript Exercises</button>
+                            <button class="short">JS Exercises</button>
+                        </div>
+                    </div>
+                    <div class="exercises-buttons-down">
+                        <div class="exercises-button exercises-button4">
+                            <button>SQL</button>
+                        </div>
+                        <div class="exercises-button exercises-button5">
+                            <button>Python</button>
+                        </div>
+                        <div class="exercises-button exercises-button6">
+                            <button>PHP</button>
+                        </div>
+                        <div class="exercises-button exercises-button7">
+                            <button>jQuery</button>
+                        </div>
+                        <div class="exercises-button exercises-button8">
+                            <button>Java</button>
+                        </div>
+                        <div class="exercises-button exercises-button9">
+                            <button>C++</button>
+                        </div>
+                        <div class="exercises-button exercises-button10">
+                            <button>C#</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div style="border: 2px solid blue; height: 500px">
                 Web Templates
