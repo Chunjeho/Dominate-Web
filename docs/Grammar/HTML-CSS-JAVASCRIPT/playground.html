@@ -20,6 +20,12 @@
           .topic-1{
               display: none;
               height: 53px;
+              text-align: center;
+              color: white;
+          }
+          .topic-1:hover{
+              background-color: white;
+              color: #555555;
           }
           .topic{
               font-size: 17px;
@@ -153,6 +159,21 @@
               font-size: 30px;
               padding-top: 35px;
           }
+          .content-box-title-p5{
+              color: black;
+              font-size: 40px;
+              padding-top: 35px;
+          }
+          .content-box-title-p6{
+              color: black;
+              font-size: 40px;
+              padding-top: 35px;
+          }
+          .content-box-title-p7{
+              color: white;
+              font-size: 40px;
+              padding-top: 35px;
+          }
           .content-box-description{
               text-align: center;
               color: #555555;
@@ -176,6 +197,29 @@
               color: white;
               padding-top: 20px;
               padding-bottom: 20px;
+          }
+          .content-box-description-p5{
+              font-size: 20px;
+              color: black;
+              padding-top: 20px;
+              padding-bottom: 20px;
+          }
+          .content-box-description-p6{
+              font-size: 20px;
+              color: black;
+              padding-top: 20px;
+              padding-bottom: 20px;
+          }
+          .content-box-description-p7{
+              font-size: 20px;
+              color: white;
+              padding-top: 20px;
+              padding-bottom: 20px;
+          }
+          .content-box-description-p8{
+              color: white;
+              font-size: 15px;
+              margin-top: 40px
           }
           .content-box-description-p3 img:hover{
               opacity: 0.6;
@@ -294,6 +338,105 @@
           }
           .exercises-buttons-down{
               display: grid;
+          }
+          .web-templates{
+              border: 2px solid blue; 
+              background-color: #f1f1f1;
+              padding: 16px;
+          }
+          .web-templates-img img{
+              width: 100%;
+          }
+          .how-to{
+              border: 2px solid blue; 
+              padding: 16px;
+          }
+          .certificate{
+              border: 2px solid blue;
+              background-color: black;
+              background-image: url(Images/getcertified.jpg);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: black;
+              height: 500px;
+          }
+          .certiticate-button{
+              text-align: center;
+              border: 2px solid green;
+              margin-top: 50px;
+          }
+          .certificate-box-button{
+              font-size: 16px;
+              padding: 16px;
+              padding-left: 30px;
+              padding-right: 30px;
+          }
+          .certificate-box-button:hover{
+              background-color: white;
+              color: black;
+              cursor: pointer;
+          }
+          .certificate-title{
+              background-color: rgba(0, 0, 0, 0.5);
+/*
+              background-color: black;
+              opacity: 0.5;
+*/
+          }
+          .ending{
+              border: 2px solid blue;
+              background-color: #616161; 
+              height: 350px;
+          }
+          .ending-button{
+              padding-top: 40px
+          }
+          .ending-button button{
+              background-color: white;
+              color: black;
+          }
+          .ending-button button:hover{
+              background-color: f1f1f1;
+          }
+          .forum-about{
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              letter-spacing: 4px;
+              margin-top: 10px;
+          }
+          .forum-box{
+              padding: 8px;
+              text-align: right;
+              border-right: 0.5px solid white
+          }
+          .about-box{
+              padding: 8px;
+              border-left: 0.5px solid white;
+          }
+          .forum{
+              color: white;
+          }
+          .forum:hover{
+              color: #4CAF50;
+          }
+          .about{
+              color: white;
+          }
+          .about:hover{
+              color: #4CAF50;
+          }
+          .ending-icon{
+              border: 2px solid red;
+              text-align: center;
+              margin-top: 25px;
+          }
+          .fa-thumbs-up{
+              color: white;
+              font-size: 35px;
+          }
+          .fa-bars{
+              font-size: 20px;
+              vertical-align: middle;
           }
           @media(min-width: 1036px){
               .title{
@@ -510,7 +653,7 @@
       </div>
       <div class="navigation">
         <div class="topic topic-1">
-            menu-icon
+            <i class="fas fa-bars"></i>
         </div>
         <button class="topic topic0">
             TUTORIALS <i class="fas fa-sort-down"></i>
@@ -860,17 +1003,70 @@
                     </div>
                 </div>
             </div>
-            <div style="border: 2px solid blue; height: 500px">
-                Web Templates
+            <div class="web-templates">
+                <div class="content-box-title content-box-title-p5">
+                    Web Templates
+                </div>
+                <div class="content-box-description content-box-description-p5">
+                        Browse our selection of <span style="font-weight: bold">free</span> responsive HTML Temlplates
+                </div>
+                <div class="web-templates-img">
+                    <a href=""><img src="Images/w3css_templates.jpg"></a>
+                </div>
+                <div class="content-box-button">
+                    <button>BROWSE TEMPLATES</button>
+                </div>
             </div>
-            <div style="border: 2px solid blue; height: 300px">
-                How to section
+            <div class="how-to">
+                <div class="content-box-title content-box-title-p6">
+                    How to section
+                </div>
+                <div class="content-box-description content-box-description-p6">
+                        Code snippets for HTML, CSS and JavaScript
+                </div>
+                <div class="content-box-button">
+                    <button>LEARN HOW TO</button>
+                </div>
             </div>
-            <div style="border: 2px solid blue; height: 500px">
-                Web Certificate
-            </div>
-            <div style="border: 2px solid blue;background-color: gray; color: white;height: 350px">
-                Ending
+            <a href="" style="text-decoration: none;">
+                <div class="certificate">
+                <div class="certificate-title">
+                    <div class="content-box-title content-box-title-p7">
+                        Web Certificates
+                    </div>
+                    <div class="content-box-description content-box-description-p7">
+                            Get Certificated in HTML, CSS, and JavaScript
+                    </div>
+                </div>
+                <div class="certiticate-button">
+                    <button class="example-box-button certificate-box-button">
+                    Get Certified <i class="fas fa-angle-double-right"></i>
+                    </button>
+                </div>
+                </div>
+            </a>
+            <div class="ending">
+                <div class="content-box-button ending-button">
+                    <button>CERTIFICATES</button>
+                    <button>QUIZZES</button>
+                    <button>EXERCISES</button>
+                </div>
+                <div class="forum-about">
+                    <div class="forum-box">
+                        <a href="" style="text-decoration: none"><span class="forum">FORUM</span></a>
+                    </div>
+                    <div class="about-box">
+                        <a href="" style="text-decoration: none"><span class="about">ABOUT</span></a>
+                    </div>
+                </div>
+                <div class="content-box-description content-box-description-p8">
+                        This is cloned version made with HTML and CSS.
+                </div>
+                <div class="ending-icon">
+                    <button style="background-color: transparent; border: none; outline: none; cursor: pointer">
+                        <i class="far fa-thumbs-up"></i>
+                    </button>
+                </div>
             </div>
         </div>
       </div>
