@@ -4,14 +4,14 @@ Dominate web by **learning**, **building** and **cloning** websites!
 ## Cloning
 
 ### W3schools.com (cloning; HTML, CSS)
-#### border(O)
+#### final version
+👉 https://chunjeho.github.io/Dominate-Web/W3schools/w3school.html
+
+👉 HTML file is located in **docs/W3schools/**
+#### test version
 👉 https://chunjeho.github.io/Dominate-Web/Grammar/HTML-CSS-JAVASCRIPT/playground.html
 
 👉 HTML file is located in **docs/Grammar/HTML-CSS-JAVASCRIPT/**
-#### border(X)
-👉 https://chunjeho.github.io/Dominate-Web/W3schools/w3schools.html
-
-👉 HTML file is located in **docs/W3schools/**
 ## Building
 
 ### Weather In Mars (Building; HTML, CSS, Javascript)
