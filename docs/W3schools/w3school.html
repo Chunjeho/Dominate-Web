@@ -67,18 +67,21 @@
           }
           .content-odd{
               border: 0px solid blue;
-              height: 400px;
+              padding: 8px;
               display: grid;
           }
           .content-even{
               border: 0px solid blue;
-              height: 400px;
+              padding: 8px;
               display: grid;
               background-color: #f1f1f1;
           }
           .example-box{
               border: 0px solid pink;
               padding: 16px;
+          }
+          .example-box-sql{
+              border: 0px solid pink;
           }
           .content-box{
               border: 0px solid black;
@@ -510,12 +513,12 @@
                   transform: translate(-50%,0)
               }
               .content-odd{
-                height: 650px;
-                grid-template-rows: 1fr 1.5fr;
+/*                height: 650px;*/
+                grid-template-rows: 1fr;
               }
               .content-even{
-                height: 650px;
-                grid-template-rows: 1fr 1.5fr;
+/*                height: 650px;*/
+                grid-template-rows: 1fr;
               }
               div.content-box{
                   order: 1;
@@ -599,11 +602,11 @@
                   grid-template-columns: 53px 1fr 53px 53px;
               }
               .content-odd{
-                height: 400px;
+/*                height: 400px;*/
                 grid-template-rows: 1fr;
               }
               .content-even{
-                height: 400px;
+/*                height: 400px;*/
                 grid-template-rows: 1fr;
               }
               .exercises{
@@ -803,7 +806,16 @@
                             HTML Example:
                         </div>
                         <div class="example-box-content example-box-content-html">
-                            html source code
+                            &lt;!DOCTYPE html&gt;<br>
+                            &lt;html&gt;<br>
+                            &lt;title&gt;HTML Tutorial&lt;/title&gt;<br>
+                            &lt;body&gt;<br>
+                            <br>
+                            &lt;h1&gt;This is a heading&lt;/h1&gt;<br>
+                            &lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+                            <br>
+                            &lt;/body&gt;<br>
+                            &lt;/html&gt;<br>
                         </div>
                         <button class="example-box-button">
                         Try it Yourself <i class="fas fa-angle-double-right"></i>
@@ -817,7 +829,19 @@
                         CSS Example:
                     </div>
                     <div class="example-box-content example-box-content-css">
-                        css source code
+                        body&nbsp;{<br>
+                        &nbsp;&nbsp;background-color:&nbsp;lightblue;<br>
+                        }<br>
+                        <br>
+                        h1&nbsp;{<br>
+                        &nbsp;&nbsp;color:&nbsp;white;<br>
+                        &nbsp;&nbsp;text-align:&nbsp;center;<br>
+                        }<br>
+                        <br>
+                        p&nbsp;{<br>
+                        &nbsp;&nbsp;font-family:&nbsp;verdana;<br>
+                        &nbsp;&nbsp;font-size:&nbsp;20px;<br>
+                        }
                     </div>
                     <button class="example-box-button">
                     Try it Yourself <i class="fas fa-angle-double-right"></i>
@@ -855,7 +879,15 @@
                             JavaScript Example:
                         </div>
                         <div class="example-box-content example-box-content-html">
-                            js source code
+                            &lt;button&nbsp;onclick="myFunction()"&gt;Click&nbsp;Me!&lt;/button&gt;<br>
+                            <br>
+                            &lt;script&gt;<br>
+                            function&nbsp;myFunction()&nbsp;{<br>
+                            &nbsp;&nbsp;var&nbsp;x&nbsp;=&nbsp;document.getElementById("demo");<br>
+                            &nbsp;&nbsp;x.style.fontSize&nbsp;=&nbsp;"25px";<br>
+                            &nbsp;&nbsp;x.style.color&nbsp;=&nbsp;"red";<br>
+                            }<br>
+                            &lt;/script&gt;
                         </div>
                         <button class="example-box-button">
                         Try it Yourself <i class="fas fa-angle-double-right"></i>
@@ -865,12 +897,14 @@
                 
             </div>
             <div class="content-even">
-                <div class="example-box">
+                <div class="example-box example-box-sql">
                     <div class="example-box-title">
                         SQL Example:
                     </div>
                     <div class="example-box-content example-box-content-css">
-                        sql source code
+                        SELECT * FROM Customers <br>
+                        WHERE Country='Mexico'; <br>
+                        <br>
                     </div>
                     <button class="example-box-button">
                     Try it Yourself <i class="fas fa-angle-double-right"></i>
