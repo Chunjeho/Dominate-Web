@@ -6,8 +6,13 @@
     <script src="https://kit.fontawesome.com/e22cbcb1b2.js" crossorigin="anonymous"></script>
     <title></title>
       <style>
+          html{
+              font-family: 'font1'
+          }
           body{
               margin: 0px;
+              display: grid;
+              grid-template-columns: 1fr;
           }
           div{
               border: 2px solid red;
@@ -92,12 +97,10 @@
           }
           .title-name-text{
               position: absolute;
-              padding-left: 8px;
               letter-spacing: 2px;
               font-size: 35px;
               font-weight: 600;
               bottom: 5px;
-              width: 300px;
           }
           .title-name-text-1{
               color: #4CAF50;
@@ -184,6 +187,7 @@
           .content-box-description{
               text-align: center;
               color: #555555;
+              padding: 20px;
           }
           .content-box-description-p1{
               font-size: 25px;
@@ -651,10 +655,59 @@
                   height: 70px;
                   grid-template-rows: 1fr;
               }
+              .content-box{
+                  padding: 10px;
+              }
+              .content-odd{
+                  padding-bottom: 20px;
+              }
+              .content-even{
+                  padding-bottom: 20px
+              }
+              .content-box-html{
+                  padding: 20px;
+              }
+              .content-box-css{
+                  padding: 20px;
+              }
+              .content-box-js{
+                  padding: 20px;
+              }
+              .content-box-sql{
+                  padding: 20px;
+              }
+              .content-box-button-html button{
+                  border: 2px solid blue;
+                  margin: 10px;
+              }
+              .content-box-button-css button{
+                  border: 2px solid blue;
+                  margin: 10px;
+              }
+              .content-box-button-js button{
+                  border: 2px solid blue;
+                  margin: 10px;
+              }
+              .content-box-button-sql button{
+                  border: 2px solid blue;
+                  margin: 10px;
+              }
+              .exercises{
+                  height: 650px
+              }
+              .exercises-button{
+                  padding-left: 70px;
+                  padding-right: 70px;
+              }
+          }
+          @font-face{
+              font-family: 'font1';
+              src: url('fonts/OpenSans/OpenSans-Regular.ttf') format('truetype')
           }
       </style>
   </head>
   <body>
+      <div style="display: grid; grid-template-rows: 1fr">
       <div class="title">
         <div class="title-name">
             <div class="title-name-text">
@@ -788,14 +841,14 @@
         </div>
         <div>
             <div class="content-odd">
-                <div class="content-box">
+                <div class="content-box content-box-html">
                     <div class="content-box-title content-box-title-p1">
                     HTML
                     </div>
                     <div class="content-box-description content-box-description-p1">
                     The language for building web pages
                     </div>
-                    <div class="content-box-button">
+                    <div class="content-box-button content-box-button-html">
                         <button>LEARN HTML</button>
                         <button>HTML REFERENCE</button>
                     </div>
@@ -847,7 +900,7 @@
                     Try it Yourself <i class="fas fa-angle-double-right"></i>
                     </button>
                 </div>
-                <div class="content-box">
+                <div class="content-box content-box-css">
                     <div class="content-box-title content-box-title-p1">
                     CSS
                     </div>
@@ -861,14 +914,14 @@
                 </div>
             </div>
             <div class="content-odd">
-                <div class="content-box">
+                <div class="content-box content-box-js">
                     <div class="content-box-title content-box-title-p1">
                     JavaScript
                     </div>
                     <div class="content-box-description content-box-description-p1">
                     The language for programming web pages
                     </div>
-                    <div class="content-box-button">
+                    <div class="content-box-button content-box-button-js">
                         <button>LEARN JAVASCRIPT</button>
                         <button>JAVASCRIPT REFERENCE</button>
                     </div>
@@ -910,7 +963,7 @@
                     Try it Yourself <i class="fas fa-angle-double-right"></i>
                     </button>
                 </div>
-                <div class="content-box">
+                <div class="content-box content-box-sql">
                     <div class="content-box-title content-box-title-p1">
                     SQL
                     </div>
@@ -1119,5 +1172,6 @@
             </div>
         </div>
       </div>
+    </div>
   </body>
 </html>
