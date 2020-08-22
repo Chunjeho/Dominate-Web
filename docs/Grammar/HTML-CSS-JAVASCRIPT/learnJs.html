@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <style>
+            div{
+                border: 2px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">Hello world!</div>
+        <p> by Jeho Chun</p>
+        <button class="add-html-element-button" onclick="add_html_element()">click</button>
+    </body>
+    
+    <script>
+        function add_html_element(){
+            var offset = document.getElementsByClassName("add-html-element-button")[0]
+            var html_element = "<p> Welcome !!! </p>"
+            offset.insertAdjacentHTML('afterend',html_element)
+        }
+        
+        document.getElementById("div1").innerHTML = "Hello, javascript!";
+        var name = document.getElementsByTagName("p")[0].textContent;
+        console.log(name);
+        document.getElementsByTagName("p")[0].setAttribute("class", "name");
+        console.log(document.getElementsByTagName("p"));
+    </script>
+</html>

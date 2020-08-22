@@ -5,6 +5,14 @@
     <title></title>
   </head>
   <body>
+      <div style="font-size: 50px;">
+        Welcome, 
+          <?php
+         $_id = $_GET['_id'];
+            echo $_GET['_id']
+          ?>
+          !!
+      </div>
     <h1><a href="index.php">WEB</a></h1>
 
       <ol>
@@ -14,7 +22,7 @@
 
         while($i<count($list)){
           if($list[$i] != '.' and $list[$i] != '..'){
-            echo "<li><a href='index.php?id={$list[$i]}'>$list[$i]</a></li>";
+            echo "<li><a href='index.php?_id={$_id}&id={$list[$i]}'>$list[$i]</a></li>";
           }
           $i = $i + 1;
         }

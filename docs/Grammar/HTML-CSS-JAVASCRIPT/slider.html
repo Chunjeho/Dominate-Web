@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        <style>
+            body{
+                background-color: white;
+                margin: 0px;
+                z-index: 1;
+            }
+            .slider-container{
+                position: relative;
+                border: 2px solid red;
+                height: 400px;
+                margin: auto;
+                top: 50%;
+                transform: translate(0,-50%);
+                display: grid;
+                grid-template-columns: 1fr 50px 500px 50px 1fr;
+                z-index: 2;
+                overflow: hidden;
+            }
+            .left-button{
+                border: 2px solid blue;
+                text-align: center;
+                background-color: white;
+                z-index: 2;
+            }
+            .right-button{
+                border: 2px solid blue;
+                text-align: center;
+                background-color: white;
+                z-index: 2;
+            }
+            .slide-button{
+                width: 100%;
+                font-size: 35px;
+                position: relative;
+                top: 50%;
+                transform: translate(0,-50%);
+                border: none;
+                background-color: transparent;
+                outline: none;
+                cursor: pointer;
+            }
+            .slide-button:hover{
+                color: darkgray;
+            }
+            .middle-content{
+                border: 2px solid green;
+                display: grid;
+                grid-template-columns: 500px 500px 500px;
+            }
+            .content{
+                background-color: aqua;
+            }
+            .margin-slider{
+                background-color: white;
+                z-index: 2;
+            }
+        </style>
+        <script>
+            var _pos = 0;
+            function moveLeft(){
+                var ele1 = document.getElementsByClassName("content")[0];
+                var ele2 = document.getElementsByClassName("content")[1];
+                var ele3 = document.getElementsByClassName("content")[2];
+                ele1.style.transition = "transform 0.5s";
+                ele2.style.transition = "transform 0.5s";
+                ele3.style.transition = "transform 0.5s";
+                _pos -= 500;
+                ele1.style.transform = "translate("+ _pos +"px,0)";
+                ele2.style.transform = "translate("+ _pos +"px,0)";
+                ele3.style.transform = "translate("+ _pos +"px,0)";
+            }
+            function moveRight(){
+                var ele1 = document.getElementsByClassName("content")[0];
+                var ele2 = document.getElementsByClassName("content")[1];
+                var ele3 = document.getElementsByClassName("content")[2];
+                ele1.style.transition = "transform 0.5s";
+                ele2.style.transition = "transform 0.5s";
+                ele3.style.transition = "transform 0.5s";
+                _pos += 500;
+                 ele1.style.transform = "translate("+ _pos +"px,0)";
+                ele2.style.transform = "translate("+ _pos+"px,0)";
+                ele3.style.transform = "translate("+ _pos +"px,0)";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="slider-container">
+            <div class="margin-slider margin-left">
+            </div>
+            <div class="left-button">
+                <button class="slide-button" onclick="moveLeft()"> <i class="fas fa-chevron-left"></i> </button>
+            </div>
+            
+            <div class="middle-content">
+                <span class="content content1">
+                    1
+                </span>
+                <span class="content content2">
+                    2
+                </span>
+                <span class="content content3">
+                    3
+                </span>
+            </div>
+            
+            <div class="right-button">
+                <button class="slide-button" onclick="moveRight()"> <i class="fas fa-chevron-right"></i> </button>
+            </div>
+            <div class="margin-slider margin-right">
+            </div>
+        </div>
+    </body>
+</html>
