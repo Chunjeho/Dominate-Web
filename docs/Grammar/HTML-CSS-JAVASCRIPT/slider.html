@@ -9,7 +9,7 @@
             }
             .slider-container{
                 position: relative;
-                border: 2px solid red;
+                border: 0px solid red;
                 height: 400px;
                 margin: auto;
                 top: 50%;
@@ -20,13 +20,13 @@
                 overflow: hidden;
             }
             .left-button{
-                border: 2px solid blue;
+                border: 0px solid blue;
                 text-align: center;
                 background-color: white;
                 z-index: 2;
             }
             .right-button{
-                border: 2px solid blue;
+                border: 0px solid blue;
                 text-align: center;
                 background-color: white;
                 z-index: 2;
@@ -46,12 +46,24 @@
                 color: darkgray;
             }
             .middle-content{
-                border: 2px solid green;
+                border: 0px solid green;
                 display: grid;
                 grid-template-columns: 500px 500px 500px;
             }
             .content{
-                background-color: aqua;
+                font-size: 50px;
+                color: white;
+                text-align: center;
+                line-height: 400px;
+            }
+            .content1{
+                background-color: red;
+            }
+            .content2{
+                background-color: green;
+            }
+            .content3{
+                background-color: blue;
             }
             .margin-slider{
                 background-color: white;
@@ -61,28 +73,38 @@
         <script>
             var _pos = 0;
             function moveLeft(){
-                var ele1 = document.getElementsByClassName("content")[0];
-                var ele2 = document.getElementsByClassName("content")[1];
-                var ele3 = document.getElementsByClassName("content")[2];
-                ele1.style.transition = "transform 0.5s";
-                ele2.style.transition = "transform 0.5s";
-                ele3.style.transition = "transform 0.5s";
-                _pos -= 500;
-                ele1.style.transform = "translate("+ _pos +"px,0)";
-                ele2.style.transform = "translate("+ _pos +"px,0)";
-                ele3.style.transform = "translate("+ _pos +"px,0)";
+                if(_pos == -1000){
+                    return;
+                }
+                else{
+                    var ele1 = document.getElementsByClassName("content")[0];
+                    var ele2 = document.getElementsByClassName("content")[1];
+                    var ele3 = document.getElementsByClassName("content")[2];
+                    ele1.style.transition = "transform 0.5s";
+                    ele2.style.transition = "transform 0.5s";
+                    ele3.style.transition = "transform 0.5s";
+                    _pos -= 500;
+                    ele1.style.transform = "translate("+ _pos +"px,0)";
+                    ele2.style.transform = "translate("+ _pos +"px,0)";
+                    ele3.style.transform = "translate("+ _pos +"px,0)";
+                }
             }
             function moveRight(){
-                var ele1 = document.getElementsByClassName("content")[0];
-                var ele2 = document.getElementsByClassName("content")[1];
-                var ele3 = document.getElementsByClassName("content")[2];
-                ele1.style.transition = "transform 0.5s";
-                ele2.style.transition = "transform 0.5s";
-                ele3.style.transition = "transform 0.5s";
-                _pos += 500;
-                 ele1.style.transform = "translate("+ _pos +"px,0)";
-                ele2.style.transform = "translate("+ _pos+"px,0)";
-                ele3.style.transform = "translate("+ _pos +"px,0)";
+                if(_pos == 0){
+                    return;
+                }
+                else{
+                    var ele1 = document.getElementsByClassName("content")[0];
+                    var ele2 = document.getElementsByClassName("content")[1];
+                    var ele3 = document.getElementsByClassName("content")[2];
+                    ele1.style.transition = "transform 0.5s";
+                    ele2.style.transition = "transform 0.5s";
+                    ele3.style.transition = "transform 0.5s";
+                    _pos += 500;
+                     ele1.style.transform = "translate("+ _pos +"px,0)";
+                    ele2.style.transform = "translate("+ _pos+"px,0)";
+                    ele3.style.transform = "translate("+ _pos +"px,0)";   
+                }
             }
         </script>
     </head>
@@ -91,7 +113,7 @@
             <div class="margin-slider margin-left">
             </div>
             <div class="left-button">
-                <button class="slide-button" onclick="moveLeft()"> <i class="fas fa-chevron-left"></i> </button>
+                <button class="slide-button" onclick="moveRight()"> <i class="fas fa-chevron-left"></i> </button>
             </div>
             
             <div class="middle-content">
@@ -107,7 +129,7 @@
             </div>
             
             <div class="right-button">
-                <button class="slide-button" onclick="moveRight()"> <i class="fas fa-chevron-right"></i> </button>
+                <button class="slide-button" onclick="moveLeft()"> <i class="fas fa-chevron-right"></i> </button>
             </div>
             <div class="margin-slider margin-right">
             </div>
