@@ -12,18 +12,21 @@
                 border: 0px solid red;
                 height: 400px;
                 margin: auto;
-                top: 50%;
-                transform: translate(0,-50%);
                 display: grid;
-                grid-template-columns: 1fr 50px 500px 50px 1fr;
+                grid-template-columns: 1fr 50px 550px 50px 1fr;
                 z-index: 2;
                 overflow: hidden;
+                margin-top: 40px;
+                margin-bottom: 40px;
             }
             .left-button{
                 border: 0px solid blue;
                 text-align: center;
                 background-color: white;
                 z-index: 2;
+            }
+            .left-button button{
+                display: none;
             }
             .right-button{
                 border: 0px solid blue;
@@ -43,72 +46,137 @@
                 cursor: pointer;
             }
             .slide-button:hover{
-                color: darkgray;
+                color: red;
             }
             .middle-content{
                 border: 0px solid green;
                 display: grid;
-                grid-template-columns: 500px 500px 500px;
+                grid-template-columns: 550px 550px 550px;
             }
             .content{
                 font-size: 50px;
                 color: white;
                 text-align: center;
                 line-height: 400px;
+                background-color: black;
             }
             .content1{
-                background-color: red;
+/*                background-color: red;*/
             }
             .content2{
-                background-color: green;
+/*                background-color: green;*/
             }
             .content3{
-                background-color: blue;
+/*                background-color: blue;*/
             }
             .margin-slider{
                 background-color: white;
                 z-index: 2;
             }
+            .title{
+                border: 0px solid black;
+                height: 150px;
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                background-color: black;
+            }
+            .title-title{
+                text-align: center;
+/*                line-height: 100px;*/
+                font-size: 50px;
+                color: white;
+                letter-spacing: 3px;
+                padding: 10px;
+            }
+            .title-quotes{
+                font-size: 15px;
+                text-align: center;
+/*                line-height: 100px;*/
+                padding-right: 20px;
+                letter-spacing: 6px;
+                color: white;
+                padding: 10px;
+            }
+            .title-navigator a{
+                text-decoration: none;
+                color: white;
+            }
+            .ending{
+                background-color: black;
+                height: 100px;
+                display: grid;
+                grid-template-rows: 40px 40px;
+                font-size: 15px;
+            }
+            .made-by{
+                color: white;
+                letter-spacing: 4px;
+                text-align: center;
+                padding: 10px;
+            }
+            .about-me{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                color: white;
+                letter-spacing: 4px;
+                padding: 10px;
+            }
+            .cc{
+                color: white;
+                letter-spacing: 4px;
+                text-align: center;
+                padding: 10px;
+                font-weight: bold;
+            }
         </style>
         <script>
             var _pos = 0;
             function moveLeft(){
-                if(_pos == -1000){
-                    return;
-                }
-                else{
-                    var ele1 = document.getElementsByClassName("content")[0];
-                    var ele2 = document.getElementsByClassName("content")[1];
-                    var ele3 = document.getElementsByClassName("content")[2];
-                    ele1.style.transition = "transform 0.5s";
-                    ele2.style.transition = "transform 0.5s";
-                    ele3.style.transition = "transform 0.5s";
-                    _pos -= 500;
-                    ele1.style.transform = "translate("+ _pos +"px,0)";
-                    ele2.style.transform = "translate("+ _pos +"px,0)";
-                    ele3.style.transform = "translate("+ _pos +"px,0)";
+                document.getElementsByClassName("slide-button")[0].style.display = "inline";
+                var ele1 = document.getElementsByClassName("content")[0];
+                var ele2 = document.getElementsByClassName("content")[1];
+                var ele3 = document.getElementsByClassName("content")[2];
+                ele1.style.transition = "transform 0.5s";
+                ele2.style.transition = "transform 0.5s";
+                ele3.style.transition = "transform 0.5s";
+                _pos -= 550;
+                ele1.style.transform = "translate("+ _pos +"px,0)";
+                ele2.style.transform = "translate("+ _pos +"px,0)";
+                ele3.style.transform = "translate("+ _pos +"px,0)";
+                if(_pos == -1100){
+                    document.getElementsByClassName("slide-button")[1].style.display = "none";
                 }
             }
             function moveRight(){
+                document.getElementsByClassName("slide-button")[1].style.display = "inline";
+                var ele1 = document.getElementsByClassName("content")[0];
+                var ele2 = document.getElementsByClassName("content")[1];
+                var ele3 = document.getElementsByClassName("content")[2];
+                ele1.style.transition = "transform 0.5s";
+                ele2.style.transition = "transform 0.5s";
+                ele3.style.transition = "transform 0.5s";
+                _pos += 550;
+                 ele1.style.transform = "translate("+ _pos +"px,0)";
+                ele2.style.transform = "translate("+ _pos+"px,0)";
+                ele3.style.transform = "translate("+ _pos +"px,0)";
+                
                 if(_pos == 0){
-                    return;
-                }
-                else{
-                    var ele1 = document.getElementsByClassName("content")[0];
-                    var ele2 = document.getElementsByClassName("content")[1];
-                    var ele3 = document.getElementsByClassName("content")[2];
-                    ele1.style.transition = "transform 0.5s";
-                    ele2.style.transition = "transform 0.5s";
-                    ele3.style.transition = "transform 0.5s";
-                    _pos += 500;
-                     ele1.style.transform = "translate("+ _pos +"px,0)";
-                    ele2.style.transform = "translate("+ _pos+"px,0)";
-                    ele3.style.transform = "translate("+ _pos +"px,0)";   
+                    document.getElementsByClassName("slide-button")[0].style.display = "none";
                 }
             }
         </script>
     </head>
     <body>
+        <div class="title">
+            <div class="title-title">
+                <i class="far fa-bookmark" style="color: white"></i> Three Daily Quotes
+                <i class="far fa-bookmark" style="color: white"></i>
+            </div>
+            <div class="title-quotes">
+                Just this three sentences can change your life
+            </div>
+        </div>
+        
         <div class="slider-container">
             <div class="margin-slider margin-left">
             </div>
@@ -133,6 +201,18 @@
             </div>
             <div class="margin-slider margin-right">
             </div>
+        </div>
+        
+        <div class="ending">
+            
+            <div class="made-by">
+                This website is made by <a href="https://github.com/Chunjeho" style="text-decoration-color: white; color: white">Jeho, Chun</a>
+            </div>
+            
+            <div class="cc">
+                CC BY-SA
+            </div>
+            
         </div>
     </body>
 </html>
