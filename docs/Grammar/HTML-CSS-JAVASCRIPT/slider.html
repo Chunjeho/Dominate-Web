@@ -5,16 +5,15 @@
             body{
                 background-color: white;
                 margin: 0px;
-                z-index: 1;
+                display: grid;
+                grid-template-rows: 150px 450px;
             }
             .slider-container{
                 position: relative;
                 border: 0px solid red;
-                height: 400px;
                 margin: auto;
                 display: grid;
-                grid-template-columns: 1fr 50px 550px 50px 1fr;
-                z-index: 2;
+                grid-template-columns: 50px 550px 50px;
                 overflow: hidden;
                 margin-top: 40px;
                 margin-bottom: 40px;
@@ -23,7 +22,6 @@
                 border: 0px solid blue;
                 text-align: center;
                 background-color: white;
-                z-index: 2;
             }
             .left-button button{
                 display: none;
@@ -32,7 +30,6 @@
                 border: 0px solid blue;
                 text-align: center;
                 background-color: white;
-                z-index: 2;
             }
             .slide-button{
                 width: 100%;
@@ -52,6 +49,7 @@
                 border: 0px solid green;
                 display: grid;
                 grid-template-columns: 550px 550px 550px;
+                z-index: -1;
             }
             .content{
                 font-size: 50px;
@@ -70,11 +68,9 @@
             }
             .margin-slider{
                 background-color: white;
-                z-index: 2;
             }
             .title{
                 border: 0px solid black;
-                height: 150px;
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 background-color: black;
@@ -199,8 +195,6 @@
         </div>
         
         <div class="slider-container">
-            <div class="margin-slider margin-left">
-            </div>
             <div class="left-button">
                 <button class="slide-button" onclick="moveRight()"> <i class="fas fa-chevron-left"></i> </button>
             </div>
@@ -241,10 +235,9 @@
             <div class="right-button">
                 <button class="slide-button" onclick="moveLeft()"> <i class="fas fa-chevron-right"></i> </button>
             </div>
-            <div class="margin-slider margin-right">
-            </div>
         </div>
         
+<!--
         <div class="ending">
             <div class="from">
                 <span style="letter-spacing: 4px;">quotes from : </span><a href="https://www.goodreads.com/quotes" style="text-decoration: none;; color: white">https://www.goodreads.com/quotes</a>
@@ -258,5 +251,6 @@
             </div>
             
         </div>
+-->
     </body>
 </html>
