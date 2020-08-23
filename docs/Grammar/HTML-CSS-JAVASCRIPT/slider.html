@@ -57,7 +57,6 @@
                 font-size: 50px;
                 color: white;
                 text-align: center;
-                line-height: 400px;
                 background-color: black;
             }
             .content1{
@@ -103,9 +102,9 @@
             }
             .ending{
                 background-color: black;
-                height: 100px;
+                height: 140px;
                 display: grid;
-                grid-template-rows: 40px 40px;
+                grid-template-rows: 1fr 1fr 1fr;
                 font-size: 15px;
             }
             .made-by{
@@ -127,6 +126,27 @@
                 text-align: center;
                 padding: 10px;
                 font-weight: bold;
+            }
+            .quote{
+                position: relative;
+                border: 0px solid blue;
+                top: 30%;
+            }
+            .quote-content{
+                border: 0px solid red; 
+                font-size: 18px; 
+                padding: 20px;
+                
+            }
+            .quote-author{
+                border: 0px solid red; 
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .from{
+                padding: 10px;
+                text-align: center;
+                color: white;
             }
         </style>
         <script>
@@ -186,13 +206,34 @@
             
             <div class="middle-content">
                 <span class="content content1">
-                    1
+                    <div class="quote">
+                        <div class="quote-content">
+                        Two things are infinite: the universe and human stupidity; and I'm not sure about the universe
+                        </div>
+                        <div class="quote-author">
+                            - Albert Einstein -
+                        </div>
+                    </div>
                 </span>
                 <span class="content content2">
-                    2
+                    <div class="quote">
+                        <div class="quote-content">
+                        So many books, so little time
+                    </div>
+                    <div class="quote-author">
+                        - Frank Zappa -
+                    </div>
+                    </div>
                 </span>
                 <span class="content content3">
-                    3
+                    <div class="quote">
+                    <div class="quote-content">
+                        A room without books is like a body without a soul
+                    </div>
+                    <div class="quote-author">
+                        - Marcus Tullius Cicero -
+                    </div>
+                    </div>
                 </span>
             </div>
             
@@ -204,7 +245,9 @@
         </div>
         
         <div class="ending">
-            
+            <div class="from">
+                <span style="letter-spacing: 4px;">quotes from : </span><a href="https://www.goodreads.com/quotes" style="text-decoration: none;; color: white">https://www.goodreads.com/quotes</a>
+            </div>
             <div class="made-by">
                 Build 2020, by <a href="https://github.com/Chunjeho" style="text-decoration-color: white; color: white">Jeho, Chun</a>
             </div>
