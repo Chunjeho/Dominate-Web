@@ -12,7 +12,7 @@
                 border: 2px solid red;
                 margin: auto;
                 display: grid;
-                grid-template-columns: 80px 550px 80px;
+                grid-template-columns:1fr 80px 550px 80px 1fr;
                 overflow: hidden;
                 margin-top: 40px;
                 margin-bottom: 40px;
@@ -49,6 +49,7 @@
                 display: grid;
                 grid-template-columns: 550px 550px 550px;
                 z-index: -1;
+                overflow: hidden;
             }
             .content{
                 font-size: 50px;
@@ -73,6 +74,7 @@
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 background-color: black;
+                height: 150px;
             }
             .title-title{
                 text-align: center;
@@ -194,6 +196,7 @@
         </div>
         
         <div class="slider-container">
+            <div></div>
             <div class="left-button">
                 <button class="slide-button" onclick="moveRight()"> <i class="fas fa-chevron-left"></i> </button>
             </div>
@@ -234,6 +237,7 @@
             <div class="right-button">
                 <button class="slide-button" onclick="moveLeft()"> <i class="fas fa-chevron-right"></i> </button>
             </div>
+            <div></div>
         </div>
         
 <!--
