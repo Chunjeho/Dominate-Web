@@ -13,7 +13,7 @@
                 margin: 0px;
             }
             div{
-                border: 2px solid red;
+                border: 0px solid red;
                 color: white;
             }
             .container{
@@ -33,7 +33,7 @@
             }
             @media(max-width: 900px){
                 .container{
-                    grid-template-rows: 100px 1fr;
+                    grid-template-rows: 100px 1px 1fr;
                 }
                 .content-d{
                     display: none;
@@ -64,6 +64,11 @@
                     position: relative;
                     top: 50%;
                     transform: translate(0,-50%);
+                }
+                .divider{
+                    border: 1px solid white;
+                    width: 80%;
+                    margin: auto
                 }
             }
         </style>
@@ -115,6 +120,7 @@
     <body>
         <div class="container">
             <div class="title">Quotes</div>
+            <div class="divider"></div>
             <div class="content-m" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend = "endpoint()">
                 <div class="content-m-text c1">
                         <div class="content-m-text-container-box">
