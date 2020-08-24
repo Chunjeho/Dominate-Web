@@ -48,9 +48,9 @@
         <script>
             var sx = 0;
             var x = 0;
-            var e1 = document.getElementsByClassName("-m-title")[0];
-            var e2 = document.getElementsByClassName("-m-title")[1];
-            var e3 = document.getElementsByClassName("-m-title")[2];
+            var e1 = document.getElementsByClassName("content-m-text")[0];
+            var e2 = document.getElementsByClassName("content-m-text")[1];
+            var e3 = document.getElementsByClassName("content-m-text")[2];
             function drag(event){
                 x = event.touches[0].clientX;
 //                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
@@ -89,13 +89,13 @@
         <div class="container">
             <div class="title">title</div>
             <div class="content-m" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend = "endpoint()">
-                <div class="content-m-title c1">
+                <div class="content-m-text c1">
                     c1
                 </div>
-                <div class="content-m-title c2">
+                <div class="content-m-text c2">
                     c2
                 </div>
-                <div class="content-m-title c3">
+                <div class="content-m-text c3">
                     c3
                 </div>
             </div>
