@@ -48,15 +48,15 @@
             var ex = 0;
             function drag(event){
                 var x = event.touches[0].clientX;
-//                document.getElementsByClassName("content-m")[0].innerHTML = x+"px";
+                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
             }
             function startpoint(event){
                 sx = event.touches[0].clientX;
-                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+ex+"px";
+                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
             }
             function endpoint(event){
                 ex = event.touches[0].clientX;
-                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+ex+"px";
+//                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+ex+"px";
             }
         </script>
     </head>
