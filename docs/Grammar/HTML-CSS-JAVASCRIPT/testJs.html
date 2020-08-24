@@ -46,10 +46,11 @@
                 .content-m-text{
                     position: relative;
                     padding: 10px;
-                    padding-top: 50%;
                     text-align: center;
                     font-size: 20px;
                     letter-spacing: 2px;
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr;
                 }
                 .content-m-text-author{
                     letter-spacing: 0px;
@@ -108,27 +109,39 @@
             <div class="title">title</div>
             <div class="content-m" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend = "endpoint()">
                 <div class="content-m-text c1">
-                    <div class="content-m-text-quotes">
+                    <div></div>
+                    <div class="content-m-text-container">
+                        <div class="content-m-text-quotes">
                         Two things are infinite: the universe and human stupidity; and I'm not sure about the universe
+                        </div>
+                        <div class="content-m-text-author">
+                            - Albert Einstein -
+                        </div>
                     </div>
-                    <div class="content-m-text-author">
-                        - Albert Einstein -
-                    </div>
+                    <div></div>
                 </div>
                 <div class="content-m-text c2">
-                    <div class="content-m-text-quotes">
-                        So many books, so little time
-                    </div>
-                    <div class="content-m-text-author">
-                        - Frank Zappa -
+                    <div class="content-m-text-container">
+                        <div></div>
+                        <div class="content-m-text-quotes">
+                            So many books, so little time
+                        </div>
+                        <div class="content-m-text-author">
+                            - Frank Zappa -
+                        </div>
+                        <div></div>
                     </div>
                 </div>
                 <div class="content-m-text c3">
-                    <div class="content-m-text-quotes">
-                        A room without books is like a body without a soul
-                    </div>
-                    <div class="content-m-text-author">
-                        - Marcus Tullius Cicero -
+                    <div class="content-m-text-container">
+                        <div></div>
+                        <div class="content-m-text-quotes">
+                            A room without books is like a body without a soul
+                        </div>
+                        <div class="content-m-text-author">
+                            - Marcus Tullius Cicero -
+                        </div>
+                        <div></div>
                     </div>
                 </div>
             </div>
