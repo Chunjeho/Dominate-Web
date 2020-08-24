@@ -63,7 +63,7 @@
                 var ele3 = document.getElementsByClassName("content-m-text")[2];
                 var _width = screen.width;
                 console.log(_width);
-                if(sx-x >= 90){
+                if(sx-x >= 90  && temp != -2*_width){
                     temp -= _width;
                     ele1.style.transition = "transform 1s";
                     ele2.style.transition = "transform 1s";
@@ -74,7 +74,7 @@
                     
 //                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide left";  
                 }
-                else if(sx-x <= -90){
+                else if(sx-x <= -90 && temp != 0){
                     temp += _width;
                     ele1.style.transition = "transform 1s";
                     ele2.style.transition = "transform 1s";
