@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
         <style>
             body{
@@ -14,8 +16,8 @@
                 display: grid;
                 grid-template-columns:1fr 80px 550px 80px 1fr;
                 overflow: hidden;
-                margin-top: 40px;
-                margin-bottom: 40px;
+                padding-top: 40px;
+                padding-bottom: 40px;
             }
             .left-button{
                 border: 2px solid blue;
@@ -74,9 +76,9 @@
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 background-color: black;
-                height: 150px;
             }
             .title-title{
+                border: 2px solid red;
                 text-align: center;
 /*                line-height: 100px;*/
                 font-size: 50px;
@@ -85,6 +87,7 @@
                 padding: 10px;
             }
             .title-quotes{
+                border: 2px solid red;
                 font-size: 15px;
                 text-align: center;
 /*                line-height: 100px;*/
@@ -146,6 +149,33 @@
                 color: white;
                 border-right: 2px solid white;
             }
+            .mobile-slider{
+                display: none;
+                border: 2px solid red;
+            }
+            @media(max-width: 900px){
+                body{
+                    background-color: black;
+                    display: grid;
+                    grid-template-rows: 80px 1fr; 
+                }
+                .title-title{
+                    font-size: 30px;
+                }
+                .title-quotes{
+                    display: none;
+                }
+                .title{
+                    grid-template-rows: 1fr;
+                }
+                .slider-container{
+                    display: none;
+                }
+                .mobile-slider{
+                   display: block;
+                    
+                }
+            }
         </style>
         <script>
             var _pos = 0;
@@ -195,6 +225,11 @@
             </div>
         </div>
         
+        <div class="mobile-slider">
+            
+        </div>
+        
+<!--
         <div class="slider-container">
             <div></div>
             <div class="left-button">
@@ -239,6 +274,7 @@
             </div>
             <div></div>
         </div>
+-->
         
 <!--
         <div class="ending">

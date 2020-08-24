@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html{
+                height: 100%;
+            }
+            body{
+                background-color: black;
+                display: grid;
+                height: 100%;
+                margin: 0px;
+            }
+            div{
+                border: 2px solid red;
+                color: white;
+            }
+            .container{
+                position: relative;
+                display: grid;
+            }
+            @media(min-width: 901px){
+                .container{
+                    grid-template-rows: 140px 1fr;
+                }
+                .content-m{
+                    display: none;
+                }
+                .content-d{
+                    display: inline;
+                }
+            }
+            @media(max-width: 900px){
+                .container{
+                    grid-template-rows: 100px 1fr;
+                }
+                .content-d{
+                    display: none;
+                }
+                .content-m{
+                    display: inline;
+                }
+            }
+        </style>
+        <script>
+            function drag(event){
+                var x = event.touches[0].clientX;
+                document.getElementsByClassName("content-m")[0].innerHTML = x+"px";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">title</div>
+            <div class="content-m" ontouchmove="drag(event)">
+                content for mobile
+            </div>
+            <div class="content-d">
+                content for desktop
+            </div>
+        </div>
+    </body>
+</html>
