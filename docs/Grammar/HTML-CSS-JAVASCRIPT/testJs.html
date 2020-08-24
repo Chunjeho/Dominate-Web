@@ -55,11 +55,14 @@
                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
             }
             function endpoint(){
-                if(sx-x >= 120){
+                if(sx-x >= 90){
                  document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide left";  
                 }
-                else{
+                else if(sx-x <= -90){
                  document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide right";  
+                }
+                else{
+                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide nowhere";
                 }
             }
         </script>
