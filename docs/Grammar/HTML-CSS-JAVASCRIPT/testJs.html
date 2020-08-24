@@ -48,6 +48,7 @@
         <script>
             var sx = 0;
             var x = 0;
+            var temp = 0;
             function drag(event){
                 x = event.touches[0].clientX;
 //                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
@@ -61,28 +62,25 @@
                 var ele2 = document.getElementsByClassName("content-m-text")[1];
                 var ele3 = document.getElementsByClassName("content-m-text")[2];
                 var _width = screen.width;
-                var temp = 0;
+                console.log(_width);
                 if(sx-x >= 90){
                     temp -= _width;
                     ele1.style.transition = "transform 1s";
-                    ele1.style.transform = "translate("+temp+"px,0)";
                     ele2.style.transition = "transform 1s";
-                    ele2.style.transform = "translate("+temp+"px,0)";
                     ele3.style.transition = "transform 1s";
+                    ele1.style.transform = "translate("+temp+"px,0)";
+                    ele2.style.transform = "translate("+temp+"px,0)";
                     ele3.style.transform = "translate("+temp+"px,0)";
                     
 //                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide left";  
                 }
                 else if(sx-x <= -90){
                     temp += _width;
-                    var ele1 = document.getElementsByClassName("content-m-text")[0];
-                    var ele2 = document.getElementsByClassName("content-m-text")[1];
-                    var ele3 = document.getElementsByClassName("content-m-text")[2];
                     ele1.style.transition = "transform 1s";
-                    ele1.style.transform = "translate("+temp+"px,0)";
                     ele2.style.transition = "transform 1s";
-                    ele2.style.transform = "translate("+temp+"px,0)";
                     ele3.style.transition = "transform 1s";
+                    ele1.style.transform = "translate("+temp+"px,0)";
+                    ele2.style.transform = "translate("+temp+"px,0)";
                     ele3.style.transform = "translate("+temp+"px,0)";
 //                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide right";  
                 }
