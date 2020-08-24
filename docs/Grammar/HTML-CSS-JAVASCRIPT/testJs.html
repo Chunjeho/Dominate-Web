@@ -45,8 +45,9 @@
         </style>
         <script>
             var sx = 0;
+            var x = 0;
             function drag(event){
-                var x = event.touches[0].clientX;
+                x = event.touches[0].clientX;
                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
             }
             function startpoint(event){
