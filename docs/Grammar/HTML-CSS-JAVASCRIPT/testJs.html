@@ -13,7 +13,7 @@
                 margin: 0px;
             }
             div{
-                border: 0px solid red;
+                border: 2px solid red;
                 color: white;
             }
             .container{
@@ -58,7 +58,12 @@
                 .title{
                     font-size: 60px;
                     letter-spacing: 8px;
+                }
+                .title-text{
+                    position: relative;
                     text-align: center;
+                    top: 50%;
+                    transform: translate(0,-50%);
                 }
                 .content-m-text-container-box{
                     position: relative;
@@ -119,7 +124,11 @@
     </head>
     <body>
         <div class="container">
-            <div class="title">Quotes</div>
+            <div class="title">
+                <div class="title-text">
+                    Quotes
+                </div>
+            </div>
             <div class="divider"></div>
             <div class="content-m" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend = "endpoint()">
                 <div class="content-m-text c1">
