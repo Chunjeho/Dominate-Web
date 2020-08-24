@@ -39,30 +39,48 @@
                     display: none;
                 }
                 .content-m{
-                    display: inline;
+                    display: grid;
+                    grid-template-columns: 100% 100% 100%;
+                    overflow: hidden;
                 }
             }
         </style>
         <script>
             var sx = 0;
             var x = 0;
+            var e1 = document.getElementsByClassName("-m-title")[0];
+            var e2 = document.getElementsByClassName("-m-title")[1];
+            var e3 = document.getElementsByClassName("-m-title")[2];
             function drag(event){
                 x = event.touches[0].clientX;
-                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
+//                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
             }
             function startpoint(event){
                 sx = event.touches[0].clientX;
-                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
+//                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
             }
             function endpoint(){
                 if(sx-x >= 90){
-                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide left";  
+                    e1.style.transition = "transform 1s";
+                    e1.style.transform = "translate(-100%,0)";
+                    e2.style.transition = "transform 1s";
+                    e2.style.transform = "translate(-100%,0)";
+                    e3.style.transition = "transform 1s";
+                    e3.style.transform = "translate(-100%,0)";
+                    
+//                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide left";  
                 }
                 else if(sx-x <= -90){
-                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide right";  
+                    e1.style.transition = "transform 1s";
+                    e1.style.transform = "translate(100%,0)";
+                    e2.style.transition = "transform 1s";
+                    e2.style.transform = "translate(100%,0)";
+                    e3.style.transition = "transform 1s";
+                    e3.style.transform = "translate(100%,0)";
+//                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide right";  
                 }
                 else{
-                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide nowhere";
+//                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide nowhere";
                 }
             }
         </script>
@@ -71,7 +89,15 @@
         <div class="container">
             <div class="title">title</div>
             <div class="content-m" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend = "endpoint()">
-                content for mobile
+                <div class="content-m-title c1">
+                    c1
+                </div>
+                <div class="content-m-title c2">
+                    c2
+                </div>
+                <div class="content-m-title c3">
+                    c3
+                </div>
             </div>
             <div class="content-d">
                 content for desktop
