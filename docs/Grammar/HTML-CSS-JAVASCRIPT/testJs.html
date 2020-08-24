@@ -45,7 +45,6 @@
         </style>
         <script>
             var sx = 0;
-            var ex = 0;
             function drag(event){
                 var x = event.touches[0].clientX;
                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
@@ -54,16 +53,20 @@
                 sx = event.touches[0].clientX;
                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px";
             }
-            function endpoint(event){
-                ex = event.touches[0].clientX;
-//                document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+ex+"px";
+            function endpoint(){
+                if(sx-x >= 120){
+                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide left";  
+                }
+                else{
+                 document.getElementsByClassName("content-m")[0].innerHTML = sx+"px, "+x+"px, slide right";  
+                }
             }
         </script>
     </head>
     <body>
         <div class="container">
             <div class="title">title</div>
-            <div class="content-m" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend = "endpoint(event)">
+            <div class="content-m" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend = "endpoint()">
                 content for mobile
             </div>
             <div class="content-d">
