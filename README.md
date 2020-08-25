@@ -20,8 +20,8 @@ Dominate web by **learning**, **building** and **cloning** websites!
 👉 HTML file is located in **docs/WeatherInMars/**
 
 ### Three Daily Quotes (Building; HTML, CSS, JavaScript; Responsive)
-👉 https://chunjeho.github.io/Dominate-Web/Grammar/HTML-CSS-JAVASCRIPT/testJs.html
+👉 https://chunjeho.github.io/Dominate-Web/Quotes/quotes.html
 
-👉 HTML file is located in **docs/Grammar/HTML-CSS-JAVASCRIPT/**
+👉 HTML file is located in **docs/Quotes/**
 
 ### Knowledge Archive Website (Not yet)
