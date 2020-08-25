@@ -34,9 +34,13 @@
                     height: 50px;
                     padding-top: 10px;
             }
+            .copyright{
+                text-align: center;
+                letter-spacing: 2px;
+            }
             @media(min-width: 1001px){
                 .container{
-                    grid-template-rows: 140px 50px 1px 1fr;
+                    grid-template-rows: 140px 50px 1px 60px 1fr 40px;
                 }
                 .content-m{
                     display: none;
@@ -62,7 +66,6 @@
                     letter-spacing: 8px;
                 }
                 .content-d-container{
-                    height: 550px;
                     position: relative;
                     top: 50%;
                     transform: translate(0,-50%)
@@ -128,7 +131,7 @@
             }
             @media(max-width: 1000px){
                 .container{
-                    grid-template-rows: 100px 1px 60px 1fr;
+                    grid-template-rows: 100px 1px 60px 1fr 40px;
                 }
                 .content-d{
                     display: none;
@@ -174,6 +177,16 @@
                 }
                 #date{
                     font-size: 20px;
+                }
+            }
+            @media(max-width: 400px){
+                .copyright{
+                    font-size: 13px
+                }
+            }
+            @media(max-width: 360px){
+                .copyright{
+                    font-size: 10px
                 }
             }
         </style>
@@ -351,6 +364,9 @@
                         <div></div>
                     </div>
                 </div>
+            </div>
+            <div class="copyright">
+                <i class="far fa-copyright"></i> 2020. Jeho Chun All rights are reserved.
             </div>
         </div>
     </body>
