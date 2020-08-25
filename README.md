@@ -3,7 +3,7 @@ Dominate web by **learning**, **building** and **cloning** websites!
 
 ## Cloning
 
-### W3schools.com (cloning; HTML, CSS)
+### W3schools.com (cloning; HTML, CSS; Responsive)
 #### final version
 👉 https://chunjeho.github.io/Dominate-Web/W3schools/w3school.html
 
@@ -19,7 +19,7 @@ Dominate web by **learning**, **building** and **cloning** websites!
 
 👉 HTML file is located in **docs/WeatherInMars/**
 
-### Three Daily Quotes (Building; HTML, CSS, JavaScript; Mobile)
+### Three Daily Quotes (Building; HTML, CSS, JavaScript; Responsive)
 👉 https://chunjeho.github.io/Dominate-Web/Grammar/HTML-CSS-JAVASCRIPT/testJs.html
 
 👉 HTML file is located in **docs/Grammar/HTML-CSS-JAVASCRIPT/**
