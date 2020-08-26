@@ -14,7 +14,7 @@
                 margin: 0px;
             }
             div{
-                border: 2px solid red;
+                border: 0px solid red;
                 color: white;
             }
             .container{
@@ -121,8 +121,7 @@
                     letter-spacing: 5px;
                     text-align: center;
                     padding-top: 20px;
-                    padding-bottom: 20px;
-                    overflow: visible
+                    padding-bottom: 20px
                 }
                 .content-d-main-text-author{
                     font-size: 25px;
@@ -285,37 +284,18 @@
             <div class="divider"></div>
             <div id="date"></div>
             <div class="content-m" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend = "endpoint()">
-                <div class="content-m-text c1">
+                {% for i in range(3) %}
+                <div class="content-m-text">
                         <div class="content-m-text-container-box">
                             <div class="content-m-text-quotes">
-                            
-“Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They're not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can't do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.”
+                                {{quote1_text[i]}}
                             </div>
                             <div class="content-m-text-author">
-                                - Albert Einstein -
+                               {{quote1_author[i]}}
                             </div>
                         </div>
                 </div>
-                <div class="content-m-text c2">
-                        <div class="content-m-text-container-box">
-                            <div class="content-m-text-quotes">
-                            So many books, so little time
-                            </div>
-                            <div class="content-m-text-author">
-                                - Frank Zappa -
-                            </div>
-                        </div>
-                </div>
-                <div class="content-m-text c3">
-                        <div class="content-m-text-container-box">
-                            <div class="content-m-text-quotes">
-                            A room without books is like a body without a soul
-                            </div>
-                            <div class="content-m-text-author">
-                                - Marcus Tullius Cicero -
-                            </div>
-                        </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="content-d">
                 <div class="content-d-container">
@@ -327,39 +307,18 @@
                             <button onclick="moveRight()"> <i class="fas fa-chevron-left"></i> </button>
                         </div>
                         <div class="content-d-main">
-                            <div class="content-d-main-text content-d-main-c1">
+                            {% for i in range(3) %}
+                            <div class="content-d-main-text">
                                 <div class="content-d-main-text-container">
                                     <div class="content-d-main-text-quotes">
-                                        
-“Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They're not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can't do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.”
+                                        {{quote1_text[i]}}
                                     </div>
                                     <div class="content-d-main-text-author">
-                                         - Albert Einstein -
+                                         {{quote1_author[i]}}
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="content-d-main-text content-d-main-c2">
-                                <div class="content-d-main-text-container">
-                                    <div class="content-d-main-text-quotes">
-                                        So many books, so little time
-                                    </div>
-                                    <div class="content-d-main-text-author">
-                                         - Frank Zappa -
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="content-d-main-text content-d-main-c3">
-                                <div class="content-d-main-text-container">
-                                    <div class="content-d-main-text-quotes">
-                                        A room without books is like a body without a soul
-                                    </div>
-                                    <div class="content-d-main-text-author">
-                                         - Marcus Tullius Cicero -
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                         <div class="right-button">
                             <button onclick="moveLeft()"> <i class="fas fa-chevron-right"></i> </button>
