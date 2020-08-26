@@ -19,9 +19,10 @@ Dominate web by **learning**, **building** and **cloning** websites!
 
 👉 HTML file is located in **docs/WeatherInMars/**
 
-### Three Daily Quotes (Building; HTML, CSS, JavaScript; Responsive)
+### Three Daily Quotes (Building; HTML, CSS, JavaScript, Python; Responsive)
 👉 https://chunjeho.github.io/Dominate-Web/Quotes/quotes.html
 
-👉 HTML file is located in **docs/Quotes**
+👉 HTML file is located in **docs/Quotes/**
 
+👉 Python file (for backend) is **docs/Grammar/FlaskForPython/app.py**
 ### Knowledge Archive Website (Not yet)
