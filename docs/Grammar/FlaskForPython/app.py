@@ -19,7 +19,7 @@ def quotes():
     print("after 10s load")
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(quotes, trigger="interval", seconds=300)
+scheduler.add_job(quotes, trigger="interval", seconds=3600)
 scheduler.start()    
     
 @app.route('/')
