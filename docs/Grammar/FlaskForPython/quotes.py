@@ -3,14 +3,14 @@ from bs4 import BeautifulSoup
 import random
 
 def GenThreeInt(length):
-    a = random.randrange(1,length+1)
+    a = random.randrange(1,length)
     while(1):
-        b = random.randrange(1,length+1)
+        b = random.randrange(1,length)
         if(b != a):
             break
 
     while(1):
-        c = random.randrange(1,length+1)
+        c = random.randrange(1,length)
         if(c != a and c != b):
             break
     return [a, b, c]
