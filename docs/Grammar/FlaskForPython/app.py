@@ -16,10 +16,10 @@ def quotes():
     global quote_text
     global quote_author
     quote_text, quote_author = MakeSoup("https://www.goodreads.com/quotes")
-    print("after 10s load")
+    print("after 1h load")
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(quotes, trigger="interval", seconds=300)
+scheduler.add_job(quotes, trigger="interval", seconds=3600)
 scheduler.start()    
     
 @app.route('/')

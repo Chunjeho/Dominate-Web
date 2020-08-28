@@ -24,5 +24,5 @@ Dominate web by **learning**, **building** and **cloning** websites!
 
 👉 HTML file is located in **docs/Quotes/**
 
-👉 Python file (for backend) is **docs/Grammar/FlaskForPython/app.py**
+👉 Python file (for backend) is **docs/Quotes/app.py**
 ### Knowledge Archive Website (Not yet)
