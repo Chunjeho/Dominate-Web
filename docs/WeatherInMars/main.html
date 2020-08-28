@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
         <style>
             body{
@@ -13,70 +14,70 @@
                 
             }
             div {
-                border: 2px solid red;
+                border: 0px solid red;
             }
             span{
                 border: 0px solid black;
             }
             .dot{
-                height: 20px;
-                width: 20px;
+                height: 10px;
+                width: 10px;
                 background-color: transparent;
                 border-radius: 50%;
                 display: inline-block;
                 border-color: white;
-                border-width: 4px;
+                border-width: 1px;
             }
             .divider{
                 width: 80%;
-                border-bottom: 4px solid white;
+                border-bottom: 2px solid white;
                 margin: auto;
-                margin-bottom: 60px
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
             .temperature-box{
                 position: relative;
             }
             @media(max-width: 1000px){
                 .mobile{
-                    padding-top: 100px;
+                    padding-top: 60px;
                 }
                 .desktop{
                     display: none;
                 }
                 .location{
-                    font-size: 70px;
+                    font-size: 30px;
                     color: white;
                     text-align: center;
                 }
                 .sol{
                     color: white;
-                    font-size: 50px;
-                    margin-bottom: 40px;
+                    font-size: 20px;
                     text-align: center;
-                    padding-top: 20px;
+                    padding-top: 10px;
                 }
                 .sol-span{
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    border-left: 4px solid white;
-                    border-right: 4px solid white;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    border-left: 2px solid white;
+                    border-right: 2px solid white;
                 }
                 .temperature-text{
-                    font-size: 200px;
+                    font-size: 60px;
                     text-align: center;
                     color: white;
                     font-weight: 100;
                 }
                 .celsius{
-                    font-size: 80px;
+                    font-size: 40px;
                     vertical-align: super
                 }
                 .fahrenheit{
-                    font-size: 80px;
+                    font-size: 40px;
                     vertical-align: super
                 }
                 .title{
-                    font-size: 60px;
+                    font-size: 25px;
                     color: white;
                     text-align: center;
                     padding: 30px
@@ -96,15 +97,14 @@
                 }
                 .temperature-dot-information{
                     text-align: center;
-                    padding-top: 30px;
-                    padding-bottom: 30px;
+                    padding-top: 10px;
                 }
                 .d1{
                     background-color: white;
                 }
                 .temperature-container{
                     display: grid;
-                    grid-template-columns: 100%;
+                    grid-template-columns: 100% 100% 100%;
                     overflow: hidden;
                 }
             }
@@ -132,29 +132,60 @@
             function end(){
                 var _width = screen.width;
                 var average_t = document.getElementsByClassName("temperature-box")[0];
-//                var max_t = document.getElementsByClassName("max_t")[0];
-//                var min_t = document.getElementsByClassName("min_t")[0];
-                if(sx-x>=90){
+                var max_t = document.getElementsByClassName("temperature-box")[1];
+                var min_t = document.getElementsByClassName("temperature-box")[2];
+                var j = 0;
+                if(sx-x>=90 && _pos != -2*_width){
                     _pos -= _width;
                     console.log("_pos :"+_pos);
                     console.log("slide left");
                     average_t.style.transition = "transform 1s";
-//                    max_t.style.transition = "transform 1s";
-//                    min_t.style.transition = "transform 1s";
+                    max_t.style.transition = "transform 1s";
+                    min_t.style.transition = "transform 1s";
                     average_t.style.transform = "translate("+_pos+"px,0)";
-//                    max_t.style.transform = "translate("+_pos+"px,0)";
-//                    min_t.style.transform = "translate("+_pos+"px,0)"
+                    max_t.style.transform = "translate("+_pos+"px,0)";
+                    min_t.style.transform = "translate("+_pos+"px,0)";
+                    if(_pos/_width == 0){
+                            document.getElementsByClassName("dot")[0].style.backgroundColor = "white";
+                            document.getElementsByClassName("dot")[1].style.backgroundColor = "transparent";
+                            document.getElementsByClassName("dot")[2].style.backgroundColor = "transparent";
+                    }
+                    else if(_pos/_width == -1){
+                            document.getElementsByClassName("dot")[1].style.backgroundColor = "white";
+                            document.getElementsByClassName("dot")[0].style.backgroundColor = "transparent";
+                            document.getElementsByClassName("dot")[2].style.backgroundColor = "transparent";
+                    }
+                    else if(_pos/_width == -2){
+                            document.getElementsByClassName("dot")[2].style.backgroundColor = "white";
+                            document.getElementsByClassName("dot")[1].style.backgroundColor = "transparent";
+                            document.getElementsByClassName("dot")[0].style.backgroundColor = "transparent";
+                    }
                 }
-                else if(sx-x<=-90){
+                else if(sx-x<=-90 && _pos != 0){
                      _pos += _width;
                     console.log("slide right");
                     console.log("_pos :"+_pos);
                     average_t.style.transition = "transform 1s";
-//                    max_t.style.transition = "transform 1s";
-//                    min_t.style.transition = "transform 1s";
+                    max_t.style.transition = "transform 1s";
+                    min_t.style.transition = "transform 1s";
                     average_t.style.transform = "translate("+_pos+"px,0)";
-//                    max_t.style.transform = "translate("+_pos+"px,0)";
-//                    min_t.style.transform = "translate("+_pos+"px,0)"
+                    max_t.style.transform = "translate("+_pos+"px,0)";
+                    min_t.style.transform = "translate("+_pos+"px,0)";
+                    if(_pos/_width == 0){
+                            document.getElementsByClassName("dot")[0].style.backgroundColor = "white";
+                            document.getElementsByClassName("dot")[1].style.backgroundColor = "transparent";
+                            document.getElementsByClassName("dot")[2].style.backgroundColor = "transparent";
+                    }
+                    else if(_pos/_width == -1){
+                            document.getElementsByClassName("dot")[1].style.backgroundColor = "white";
+                            document.getElementsByClassName("dot")[0].style.backgroundColor = "transparent";
+                            document.getElementsByClassName("dot")[2].style.backgroundColor = "transparent";
+                    }
+                    else if(_pos/_width == -2){
+                            document.getElementsByClassName("dot")[2].style.backgroundColor = "white";
+                            document.getElementsByClassName("dot")[1].style.backgroundColor = "transparent";
+                            document.getElementsByClassName("dot")[0].style.backgroundColor = "transparent";
+                    }
                 }
             }
         </script>
@@ -167,6 +198,7 @@
             <div class="sol">
                 <span class="sol-span">Sol 600</span>
             </div>
+            <div class="divider"></div>
             <div class="temperature-container" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend="end()">
                 <div class="temperature-box av_t">
                     <div class="title temperature-title">
@@ -181,8 +213,7 @@
                         </div>
                     </div>
                 </div>
-<!--
-                <div class="max_t">
+                <div class="temperature-box max_t">
                     <div class="title temperature-title">
                         <span class="title-span temperature-title-span">Average Temperature</span>
                     </div>
@@ -195,7 +226,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="min_t">
+                <div class="temperature-box min_t">
                     <div class="title temperature-title">
                         <span class="title-span temperature-title-span">Average Temperature</span>
                     </div>
@@ -208,7 +239,6 @@
                         </div>
                     </div>
                 </div>
--->
             </div>
             <div class="temperature-dot-information">
                     <span class="dot d1"></span>
