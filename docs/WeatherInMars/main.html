@@ -1,254 +1,224 @@
+<!DOCTYPE html>
 <html>
-    <script>
-        function showDate(){
-            var obj = JSON.parse(localStorage.getItem('marsWeather'));
-            var len = obj["sol_keys"].length;
-            var sol = obj["sol_keys"][len-1];
-            var date = obj[sol]["First_UTC"].substring(0,10);
-            
-            if(document.getElementById("sol").textContent == date){
-                document.getElementById("sol").innerHTML = "Sol "+sol;
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        <style>
+            body{
+                margin: 0;
+                border: 0px solid blue;
+                background-image: url(Images/MarsBackground2.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+                
             }
-            else{
-             document.getElementById("sol").innerHTML = date;   
+            div {
+                border: 2px solid red;
             }
-        }
-        function FtoC(F){
-            var C = (F-32)*5/9;
-            return C.toFixed(2);
-        };
-        function CtoF(C){
-            var F = (C*9/5)+32;
-            return F.toFixed(2);
-        };
-        function ChangeToFContent(from_idName, to_idName){
-            if(document.getElementById(from_idName) != null){
-                temp = document.getElementById(from_idName).textContent;
-             document.getElementById(from_idName).id = to_idName;
-            document.getElementById(to_idName).innerHTML = CtoF(temp);   
+            span{
+                border: 0px solid black;
             }
-        }
-        function ChangeToCContent(from_idName, to_idName){
-            if(document.getElementById(from_idName) != null){
-            temp = document.getElementById(from_idName).textContent;
-            document.getElementById(from_idName).id = to_idName;
-            document.getElementById(to_idName).innerHTML = FtoC(temp);
+            .dot{
+                height: 20px;
+                width: 20px;
+                background-color: transparent;
+                border-radius: 50%;
+                display: inline-block;
+                border-color: white;
+                border-width: 4px;
             }
-        }
-        function ChangeToF(){
-              var _length = document.getElementsByClassName("content").length;
-
-              for(i=0;i<_length;i++){
-                  document.getElementsByClassName("degree")[i].innerHTML = '&#8457';
-              };
-            ChangeToFContent("cav", "fav");
-            ChangeToFContent("cmn", "fmn");
-            ChangeToFContent("cmx", "fmx");
-        };
-        function ChangeToC(){
-            var _length = document.getElementsByClassName("content").length;
-            
-          for(i=0;i<_length;i++){
-              document.getElementsByClassName("degree")[i].innerHTML = '&#8451;';
-          };
-            
-          ChangeToCContent("fav", "cav");
-          ChangeToCContent("fmn", "cmn");
-          ChangeToCContent("fmx", "cmx");
-        };
-        const Http = new XMLHttpRequest();
-        const url='https://api.nasa.gov/insight_weather/?api_key=Wgcl7DC89dOjdeB4ZPPBADzO1mQa6bu03Y0QeixS&feedtype=json&ver=1.0';
-        Http.open("GET", url);
-        Http.onreadystatechange = function(){
-            if(Http.readyState == 4 && Http.status == 200){
-                console.log(JSON.parse(Http.responseText));
-                localStorage.setItem('marsWeather', JSON.stringify(JSON.parse(Http.responseText)));
-                len = JSON.parse(Http.responseText)["sol_keys"].length;
-                sol = JSON.parse(Http.responseText)["sol_keys"][len-1];
-                if(JSON.parse(Http.responseText)["validity_checks"][sol]["AT"]["valid"] == true){
-                    av = JSON.parse(Http.responseText)[sol]["AT"]["av"].toFixed(2);
-                    mn = JSON.parse(Http.responseText)[sol]["AT"]["mn"].toFixed(2);
-                    mx = JSON.parse(Http.responseText)[sol]["AT"]["mx"].toFixed(2);
+            .divider{
+                width: 80%;
+                border-bottom: 4px solid white;
+                margin: auto;
+                margin-bottom: 60px
+            }
+            .temperature-box{
+                position: relative;
+            }
+            @media(max-width: 1000px){
+                .mobile{
+                    padding-top: 100px;
                 }
-                else{
-                    av = 'NaN';
-                    mn = 'NaN';
-                    mx = 'NaN';
+                .desktop{
+                    display: none;
                 }
-                document.getElementById("sol").innerHTML = "Sol "+sol;
-                document.getElementById("cav").innerHTML = av;
-                document.getElementById("cmn").innerHTML = mn;
-                document.getElementById("cmx").innerHTML = mx;
+                .location{
+                    font-size: 70px;
+                    color: white;
+                    text-align: center;
+                }
+                .sol{
+                    color: white;
+                    font-size: 50px;
+                    margin-bottom: 40px;
+                    text-align: center;
+                    padding-top: 20px;
+                }
+                .sol-span{
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    border-left: 4px solid white;
+                    border-right: 4px solid white;
+                }
+                .temperature-text{
+                    font-size: 200px;
+                    text-align: center;
+                    color: white;
+                    font-weight: 100;
+                }
+                .celsius{
+                    font-size: 80px;
+                    vertical-align: super
+                }
+                .fahrenheit{
+                    font-size: 80px;
+                    vertical-align: super
+                }
+                .title{
+                    font-size: 60px;
+                    color: white;
+                    text-align: center;
+                    padding: 30px
+                }
+                .title-span{
+                    border: 2px solid white;
+                    border-right: 8px solid white;
+                    border-left: 8px solid white;
+                    padding: 10px;
+                }
+                .temperature-text{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+                .temperature-text-c{
+                    border-right: 2px solid white;
+                }
+                .temperature-dot-information{
+                    text-align: center;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                }
+                .d1{
+                    background-color: white;
+                }
+                .temperature-container{
+                    display: grid;
+                    grid-template-columns: 100%;
+                    overflow: hidden;
+                }
             }
-        };
-        Http.send();
-        
-    </script>
-    <style>
-        html{
-/*            border: 2px solid red;*/
-        }
-        body{
-/*            border: 2px solid blue;*/
-            margin: 0;
-            background-image: url("Images/MarsBackground2.jpg");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            font-weight: 100
-        }
-        .title{
-            position: relative;
-/*            border: 2px solid red;*/
-            top: 40px;
-            display: flex;
-            width: 100%;
-            margin: 0px;
-        }
-        .title-topic{
-            flex: 1;
-            text-align: center;
-            font-size: 25px;
-            letter-spacing: 3.14px;
-        }
-        .title-topic-boder{
-            border-right: 2px solid white;
-        }
-        .title-topic-a:hover{
-            color: darkgrey;
-        }
-        
-        .title-topic-a{
-            text-decoration: none;
-            color: whitesmoke;
-        }
-        .title-topic-button{
-            text-decoration: none;
-            color: whitesmoke;
-            background-color: transparent;
-            flex: 1;
-            font-size: 25px;
-            outline-style: none;
-            border-left: 4px solid white;
-            border-right: 4px solid white;
-            border-top: 2px solid white;
-            border-bottom: 2px solid white;
-            letter-spacing: 3.14px;
-        }
-        .content{
-            position: relative;
-/*            border: 2px solid red;*/
-            font-size: 80px;
-            text-align: center;
-            color: white;
-            letter-spacing: 4px;
-            font-weight: 100;
-        }
-        .content-description{
-/*            border: 2px solid red;*/
-            font-size: 40px;
-            letter-spacing: 4px;
-            color: white;
-            text-align: center;
-        }
-        .degree{
-            font-size: 50px;
-        }
-        .temp{
-            position: relative;
-            top: 50%;
-/*            border: 2px solid red;*/
-            height: 200px;
-            transform: translate(0,-50%);
-            display: flex;
-        }
-        #cav{
-            font-size: 80px;
-            letter-spacing: 5px;
-            font-weight: 100;
-        }
-        #fav{
-            font-size: 80px;
-            letter-spacing: 5px;
-            font-weight: 100;
-        }
-        .temp-change-button{
-            height: 100px; 
-            width: 100px; 
-            background-color: transparent; 
-            font-size: 40px; 
-            color: white;
-            border: none;
-            outline: none;
-            text-align: center;
-        }
-        .temp-change-button:hover{
-            cursor: pointer;
-            color: darkgray
-        }
-        .temp-change-border{
-/*            border: 2px solid red; */
-            position: relative; 
-            top: 250px; 
-            height: 100px;
-            line-height: 100px; 
-            text-align: center; 
-            font-size: 40px; 
-            color: white;
-        }
-        .temp-change-content{
-/*            border: 2px solid red; */
-            display: flex; 
-            width: 180px; 
-            margin: auto;
-        }
-    </style>
-    <title>Mars</title>
+            @media(min-width: 1001px){
+                .desktop{
+                    display: grid;
+                }
+                .mobile{
+                    display: none;
+                }
+            }
+        </style>
+        <script>
+            var sx = 0;
+            var x = 0;
+            var _pos = 0;
+            function drag(event){
+                x = event.touches[0].clientX;
+                console.log(sx+"px, "+x+"px");
+            }
+            function startpoint(event){
+                sx = event.touches[0].clientX;
+                console.log(sx+"px, "+x+"px");
+            }
+            function end(){
+                var _width = screen.width;
+                var average_t = document.getElementsByClassName("temperature-box")[0];
+//                var max_t = document.getElementsByClassName("max_t")[0];
+//                var min_t = document.getElementsByClassName("min_t")[0];
+                if(sx-x>=90){
+                    _pos -= _width;
+                    console.log("_pos :"+_pos);
+                    console.log("slide left");
+                    average_t.style.transition = "transform 1s";
+//                    max_t.style.transition = "transform 1s";
+//                    min_t.style.transition = "transform 1s";
+                    average_t.style.transform = "translate("+_pos+"px,0)";
+//                    max_t.style.transform = "translate("+_pos+"px,0)";
+//                    min_t.style.transform = "translate("+_pos+"px,0)"
+                }
+                else if(sx-x<=-90){
+                     _pos += _width;
+                    console.log("slide right");
+                    console.log("_pos :"+_pos);
+                    average_t.style.transition = "transform 1s";
+//                    max_t.style.transition = "transform 1s";
+//                    min_t.style.transition = "transform 1s";
+                    average_t.style.transform = "translate("+_pos+"px,0)";
+//                    max_t.style.transform = "translate("+_pos+"px,0)";
+//                    min_t.style.transform = "translate("+_pos+"px,0)"
+                }
+            }
+        </script>
+    </head>
     <body>
-        <div class = "title">
-        <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Temperature</a></span>
-            <span class="title-topic"><a href="wind.html" class="title-topic-a">Wind</a></span>
-            <button class="title-topic-button" name = "sol" onclick="showDate()"><span id = "sol"></span></button>
-        <span class="title-topic title-topic-boder"><a href="#" class="title-topic-a">Pressure</a></span>
-            <span class="title-topic"><a href="#" class="title-topic-a">Season</a></span>
-        </div>
-        <div style="position: absolute; top: 80px; left: 50%; transform: translate(-50%,0); font-size: 20px; letter-spacing: 6px; color: white; text-align: center">
-            Elysium Planitia, Mars
+        <div class="mobile">
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i> Elysium Planitia
             </div>
-        <div class="temp">
-            <div style="flex: 1">
-                <div class="content-description">Average
-            </div> 
-        <div class="content">
-            <span id = "cav"></span><sup><span class="degree">&#8451;</span></sup>
-        </div>
+            <div class="sol">
+                <span class="sol-span">Sol 600</span>
             </div>
+            <div class="temperature-container" ontouchmove="drag(event)" ontouchstart="startpoint(event)" ontouchend="end()">
+                <div class="temperature-box av_t">
+                    <div class="title temperature-title">
+                        <span class="title-span temperature-title-span">Average Temperature</span>
+                    </div>
+                    <div class="temperature-text">
+                        <div class="temperature-text-c">
+                            0<span class="celsius">&#8451;</span>
+                        </div>
+                        <div class="temperature-text-f">
+                            0<span class="fahrenheit">&#8457;</span>
+                        </div>
+                    </div>
+                </div>
+<!--
+                <div class="max_t">
+                    <div class="title temperature-title">
+                        <span class="title-span temperature-title-span">Average Temperature</span>
+                    </div>
+                    <div class="temperature-text">
+                        <div class="temperature-text-c">
+                            0<span class="celsius">&#8451;</span>
+                        </div>
+                        <div class="temperature-text-f">
+                            0<span class="fahrenheit">&#8457;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="min_t">
+                    <div class="title temperature-title">
+                        <span class="title-span temperature-title-span">Average Temperature</span>
+                    </div>
+                    <div class="temperature-text">
+                        <div class="temperature-text-c">
+                            0<span class="celsius">&#8451;</span>
+                        </div>
+                        <div class="temperature-text-f">
+                            0<span class="fahrenheit">&#8457;</span>
+                        </div>
+                    </div>
+                </div>
+-->
+            </div>
+            <div class="temperature-dot-information">
+                    <span class="dot d1"></span>
+                    <span class="dot d2"></span>
+                    <span class="dot d3"></span>
+                </div>
+            <div class="divider"></div>
+        </div>
+        <div class="desktop">
             
-            <div style="flex: 1; border-left: 2px solid white">
-                <div class="content-description">Minimum
-            </div> 
-        <div class="content">
-            <span id = "cmn"></span><sup><span class="degree">&#8451;</span></sup>
-        </div>
-            </div>
-            
-            <div style="flex: 1; border-left: 2px solid white">
-                <div class="content-description">Maximum
-            </div> 
-        <div class="content">
-            <span id = "cmx"></span><sup><span class="degree">&#8451;</span></sup>
-        </div>
-            </div>
-        </div>
-        <div class="temp-change-border">
-            <div class="temp-change-content">
-                <div style="flex: 1; border-right: 1px solid white">
-                <button class="temp-change-button" onclick="ChangeToC()">&#8451;</button>
-            </div>
-            <div style="flex: 1; border-left: 1px solid white">
-                <button class="temp-change-button" onclick="ChangeToF()">&#8457;</button>
-            </div>
-            </div>
         </div>
     </body>
 </html>
