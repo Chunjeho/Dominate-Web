@@ -14,7 +14,7 @@ Dominate web by **learning**, **building** and **cloning** websites!
 👉 HTML file is located in **docs/Grammar/HTML-CSS-JAVASCRIPT/**
 ## Building
 
-### Weather In Mars (Building; HTML, CSS, JavaScript)
+### Weather In Mars (Building; HTML, CSS, JavaScript; Mobile Only)
 👉 https://chunjeho.github.io/Dominate-Web/WeatherInMars/main.html
 
 👉 HTML file is located in **docs/WeatherInMars/**

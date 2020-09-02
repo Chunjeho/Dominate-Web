@@ -1,0 +1,177 @@
+html{
+    background-color: black;
+}
+body{
+    margin: 0;
+    border: 0px solid blue;
+    background-image: url("../img/MarsBackground2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+div {
+    border: 0px solid red;
+}
+span{
+    border: 0px solid black;
+}
+.dot{
+    height: 7px;
+    width: 7px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    border-color: white;
+    border-width: 1px;
+}
+.divider{
+    width: 80%;
+    border-bottom: 2px solid white;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.box{
+    position: relative;
+}
+@media(max-width: 1000px){
+    .mobile{
+        padding-top: 60px;
+    }
+    .desktop{
+        display: none;
+    }
+    .location{
+        font-size: 30px;
+        color: white;
+        text-align: center;
+    }
+    .sol{
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .sol-span{
+        padding-left: 10px;
+        padding-right: 10px;
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+    }
+    .container{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .text{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        font-weight: 100;
+    }
+    .wind-direction-text{
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        font-weight: 100;
+    }
+    .unit{
+        font-size: 40px;
+        vertical-align: super;
+    }
+    .meter{
+        font-size: 30px;
+        vertical-align: super;
+    }
+    .mile{
+        font-size: 30px;
+        vertical-align: super;
+    }
+    .title{
+        font-size: 25px;
+        color: white;
+        text-align: center;
+        padding: 30px
+    }
+    .title-span{
+        border: 2px solid white;
+        border-right: 8px solid white;
+        border-left: 8px solid white;
+        padding: 10px;
+    }
+    .temperature-text-c{
+        border-right: 2px solid white;
+    }
+    .wind-text-meter{
+        border-right: 2px solid white;
+    }
+    .dot-information{
+        text-align: center;
+        padding-top: 10px;
+    }
+    .d1{
+        background-color: white;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 100% 100% 100%;
+        overflow: hidden;
+    }
+    .wind-container{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: 100% 100% 100% 100%;
+        overflow: hidden;
+    }
+}
+@media(min-width: 1001px){
+    .desktop{
+        display: grid;
+    }
+    .mobile{
+        display: none;
+    }
+}
+@media(max-width: 380px){
+    .temperature-text-c{
+        font-size: 40px;   
+    }
+    .temperature-text-f{
+        font-size: 40px;   
+    }
+    .text{
+        font-size: 40px;
+    }
+    .unit{
+        font-size: 30px;
+    }
+    .meter{
+        font-size: 20px;
+    }
+    .mile{
+        font-size: 20px;
+    }
+    .title{
+        font-size: 20px;
+    }
+}
+@media(max-width: 330px){
+    .temperature-text-c{
+        font-size: 30px;   
+    }
+    .temperature-text-f{
+        font-size: 30px;   
+    }
+    .text{
+        font-size: 30px;
+    }
+    .unit{
+        font-size: 20px;
+    }
+    .title{
+        font-size: 15px;
+    }
+}
