@@ -37,6 +37,9 @@
                 border: 1.5px solid white;
             }
             @media(max-width: 1000px){
+                .mobile{
+                    display: inline;
+                }
                 .title{
                     font-size: 30px;
                     font-weight: 100;
@@ -115,6 +118,9 @@
                 
             }
             @media(min-width: 1001px){
+                .mobile{
+                    display: none;
+                }
                 .title{
                     font-size: 40px;
                 }
@@ -157,48 +163,50 @@
     </head>
     
     <body>
-        <div class="title">
+        <div class="mobile">
+            <div class="title">
             <span class="title-span">Fuck Off COVID-19</span>
-        </div>
-        <div class="main-content">
-            <div class="location">
-                <i class="fas fa-map-marker-alt"></i> Current location
             </div>
-            <div class="divider"></div>
-            <div class="information-slider" ontouchstart="start(event)" ontouchmove = "drag(event)" ontouchend="end()">
-                <div class="slider s1">
-                    Overview
+            <div class="main-content">
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i> Current location
                 </div>
-                <div class="slider s2">
-                    Statistics
-                </div>
-                <div class="slider s3">
-                    Alert
-                </div>
-            </div>
-            <div class="dot-information">
-                <span class="dot d1"></span>
-                <span class="dot d2"></span>
-                <span class="dot d3"></span>
-            </div>
-            <div class="divider"></div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search..">
-                <div class="filter">
-                    <div class="filter-box">
-                        <button><div class="filter-childern by-location"><i class="fas fa-map-marked-alt"></i></div></button>
+                <div class="divider"></div>
+                <div class="information-slider" ontouchstart="start(event)" ontouchmove = "drag(event)" ontouchend="end()">
+                    <div class="slider s1">
+                        Overview
                     </div>
-                    <div class="empty"></div>
-                    <div class="filter-box">
-                        <button><div class="filter-childern by-date"><i class="far fa-calendar-alt"></i></div></button>
+                    <div class="slider s2">
+                        Statistics
+                    </div>
+                    <div class="slider s3">
+                        Alert
                     </div>
                 </div>
+                <div class="dot-information">
+                    <span class="dot d1"></span>
+                    <span class="dot d2"></span>
+                    <span class="dot d3"></span>
+                </div>
+                <div class="divider"></div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..">
+                    <div class="filter">
+                        <div class="filter-box">
+                            <button><div class="filter-childern by-location"><i class="fas fa-map-marked-alt"></i></div></button>
+                        </div>
+                        <div class="empty"></div>
+                        <div class="filter-box">
+                            <button><div class="filter-childern by-date"><i class="far fa-calendar-alt"></i></div></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="information-list">
+                    Display informations in here
+                </div>
+                <div class="divider"></div>
             </div>
-            <div class="divider"></div>
-            <div class="information-list">
-                Display informations in here
-            </div>
-            <div class="divider"></div>
         </div>
     </body>
 </html>
