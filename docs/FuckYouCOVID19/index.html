@@ -19,11 +19,12 @@
                 
             }
             .divider{
-                border-bottom: 2px solid white;
+                border-bottom: 2px solid #FDFDD3;
                 width: 80%;
                 margin: auto;
                 margin-top: 10px;
                 margin-bottom: 10px;
+                
             }
             .dot-information{
                 text-align: center;
@@ -146,17 +147,31 @@
                 
                 if(sx - x >= 90 && pos != -2*_width){
                     pos -= _width;
+                    console.log(pos);
                     for(var i=0;i<3;i++){
                         document.getElementsByClassName("slider")[i].style.transition = "transform 1s";
                         document.getElementsByClassName("slider")[i].style.transform = "translate("+ pos +"px,0)";
+                        if(-(pos/_width) == i){
+                            document.getElementsByClassName("dot")[i].style.backgroundColor = "white";
+                        }
+                        else{
+                            document.getElementsByClassName("dot")[i].style.backgroundColor = "transparent";
+                        }
                     }
                     console.log("slide left");
                 }
                 else if(sx - x <= -90 && pos != 0){
                     pos += _width;
+                    console.log(pos);
                     for(var i=0;i<3;i++){
                         document.getElementsByClassName("slider")[i].style.transition = "transform 1s";
                         document.getElementsByClassName("slider")[i].style.transform = "translate("+ pos +"px,0)";
+                        if(-(pos/_width) == i){
+                            document.getElementsByClassName("dot")[i].style.backgroundColor = "white";
+                        }
+                        else{
+                            document.getElementsByClassName("dot")[i].style.backgroundColor = "transparent";
+                        }
                     }
                     console.log("slide right");
                 }
