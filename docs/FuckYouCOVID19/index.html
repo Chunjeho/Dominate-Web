@@ -10,7 +10,7 @@
                 background-color: #1C2541
             }
             div {
-                border: 2px solid blue;
+                border: 0px solid blue;
             }
             .title{
                 text-align: center;
@@ -144,13 +144,18 @@
                     grid-template-columns: 100% 100%;
                     overflow: hidden;
                 }
-                .select-do{
-                    width: 80%;
-                    height: 30px;
-                    border: none;
-                    font-size: 20px;
-                    font-weight: lighter;
+                .select{
+                    display: none;
                     margin-top: 10px;
+                    height: 30px;
+                    border: 0px solid red;
+                    font-size: 18px;
+                    font-weight: lighter;
+                    background-color: #3A506B;
+                    color: white;
+                    border-radius: 25px;
+                    padding-right: 10px;
+                    padding-left: 10px;
                 }
                 
             }
@@ -167,6 +172,25 @@
             var x = 0;
             var sx = 0;
             var pos = 0;
+            
+            function showHideLocation(){
+                var ele1 = document.getElementsByClassName("select")[0].style;
+                var ele2 = document.getElementsByClassName("select")[1].style;
+                
+                if(ele1.display == "none" && ele2.display == "none"){
+                    ele1.display = "inline";
+                    ele2.display = "inline";
+                }
+                else if(ele1.display == "inline" && ele2.display == "inline"){
+                    ele1.display = "none";
+                    ele2.display = "none";
+                }
+                else{
+                    ele1.display = "inline";
+                    ele2.display = "inline";
+                }
+                
+            }
             
             function alert(e){
                 var input = document.getElementById("mySearch");
@@ -255,31 +279,51 @@
                      <input type="search" placeholder="Search.." id="mySearch" onkeypress="alert(event)">
                     <div class="filter">
                         <div class="filter-box">
-                            <button><div class="filter-childern by-location"><i class="fas fa-map-marked-alt"></i></div></button>
+                            <button onclick="showHideLocation()"><div class="filter-childern by-location"><i class="fas fa-map-marked-alt"></i></div></button>
                         </div>
                         <div class="empty"></div>
                         <div class="filter-box">
                             <button><div class="filter-childern by-date"><i class="far fa-calendar-alt"></i></div></button>
                         </div>
                     </div>
-                    <select class="select-do">
-                        <option>서울시</option>
-                        <option>경기</option>
-                        <option>강원</option>
-                        <option>경남</option>
-                        <option>경북</option>
-                        <option>전북</option>
-                        <option>전남</option>
-                        <option>서울</option>
-                        <option>부산</option>
-                        <option>대구</option>
-                        <option>인천</option>
-                        <option>광주</option>
-                        <option>대전</option>
-                        <option>울산</option>
-                        <option>제주</option>
-                        <option>세종</option>
-                    </select>
+                        <select class="select do">
+                            <option selected disabled>도/특별시</option>
+                            <option>서울</option>
+                            <option>경기</option>
+                            <option>강원</option>
+                            <option>경남</option>
+                            <option>경북</option>
+                            <option>전북</option>
+                            <option>전남</option>
+                            <option>서울</option>
+                            <option>부산</option>
+                            <option>대구</option>
+                            <option>인천</option>
+                            <option>광주</option>
+                            <option>대전</option>
+                            <option>울산</option>
+                            <option>제주</option>
+                            <option>세종</option>
+                        </select>
+                        <select class="select si">
+                            <option selected disabled>시/군/구</option>
+                            <option>서울</option>
+                            <option>경기</option>
+                            <option>강원</option>
+                            <option>경남</option>
+                            <option>경북</option>
+                            <option>전북</option>
+                            <option>전남</option>
+                            <option>서울</option>
+                            <option>부산</option>
+                            <option>대구</option>
+                            <option>인천</option>
+                            <option>광주</option>
+                            <option>대전</option>
+                            <option>울산</option>
+                            <option>제주</option>
+                            <option>세종</option>
+                        </select>
                 </div>
                 <div class="divider"></div>
                 <div class="information-list">
