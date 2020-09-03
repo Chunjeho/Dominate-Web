@@ -11,7 +11,7 @@
                 background-color: #1C2541
             }
             div {
-                border: 2px solid blue;
+                border: 0px solid blue;
             }
             .title{
                 text-align: center;
@@ -123,27 +123,28 @@
                     font-size: 20px;
                     color: white;
                 }
-                .select-bar-container{
-                    padding-top: 10px;
-                    width: 80%;
-                    margin: auto;
-                    display: grid;
-                    grid-template-columns: 1fr 20px 1fr;
+                .location-search-dialog{
+                    display: inline;
+                    width: 100%;
+                    height: 0%;
+                    position: fixed;
+                    background-color: white;
+                    bottom: 0px;
+                    border-radius: 25px 25px 0 0;
+                    z-index: 0;
+                    background-color: #5BC0BE;
                 }
-                .select-box select{
-                    border: none;
-                    border-radius: 25px;
+                .close{
+                    height: 35px;
+                    text-align: right;
                     padding: 10px;
-                    background-color: #3A506B;
-                    color: white;
-                    font-weight: bold;
-                    -webkit-appearance: button;
-                    -moz-appearance: button;
                 }
-                .select-box:before{
-                    content: '';
-                    position: absolute;
-                    top: 0;
+                .close button{
+                    font-size: 25px;
+                    color: white;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
                 }
             }
             @media(min-width: 1001px){
@@ -159,6 +160,15 @@
             var x = 0;
             var sx = 0;
             var pos = 0;
+            
+            function location_search_dialog(){
+                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 1s";
+                document.getElementsByClassName("location-search-dialog")[0].style.height = "70%";
+            }
+            
+            function close_location_search_dialog(){
+                document.getElementsByClassName("location-search-dialog")[0].style.display = "none";
+            }
             
             function alert(e){
                 var input = document.getElementById("mySearch");
@@ -243,25 +253,12 @@
                         <input type="search" placeholder="Search.." id="mySearch" onkeypress="alert(event)">
                         <div class="filter">
                             <div class="filter-box">
-                                <button onclick=""><div class="filter-childern by-location"><i class="fas fa-map-marked-alt"></i></div></button>
+                                <button onclick="location_search_dialog()"><div class="filter-childern by-location"><i class="fas fa-map-marked-alt"></i></div></button>
                             </div>
                             <div class="empty"></div>
                             <div class="filter-box">
                                 <button><div class="filter-childern by-date"><i class="far fa-calendar-alt"></i></div></button>
                             </div>
-                        </div>
-                        <div class="select-bar-container">
-                            <div class="select-box">
-                                <select class="select-bar">
-                                    <option selected disabled>도/특별시</option>
-                                    <option>서울</option>
-                                </select>
-                            </div>
-                            <div class="empty"></div>
-                            <select class="select-bar">
-                                <option selected disabled>시/군/구</option>
-                                <option>강남구</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -270,6 +267,11 @@
                     Display informations in here
                 </div>
                 <div class="divider"></div>
+                <div class="location-search-dialog">
+                    <div class="close">
+                        <button onclick="close_location_search_dialog()"><i class="far fa-times-circle"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
