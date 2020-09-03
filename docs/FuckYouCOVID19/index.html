@@ -67,7 +67,7 @@
                     text-align: center;
                     padding: 20px;
                 }
-                .search-bar input[type=text]{
+                .search-bar input[type=search]{
                     position: relative;
                     height: 30px;
                     padding: 6px;
@@ -136,6 +136,12 @@
             var x = 0;
             var sx = 0;
             var pos = 0;
+            
+            function alert(e){
+                if(e.keyCode === 13){
+                    alert("Hello, world!")
+                }
+            }
             
             function drag(event){
                 x = event.touches[0].clientX;
@@ -212,7 +218,9 @@
                 </div>
                 <div class="divider"></div>
                 <div class="search-bar">
-                    <input type="text" placeholder="Search..">
+                    <form action="#">
+                     <input type="search" placeholder="Search.." id="mySearch" onkeypress="alert(event)">
+                    </form>
                     <div class="filter">
                         <div class="filter-box">
                             <button><div class="filter-childern by-location"><i class="fas fa-map-marked-alt"></i></div></button>
