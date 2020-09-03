@@ -11,7 +11,7 @@
                 background-color: #1C2541
             }
             div {
-                border: 2px solid blue;
+                border: 0px solid blue;
             }
             .title{
                 text-align: center;
@@ -43,13 +43,6 @@
                 .mobile{
                     display: inline;
                 }
-                .title{
-                    font-size: 30px;
-                    font-weight: 100;
-                    height: 100px;
-                    background-color: #FFCDD7;
-                    color: white;
-                }
                 .title-span{
                     border: 0px solid red;
                     line-height: 100px;
@@ -70,7 +63,7 @@
                 }
                 .search-bar input[type=search]{
                     position: relative;
-                    height: 40px;
+                    height: 45px;
                     padding: 6px;
                     padding-left: 20px;
                     width: 80%;
@@ -113,7 +106,7 @@
                 }
                 .filter-box button{
                     width: 100%;
-                    height: 35px;
+                    height: 50px;
 /*                    background-color: #FFCDD7;*/
                     background-color: #3A506B;
                     padding: 0px;
@@ -130,22 +123,72 @@
                     background-color: white;
                     border-radius: 25px 25px 0 0;
                     z-index: 2;
-                    background-color: #CADBEE;
+                    background-color: #3A506B;
                     bottom: 0px;
                     left: 50%;
                     transform: translate(-50%,0);
+                    touch-action: none;
+                    border-top: 1px solid white;
                 }
                 .close{
-                    height: 35px;
                     display: grid;
-                    grid-template-columns: 40px 1fr 40px;
+                    grid-template-columns: 50px 1fr 50px;
                 }
-                .close button{
-                    font-size: 25px;
+                .close-location-dialog-button{
+                    height: 50px;
+                    font-size: 20px;
                     color: white;
                     background-color: transparent;
-                    border: none;
+                    border: 0px solid red;
                     outline: none;
+                    text-align: center;
+                    width: 50px;
+                }
+                .location-search-today{
+                    font-size: 25px;
+                    font-weight: 100;
+                    color: white;
+                    text-align: center;
+                    line-height: 50px;
+                    border-bottom: 2px solid white;
+                }
+                .select-location-main{
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr;
+                }
+                .select-title{
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: center;
+                    padding-top: 20px;
+                    padding-bottom: 10px;
+                }
+                .select{
+                    height: 45px;
+                    padding: 10px;
+                    display: grid;
+                    overflow: scroll;
+                }
+                .select-do{
+                    grid-template-columns: 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30%;
+                }
+                .select-si{
+                    grid-template-columns: 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 30%;
+                }
+                .do-element{
+                    height: 100%;
+                    background-color: white;
+/*                    border: 1px solid #CADBEE;*/
+                    border-radius: 25px;
+                    margin-right: 10px;
+                }
+                .si-element{
+                    height: 100%;
+                    background-color: white;
+/*                    border: 1px solid #CADBEE;*/
+                    border-radius: 25px;
+                    margin-right: 10px;
                 }
             }
             @media(min-width: 1001px){
@@ -163,12 +206,12 @@
             var pos = 0;
             
             function location_search_dialog(){
-                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 1s";
-                document.getElementsByClassName("location-search-dialog")[0].style.height = "70%";
+                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 0.5s";
+                document.getElementsByClassName("location-search-dialog")[0].style.height = "80%";
             }
             
             function close_location_search_dialog(){
-                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 1s";
+                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 0.5s";
                 document.getElementsByClassName("location-search-dialog")[0].style.height = "0%";
             }
             
@@ -273,10 +316,53 @@
             <div class="location-search-dialog">
                 <div class="close">
                     <div></div>
-                    <div></div>
-                    <div>
-                     <button onclick="close_location_search_dialog()"><i class="fas fa-times"></i></button>
+                    <div class="location-search-today">2020-01-01 Wed</div>
+                    <div class="location-search-close-button-container">
+                     <button class="close-location-dialog-button" onclick="close_location_search_dialog()"><i class="fas fa-times"></i></button>
                     </div>
+                </div>
+                <div class="select-location-main">
+                    <div class="select1">
+                        <div class="select-title">도/특별시 선택 (1개 이상)</div>
+                        <div class="select select-do">
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                            <div class="do-element"></div>
+                        </div>
+                    </div>
+                    <div class="select2">
+                        <div class="select-title">시/군/구 선택</div>
+                        <div class="select select-si">
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                            <div class="si-element"></div>
+                        </div>
+                    </div>
+                    <div class="select3"></div>
                 </div>
             </div>
         </div>
