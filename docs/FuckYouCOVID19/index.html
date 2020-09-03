@@ -138,9 +138,11 @@
             var pos = 0;
             
             function alert(e){
-                var input = document.getElementById("mySearch")
+                var input = document.getElementById("mySearch");
+                var to = document.getElementsByClassName("information-list")[0];
                 if(e.keyCode === 13){
-                    console.log(input.value)
+                    console.log(input.value);
+                    to.innerHTML = input.value
                 }
             }
             
