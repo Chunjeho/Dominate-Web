@@ -127,17 +127,17 @@
                     display: inline;
                     width: 100%;
                     height: 0%;
-                    position: fixed;
+                    position: absolute;
                     background-color: white;
                     bottom: 0px;
                     border-radius: 25px 25px 0 0;
-                    z-index: 0;
+                    z-index: 2;
                     background-color: #5BC0BE;
                 }
                 .close{
                     height: 35px;
                     text-align: right;
-                    padding: 10px;
+                    padding: 5px;
                 }
                 .close button{
                     font-size: 25px;
@@ -167,7 +167,8 @@
             }
             
             function close_location_search_dialog(){
-                document.getElementsByClassName("location-search-dialog")[0].style.display = "none";
+                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 1s";
+                document.getElementsByClassName("location-search-dialog")[0].style.height = "0%";
             }
             
             function alert(e){
@@ -267,11 +268,11 @@
                     Display informations in here
                 </div>
                 <div class="divider"></div>
-                <div class="location-search-dialog">
+            </div>
+            <div class="location-search-dialog">
                     <div class="close">
                         <button onclick="close_location_search_dialog()"><i class="far fa-times-circle"></i></button>
                     </div>
-                </div>
             </div>
         </div>
     </body>
