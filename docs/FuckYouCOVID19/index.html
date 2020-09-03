@@ -11,7 +11,7 @@
                 background-color: #1C2541
             }
             div {
-                border: 2px solid blue;
+                border: 0px solid blue;
             }
             .title{
                 text-align: center;
@@ -130,14 +130,15 @@
                     background-color: white;
                     border-radius: 25px 25px 0 0;
                     z-index: 2;
-                    background-color: #5BC0BE;
+                    background-color: #CADBEE;
                     bottom: 0px;
                     left: 50%;
                     transform: translate(-50%,0);
                 }
                 .close{
                     height: 35px;
-                    text-align: right;
+                    display: grid;
+                    grid-template-columns: 40px 1fr 40px;
                 }
                 .close button{
                     font-size: 25px;
@@ -271,7 +272,11 @@
             </div>
             <div class="location-search-dialog">
                 <div class="close">
-                    <button onclick="close_location_search_dialog()"><i class="far fa-times-circle"></i></button>
+                    <div></div>
+                    <div>changed</div>
+                    <div>
+                     <button onclick="close_location_search_dialog()"><i class="fas fa-times"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
