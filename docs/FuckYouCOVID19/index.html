@@ -124,15 +124,14 @@
                     color: white;
                 }
                 .location-search-dialog{
-                    display: inline;
                     width: 100%;
                     height: 0%;
-                    position: absolute;
+                    position: fixed;
                     background-color: white;
-                    bottom: 0px;
                     border-radius: 25px 25px 0 0;
                     z-index: 2;
                     background-color: #5BC0BE;
+                    bottom: 0px;
                 }
                 .close{
                     height: 35px;
@@ -270,9 +269,9 @@
                 <div class="divider"></div>
             </div>
             <div class="location-search-dialog">
-                    <div class="close">
-                        <button onclick="close_location_search_dialog()"><i class="far fa-times-circle"></i></button>
-                    </div>
+                <div class="close">
+                    <button onclick="close_location_search_dialog()"><i class="far fa-times-circle"></i></button>
+                </div>
             </div>
         </div>
     </body>
