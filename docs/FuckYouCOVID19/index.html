@@ -145,11 +145,11 @@
                 }
                 .location-search-today{
                     font-size: 20px;
-                    font-weight: 100;
+                    font-weight: lighter;
                     color: black;
                     text-align: center;
                     line-height: 50px;
-                    border-bottom: 2px solid black;
+                    border-bottom: 1px solid black;
                 }
                 .select-location-main{
                     display: grid;
@@ -177,14 +177,14 @@
                 }
                 .do-element{
                     height: 100%;
-                    background-color: #F3F3F6;
+                    background-color: #F2F2F2;
 /*                    border: 1px solid #CADBEE;*/
                     border-radius: 25px;
                     margin-right: 10px;
                 }
                 .si-element{
                     height: 100%;
-                    background-color: #F3F3F6;
+                    background-color: #F2F2F2;
 /*                    border: 1px solid #CADBEE;*/
                     border-radius: 25px;
                     margin-right: 10px;
@@ -205,12 +205,12 @@
             var pos = 0;
             
             function location_search_dialog(){
-                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 1s";
+                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 0.6s";
                 document.getElementsByClassName("location-search-dialog")[0].style.height = "70%";
             }
             
             function close_location_search_dialog(){
-                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 1s";
+                document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 0.6s";
                 document.getElementsByClassName("location-search-dialog")[0].style.height = "0%";
             }
             
