@@ -138,8 +138,9 @@
             var pos = 0;
             
             function alert(e){
+                var input = document.getElementById("mySearch")
                 if(e.keyCode === 13){
-                    alert("Hello, world!")
+                    console.log(input.value)
                 }
             }
             
@@ -218,9 +219,7 @@
                 </div>
                 <div class="divider"></div>
                 <div class="search-bar">
-                    <form action="#">
                      <input type="search" placeholder="Search.." id="mySearch" onkeypress="alert(event)">
-                    </form>
                     <div class="filter">
                         <div class="filter-box">
                             <button><div class="filter-childern by-location"><i class="fas fa-map-marked-alt"></i></div></button>
