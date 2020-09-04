@@ -200,6 +200,9 @@
                 .select-container{
                     
                 }
+                .select-amount{
+                    text-align: center;
+                }
             }
             @media(min-width: 1001px){
                 .mobile{
@@ -214,6 +217,8 @@
             var x = 0;
             var sx = 0;
             var pos = 0;
+            var select_DoSi = 0;
+            var select_DoSi_list = [];
             var Do = ['경기','강원','경남','경북','전북','전남','제주'];
             var SpecialOrWide_si = ['서울','부산','대구','인천','광주','대전','울산','세종']
             function setDoSi(){
@@ -246,7 +251,23 @@
             
             function send(ele){
                 console.log(ele.textContent);
-                document.getElementsByClassName("information-list")[0].innerHTML = ele.textContent;
+                if(select_DoSi_list.indexOf(ele.textContent) == -1){
+                    select_DoSi_list.push(ele.textContent)
+                    select_DoSi += 1;
+                    console.log(ele.style.backgroundColor);
+                    ele.style.backgroundColor = "#1C2541";
+                    ele.style.color = "white";
+                    
+                }
+                else if(select_DoSi_list.indexOf(ele.textContent) >= 0){
+                    select_DoSi -= 1; 
+                    select_DoSi_list.splice(select_DoSi_list.indexOf(ele.textContent),1);
+                    ele.style.backgroundColor = "#F2F2F2";
+                    ele.style.color = "black";
+                    
+                }
+                document.getElementsByClassName("information-list")[0].innerHTML = select_DoSi_list;
+                document.getElementsByClassName("amount")[0].innerHTML = select_DoSi;
             }
             
             function drag(event){
@@ -348,9 +369,9 @@
                 </div>
                 <div class="select-location-main">
                     <div class="select-container select1">
-                        <div class="select-title">도/특별시 선택 (1개 이상)</div>
+                        <div class="select-title">도/광역시/특별시 선택</div>
                         <div class="select select-do">
-                            <div class="do-si-element do-element"><button onclick="send(this)"><span class="do-si-element-span do-element-span"></span></button></div>
+                            <div class="do-si-element do-element"><button class="do-si-element-button" onclick="send(this)"><span class="do-si-element-span do-element-span"></span></button></div>
                             <div class="do-si-element do-element"><button onclick="send(this)"><span class="do-si-element-span do-element-span"></span></button></div>
                             <div class="do-si-element do-element"><button  onclick="send(this)"><span class="do-si-element-span do-element-span"></span></button></div>
                             <div class="do-si-element do-element"><button  onclick="send(this)"><span class="do-si-element-span do-element-span"></span></button></div>
@@ -366,6 +387,9 @@
                             <div class="do-si-element do-element"><button  onclick="send(this)"><span class="do-si-element-span do-element-span"></span></button></div>
                             <div class="do-si-element do-element"><button  onclick="send(this)"><span class="do-si-element-span do-element-span"></span></button></div>
                         </div>
+                    </div>
+                    <div class="select-amount select-amount-do-si">
+                        <span class="amount">0</span>/15
                     </div>
                     <div class="select-container select2">
                         <div class="select-title">시/군/구 선택</div>
