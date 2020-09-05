@@ -125,7 +125,7 @@
                     position: fixed;
                     background-color: white;
                     border-radius: 25px 25px 0 0;
-                    z-index: 2;
+                    z-index: 3;
                     background-color: white;
                     bottom: 0px;
                     left: 50%;
@@ -136,7 +136,12 @@
                     display: grid;
                     grid-template-columns: 50px 1fr 50px;
                 }
-                .close-location-dialog-button{
+                .close-calendar{
+                    display: grid;
+                    height: 50px;
+                    grid-template-columns: 50px 1fr 50px;
+                }
+                .close-select-dialog-button{
                     height: 50px;
                     font-size: 20px;
                     color: black;
@@ -153,6 +158,17 @@
                     text-align: center;
                     line-height: 50px;
                     border-bottom: 1px solid black;
+                }
+                .calendar-search-location{
+                    font-size: 20px;
+                    font-weight: lighter;
+                    color: black;
+                    text-align: center;
+                    line-height: 50px;
+                    border-bottom: 1px solid black;
+                    overflow-y: hidden;
+                    overflow-x: scroll;
+                    white-space: nowrap;
                 }
                 .select-location-main{
                     width: 97%;
@@ -231,6 +247,16 @@
                     font-size: 20px;
                     outline: none;
                 }
+                .calendar-search-dialog{
+                    position: fixed;
+                    background-color: white;
+                    width: 100%;
+                    height: 0%;
+                    bottom: 0px;
+                    z-index: 2;
+                    border-radius: 25px 25px 0 0;
+                    touch-action: none;
+                }
             }
             @media(min-width: 1001px){
                 .mobile{
@@ -263,6 +289,13 @@
                 for(var i=0;i<location.length;i++){
                     document.getElementsByClassName('do-element-span')[i].innerHTML = location[i];
                 }
+            }
+            
+            function calendar_search_dialog(){
+                var ele = document.getElementsByClassName("calendar-search-dialog")[0];
+                var _width = window.screen.width;
+                ele.style.transition = "height 0.6s";
+                ele.style.height = "70%";
             }
             
             function location_search_dialog(){
@@ -304,6 +337,12 @@
                 document.getElementsByClassName("location-search-dialog")[0].style.height = "0%";
             }
             
+            function close_calendar_search_dialog(){
+                var ele = document.getElementsByClassName("calendar-search-dialog")[0];
+                ele.style.transition = "height 0.6s";
+                ele.style.height = "0%";
+            }
+            
             function alert(e){
                 var input = document.getElementById("mySearch");
                 var to = document.getElementsByClassName("information-list")[0];
@@ -328,6 +367,7 @@
                 }
                 document.getElementsByClassName("amount-si")[0].innerHTML = select_Si;
                 document.getElementsByClassName("information-list")[0].innerHTML = select_Si_list
+                document.getElementsByClassName("calendar-search-location")[0].innerHTML = select_Si_list
             }
             
             function sendFromDoSi(ele){
@@ -374,6 +414,7 @@
                                 select_Si -= 1;
                                 select_Si_list.splice(select_Si_list.indexOf(document.getElementsByClassName(ele.textContent)[0].childNodes[0].textContent), 1)
                                 document.getElementsByClassName("information-list")[0].innerHTML = select_Si_list
+                                document.getElementsByClassName("calendar-search-location")[0].innerHTML = select_Si_list
                             }
                             document.getElementsByClassName(ele.textContent)[0].remove()   
                         }
@@ -473,7 +514,7 @@
                             </div>
                             <div class="empty"></div>
                             <div class="filter-box">
-                                <button><div class="filter-childern by-date"><i class="far fa-calendar-alt"></i></div></button>
+                                <button onclick="calendar_search_dialog()"><div class="filter-childern by-date"><i class="far fa-calendar-alt"></i></div></button>
                             </div>
                         </div>
                     </div>
@@ -489,7 +530,7 @@
                     <div></div>
                     <div class="location-search-today">2020-01-01 Wed</div>
                     <div class="location-search-close-button-container">
-                     <button class="close-location-dialog-button" onclick="close_location_search_dialog()"><i class="fas fa-times"></i></button>
+                     <button class="close-select-dialog-button" onclick="close_location_search_dialog()"><i class="fas fa-times"></i></button>
                     </div>
                 </div>
                 <div class="select-location-main">
@@ -527,6 +568,15 @@
                     </div>
                     <div class="select3">
                         <button class="location-submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-search-dialog">
+                <div class="close-calendar">
+                    <div></div>
+                    <div class="calendar-search-location"></div>
+                    <div class="location-search-close-button-container">
+                        <button class="close-select-dialog-button" onclick="close_calendar_search_dialog()"><i class="fas fa-times"></i></button>
                     </div>
                 </div>
             </div>
