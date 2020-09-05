@@ -267,7 +267,36 @@
             
             function location_search_dialog(){
                 document.getElementsByClassName("location-search-dialog")[0].style.transition = "height 0.6s";
-                document.getElementsByClassName("location-search-dialog")[0].style.height = "70%";
+                
+                console.log(screen.height)
+                
+                if(screen.height < 616){
+                    document.getElementsByClassName("location-search-dialog")[0].style.height = "70%";    
+                }
+                
+                else if(screen.height < 716 && screen.height >= 616){
+                    document.getElementsByClassName("location-search-dialog")[0].style.height = "65%";    
+                }
+                
+                else if(screen.height < 800 && screen.height >= 716){
+                 document.getElementsByClassName("location-search-dialog")[0].style.height = "55%";   
+                }
+                
+                else if(screen.height < 846 && screen.height >= 800){
+                 document.getElementsByClassName("location-search-dialog")[0].style.height = "50%";   
+                }
+                
+                else if(screen.height < 920 && screen.height >= 846){
+                 document.getElementsByClassName("location-search-dialog")[0].style.height = "48%";   
+                }
+                
+                else if(screen.height < 980 && screen.height >= 920){
+                 document.getElementsByClassName("location-search-dialog")[0].style.height = "44%";   
+                }
+                
+                else{
+                 document.getElementsByClassName("location-search-dialog")[0].style.height = "40%";
+                }
             }
             
             function close_location_search_dialog(){
