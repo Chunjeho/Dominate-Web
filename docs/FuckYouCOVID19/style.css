@@ -120,9 +120,8 @@ span {
         z-index: 3;
         background-color: white;
         bottom: 0px;
-        left: 50%;
-        transform: translate(-50%,0);
-        touch-action: none;
+        /* left: 50%;
+        transform: translate(-50%,0); */
     }
     .close{
         display: grid;
@@ -161,9 +160,14 @@ span {
         overflow-x: scroll;
         white-space: nowrap;
     }
+    .select-location{
+        /* border: 2px solid red; */
+        height: 90%;
+        overflow: scroll;
+    }
     .select-location-main{
+        /* border: 2px solid green; */
         width: 97%;
-        height: 100%;
         margin: auto;
     }
     .select-title{
@@ -222,6 +226,9 @@ span {
         display: none;
         text-align: center;
         padding: 10px;
+    }
+    .select4{
+        height: 100px;
     }
     .location-submit{
         height: 45px;
