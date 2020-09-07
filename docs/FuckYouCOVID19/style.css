@@ -271,7 +271,7 @@ span {
         font-weight: lighter;
         line-height: 60px;
     }
-    .calender-month-picker-title{
+    .calendar-month-picker-title{
         font-size: 20px;
         font-weight: bold;
         text-align: center;
@@ -302,6 +302,24 @@ span {
         width: 100%;
         /* border: 2px solid red; */
         background-color: #F2F2F2;
+    }
+    .undo{
+        text-align: center;
+    }
+    .undo-button{
+        display: none;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 20px;
+    }
+    .calendar-day-picker-title{
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 50px;
     }
 }
 @media(min-width: 1001px){

@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <script>
+            var year = [2020];
+            var month = [];
             var size = "";
             var htmlCode = "";
             var x = 0;
@@ -219,6 +221,41 @@
                     console.log("slide right");
                 }
             }
+
+            function loadDayPicker(ele){
+                console.log(ele.textContent);
+                month.push(ele.textContent);
+                document.getElementsByClassName("calendar-year-title")[0].innerHTML += (" "+ele.textContent);
+                document.getElementsByClassName("undo-button")[0].style.display = "block"
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'calendar_day_picker.html',true);
+                xhr.onload = function(){
+                    if(this.status == 200){
+                        document.getElementsByClassName("calendar-month-picker-container")[0].remove()
+                        document.getElementsByClassName("calendar-month-picker-title")[0].remove()
+                        document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML('afterend',this.responseText)
+                    }
+                }
+                xhr.send()
+            }
+
+            function undo(ele){
+                var xhr = new XMLHttpRequest();
+                if(month.length == 1){
+                    document.getElementsByClassName("calendar-day-picker-title")[0].remove();
+                    document.getElementsByClassName("calendar-day-picker-container")[0].remove();
+                    xhr.open('GET', 'calendar_month_picker.html',true)
+                    month.pop()
+                    document.getElementsByClassName("calendar-year-title")[0].innerHTML = year[0]+"년"
+                    document.getElementsByClassName("undo-button")[0].style.display = "none"
+                }
+                xhr.onload = function(){
+                    if(this.status == 200){
+                        document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML("afterend",this.responseText)
+                    }
+                }
+                xhr.send()
+            }
         </script>
     </head>
     
@@ -317,7 +354,9 @@
             </div>
             <div class="calendar-search-dialog">
                 <div class="close-calendar">
-                    <div></div>
+                    <div class="undo">
+                        <button class="undo-button" onclick="undo(this)"><i class="fas fa-chevron-left"></i></button>
+                    </div>
                     <div class="calendar-search-location"></div>
                     <div class="location-search-close-button-container">
                         <button class="close-select-dialog-button" onclick="close_calendar_search_dialog()"><i class="fas fa-times"></i></button>
@@ -325,51 +364,51 @@
                 </div>
                 <div class="calendar-main">
                     <div class="calendar-main-container">
-                        <div class="calendar-year-title">2020</div>
-                        <div class="calender-month-picker-title">월 선택</div>
+                        <div class="calendar-year-title">2020년</div>
+                        <div class="calendar-month-picker-title">월 선택</div>
                         <div class="calendar-month-picker-container">
                             <div class="calendar-month-overview-row calendar-month-overview-row1">
                                 <div class="calendar-month-overview calendar-month-overview-col1">
-                                    <button>1월</button>
+                                    <button onclick="loadDayPicker(this)">1월</button>
                                 </div>
                                 <div class="calendar-month-overview calendar-month-overview-col2">
-                                    <button>2월</button>
+                                    <button onclick="loadDayPicker(this)">2월</button>
                                 </div>
                                 <div class="calendar-month-overview calendar-month-overview-col3">
-                                    <button>3월</button>
+                                    <button onclick="loadDayPicker(this)">3월</button>
                                 </div>
                             </div>
                             <div class="calendar-month-overview-row calendar-month-overview-row2">
                                 <div class="calendar-month-overview calendar-month-overview-col1">
-                                    <button>4월</button>
+                                    <button onclick="loadDayPicker(this)">4월</button>
                                 </div>
                                 <div class="calendar-month-overview calendar-month-overview-col2">
-                                    <button>5월</button>
+                                    <button onclick="loadDayPicker(this)">5월</button>
                                 </div>
                                 <div class="calendar-month-overview calendar-month-overview-col3">
-                                    <button>6월</button>
+                                    <button onclick="loadDayPicker(this)">6월</button>
                                 </div>
                             </div>
                             <div class="calendar-month-overview-row calendar-month-overview-row3">
                                 <div class="calendar-month-overview calendar-month-overview-col1">
-                                    <button>7월</button>
+                                    <button onclick="loadDayPicker(this)">7월</button>
                                 </div>
                                 <div class="calendar-month-overview calendar-month-overview-col2">
-                                    <button>8월</button>
+                                    <button onclick="loadDayPicker(this)">8월</button>
                                 </div>
                                 <div class="calendar-month-overview calendar-month-overview-col3">
-                                    <button>9월</button>
+                                    <button onclick="loadDayPicker(this)">9월</button>
                                 </div>
                             </div>
                             <div class="calendar-month-overview-row calendar-month-overview-row4">
                                 <div class="calendar-month-overview calendar-month-overview-col1">
-                                    <button>10월</button>
+                                    <button onclick="loadDayPicker(this)">10월</button>
                                 </div>
                                 <div class="calendar-month-overview calendar-month-overview-col2">
-                                    <button>11월</button>
+                                    <button onclick="loadDayPicker(this)">11월</button>
                                 </div>
                                 <div class="calendar-month-overview calendar-month-overview-col3">
-                                    <button>12월</button>
+                                    <button onclick="loadDayPicker(this)">12월</button>
                                 </div>
                             </div>
                         </div>
