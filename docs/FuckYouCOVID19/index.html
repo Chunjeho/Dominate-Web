@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <script>
-            var year = [2020];
+            var year = ["2020년"];
             var month = [];
             var size = "";
             var htmlCode = "";
@@ -225,7 +225,8 @@
             function loadDayPicker(ele){
                 console.log(ele.textContent);
                 month.push(ele.textContent);
-                document.getElementsByClassName("calendar-year-title")[0].innerHTML += (" "+ele.textContent);
+                console.log("month: "+month)
+                document.getElementsByClassName("calendar-year-title-button")[0].innerHTML += (" "+ele.textContent);
                 document.getElementsByClassName("undo-button")[0].style.display = "block"
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', 'calendar_day_picker.html',true);
@@ -233,27 +234,49 @@
                     if(this.status == 200){
                         document.getElementsByClassName("calendar-month-picker-container")[0].remove()
                         document.getElementsByClassName("calendar-month-picker-title")[0].remove()
-                        document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML('afterend',this.responseText)
+                        document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML('beforeend',this.responseText)
                     }
                 }
+                document.getElementsByClassName("calendar-year-title-button")[0].style.pointerEvents = "none"
                 xhr.send()
+            }
+
+            function loadYearPicker(ele){
+                document.getElementsByClassName("undo-button")[0].style.display = "block"
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'calendar_year_picker.html',true);
+                xhr.onload = function(){
+                    if(this.status == 200){
+                        document.getElementsByClassName("calendar-month-picker-container")[0].remove()
+                        document.getElementsByClassName("calendar-month-picker-title")[0].remove()
+                        document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML('beforeend',this.responseText)
+                    }
+                }
+                xhr.send();
+                ele.style.pointerEvents = "none";
             }
 
             function undo(ele){
                 var xhr = new XMLHttpRequest();
+                document.getElementsByClassName("undo-button")[0].style.display = "none"
                 if(month.length == 1){
                     document.getElementsByClassName("calendar-day-picker-title")[0].remove();
                     document.getElementsByClassName("calendar-day-picker-container")[0].remove();
                     xhr.open('GET', 'calendar_month_picker.html',true)
                     month.pop()
-                    document.getElementsByClassName("calendar-year-title")[0].innerHTML = year[0]+"년"
-                    document.getElementsByClassName("undo-button")[0].style.display = "none"
+                    document.getElementsByClassName("calendar-year-title-button")[0].innerHTML = year[0]
+                }
+                else if(year.length == 1 && month.length == 0){
+                    document.getElementsByClassName("calendar-year-picker-container")[0].remove()
+                    document.getElementsByClassName("calendar-year-picker-title")[0].remove()
+                    xhr.open('GET', 'calendar_month_picker.html',true)
                 }
                 xhr.onload = function(){
                     if(this.status == 200){
                         document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML("afterend",this.responseText)
                     }
                 }
+                document.getElementsByClassName("calendar-year-title-button")[0].style.pointerEvents = "auto"
                 xhr.send()
             }
         </script>
@@ -364,7 +387,7 @@
                 </div>
                 <div class="calendar-main">
                     <div class="calendar-main-container">
-                        <div class="calendar-year-title">2020년</div>
+                        <div class="calendar-year-title"><button class="calendar-year-title-button" onclick="loadYearPicker(this)">2020년</button></div>
                         <div class="calendar-month-picker-title">월 선택</div>
                         <div class="calendar-month-picker-container">
                             <div class="calendar-month-overview-row calendar-month-overview-row1">
