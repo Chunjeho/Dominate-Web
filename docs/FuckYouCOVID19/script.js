@@ -237,13 +237,16 @@ var year = ["2020"];
                         console.log("week: "+dayName)
                         var x = document.getElementsByClassName("day-row");
                         var week = ['Sun', 'Mon', 'Thu', 'Wed', 'Thr', 'Fri', 'Sat']
-                        document.getElementsByClassName("calendar-day-picker-container")[0].style.gridTemplateRows = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px"
+                        document.getElementsByClassName("calendar-day-picker-container")[0].style.gridTemplateRows = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px" + " 150px"
                         
                         for(var i=0;i<6;i++){
-                            x[i].style.gridTemplateColumns = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px"
                             for(var j=0;j<7;j++){
-                                x[i].insertAdjacentHTML("beforeend", '<div class="day-box"><button class="day-button '+ week[j] +'"> </button></div> ')
+                                x[i].insertAdjacentHTML("afterbegin", '<div class="day-box"><button class="day-button '+ week[j] +'"></button></div> ')
                             }
+                        }
+
+                        for(var i=0;i<6;i++){
+                            x[i].style.gridTemplateColumns = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px"
                         }
 
                         var j = 1;
