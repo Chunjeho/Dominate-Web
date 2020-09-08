@@ -311,7 +311,7 @@ var year = ["2020"];
                     document.getElementsByClassName("calendar-main-container")[0].style.gridTemplateRows = "60px 50px 1fr"
                     xhr.open('GET', 'calendar_month_picker.html',true)
                     month.pop()
-                    document.getElementsByClassName("calendar-year-title-button")[0].innerHTML = year[0]
+                    document.getElementsByClassName("calendar-year-title-button")[0].innerHTML = year[0] + "년"
                 }
                 else if(year.length == 1 && month.length == 0){
                     document.getElementsByClassName("calendar-year-picker-container")[0].remove()
