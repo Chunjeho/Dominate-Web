@@ -258,6 +258,7 @@ span {
         grid-template-rows: 60px 1fr;
     }
     .calendar-main{
+        border: 2px solid black;
         overflow-y: scroll;
         overflow-x: hidden;
     }
@@ -265,7 +266,6 @@ span {
         height: 100%;
         display: grid;
         grid-template-rows: 60px 50px 1fr;
-        /* border: 2px solid green; */
     }
     .calendar-year-title{
         text-align: center;
@@ -337,16 +337,11 @@ span {
         line-height: 50px;
     }
     .calendar-day-picker-container{
-        /* border: 2px solid yellow; */
+        border: 2px solid green;
         display: grid;
-        /* grid-template-rows: 20% 20% 20% 20% 20% 20% 60%; */
         overflow-y: scroll;
-        overflow-x: none;
+        overflow-x: hidden;
         white-space: nowrap;
-    }
-    .day-row{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
     .calendar-day-picker-week{
         display: grid;
@@ -371,23 +366,24 @@ span {
         border-radius: 25px;
         outline: none;
     }
-    .day{
-        text-align: center;
-        height: 100%;
+    .day-row{
+        border: 2px solid blue;
+        position: relative;
+        width: 100%;
+        display: grid;
+    }
+    .day-box{
+        border: 2px solid yellow;
     }
     .day-button{
-        position: relative;
         text-align: center;
-        width: 80%;
-        height: 80%;
         border: none;
-        border-radius: 50%;
         background-color: #F2F2F2;
         outline: none;
-        top: 50%;
-        transform: translate(0, -50%);
         font-size: 20px;
         font-weight: 100;
+        border: 2px solid red;
+        width: 100%;
     }
 
     .next{

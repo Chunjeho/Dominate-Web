@@ -231,25 +231,18 @@ var year = ["2020"];
                         document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML('afterend',this.responseText)
                         document.getElementsByClassName("calendar-year-title-button")[0].style.pointerEvents = "none"
 
-                        var _width = String(parseInt(window.screen.width/7));
-                        var _gridTemplateRows = ""
-
-                        for(var i=0;i<6;i++){
-                            _gridTemplateRows += (_width + "px ");
-                        }
-
-                        _gridTemplateRows += " 60%"
-
-                        document.getElementsByClassName("calendar-day-picker-container")[0].style.gridTemplateRows = _gridTemplateRows
-
+                        var _width = screen.width/7
                         var day = new Date('2020-'+month[0].toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})+'-01');
                         var dayName = day.getDay()
                         console.log("week: "+dayName)
                         var x = document.getElementsByClassName("day-row");
                         var week = ['Sun', 'Mon', 'Thu', 'Wed', 'Thr', 'Fri', 'Sat']
+                        document.getElementsByClassName("calendar-day-picker-container")[0].style.gridTemplateRows = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px"
+                        
                         for(var i=0;i<6;i++){
+                            x[i].style.gridTemplateColumns = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px"
                             for(var j=0;j<7;j++){
-                                x[i].insertAdjacentHTML("beforeend", '<div class="day"><button class="day-button '+week[j]+'"></button></div>')
+                                x[i].insertAdjacentHTML("beforeend", '<div class="day-box"><button class="day-button '+ week[j] +'"> </button></div> ')
                             }
                         }
 
@@ -260,9 +253,9 @@ var year = ["2020"];
                             var endDay = end.getDay()
                         }
 
-                        for(var i=0;i<document.getElementsByClassName("day").length;i++){
+                        for(var i=0;i<document.getElementsByClassName("day-box").length;i++){
                             if(i == dayName && j==1){
-                                document.getElementsByClassName("day-button")[i].innerHTML = j;
+                                document.getElementsByClassName("day-button")[i].innerHTML = String(j);
                                 j += 1
                             }
                             else if(j > 1){
@@ -271,11 +264,11 @@ var year = ["2020"];
                                     var next = true;
                                 }
                                 else if(!next){
-                                    document.getElementsByClassName("day-button")[i].innerHTML = j;
+                                    document.getElementsByClassName("day-button")[i].innerHTML = String(j);
                                     j += 1
                                 }
                                 if(next){
-                                    document.getElementsByClassName("day-button")[i].innerHTML = j;
+                                    document.getElementsByClassName("day-button")[i].innerHTML = String(j);
                                     document.getElementsByClassName("day-button")[i].className += " next";
                                     j += 1
                                 }
