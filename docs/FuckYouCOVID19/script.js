@@ -30,7 +30,7 @@ var year = ["2020"];
                 var ele = document.getElementsByClassName("calendar-search-dialog")[0];
                 var _width = window.screen.width;
                 ele.style.transition = "height 0.6s";
-                ele.style.height = "70%";
+                ele.style.height = "80%";
             }
             
             function location_search_dialog(){
