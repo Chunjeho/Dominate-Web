@@ -277,7 +277,6 @@ var year = ["2020"];
                         document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML("afterend",this.responseText)
                     }
                 }
-                document.getElementsByClassName("calendar-day-picker-container")[0].className = "calendar-day-picker-container"
                 document.getElementsByClassName("calendar-year-title-button")[0].style.pointerEvents = "auto"
                 document.getElementsByClassName("calendar-month-change")[0].style.display = "none"
                         document.getElementsByClassName("calendar-month-change")[1].style.display = "none"
