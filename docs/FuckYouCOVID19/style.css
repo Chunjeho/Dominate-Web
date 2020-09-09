@@ -4,7 +4,7 @@ body {
     background-color: #1C2541
 }
 div {
-    border: 2px solid blue;
+    border: 0px solid blue;
 }
 span {
     border: 0px solid red;
