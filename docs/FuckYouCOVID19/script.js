@@ -216,7 +216,7 @@ var year = ["2020"];
 
             function loadDayPicker(ele){
                 console.log(ele.textContent);
-                month.push(parseInt(ele.textContent.substring(0,1)));
+                month.push(parseInt(ele.textContent.substring(0, ele.textContent.length-1)));
                 console.log("month: "+month)
 
                 var xhr = new XMLHttpRequest();
@@ -361,8 +361,9 @@ var year = ["2020"];
             }
 
             function moveLeftOrRight(ele){
+                var m = 0
                 if(ele.name == "calendar-month-change-left"){
-                    var m = month[0]
+                    m = month[0]
                     month.pop()
                     month.push(m>1 ? m-1 :m = 1)
                     console.log(month)
@@ -371,7 +372,7 @@ var year = ["2020"];
                     loadDayPickerContainer()
                 }
                 else if(ele.name == "calendar-month-change-right"){
-                    var m = month[0]
+                    m = month[0]
                     month.pop()
                     month.push(m<12 ? m+1 :m = 12)
                     console.log(month)
