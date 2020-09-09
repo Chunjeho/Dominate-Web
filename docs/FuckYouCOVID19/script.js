@@ -230,57 +230,9 @@ var year = ["2020"];
                         document.getElementsByClassName("calendar-main-container")[0].style.gridTemplateRows = "60px 50px 30px 1fr"
                         document.getElementsByClassName("calendar-year-title")[0].insertAdjacentHTML('afterend',this.responseText)
                         document.getElementsByClassName("calendar-year-title-button")[0].style.pointerEvents = "none"
-
-                        var _width = screen.width/7
-                        var day = new Date('2020-'+month[0].toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})+'-01');
-                        var dayName = day.getDay()
-                        console.log("week: "+dayName)
-                        var x = document.getElementsByClassName("day-row");
-                        var week = ['Sun', 'Mon', 'Thu', 'Wed', 'Thr', 'Fri', 'Sat']
-                        document.getElementsByClassName("calendar-day-picker-container")[0].style.gridTemplateRows = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px" + " 150px"
-                        
-                        for(var i=0;i<6;i++){
-                            for(var j=0;j<7;j++){
-                                x[i].insertAdjacentHTML("afterbegin", '<div class="day-box"><button class="day-button '+ week[j] +'"></button></div> ')
-                            }
-                        }
-
-                        for(var i=0;i<6;i++){
-                            x[i].style.gridTemplateColumns = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px"
-                        }
-
-                        var j = 1;
-                        var next = false;
-                        if(month[0] < 12){
-                            var end = new Date('2020-'+(month[0]+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})+'-01');
-                            var endDay = end.getDay()
-                        }
-
-                        for(var i=0;i<document.getElementsByClassName("day-box").length;i++){
-                            if(i == dayName && j==1){
-                                document.getElementsByClassName("day-button")[i].innerHTML = String(j);
-                                j += 1
-                            }
-                            else if(j > 1){
-                                if(i%7 == endDay && j>=27 && !next){
-                                    j = 1;
-                                    var next = true;
-                                }
-                                else if(!next){
-                                    document.getElementsByClassName("day-button")[i].innerHTML = String(j);
-                                    j += 1
-                                }
-                                if(next){
-                                    document.getElementsByClassName("day-button")[i].innerHTML = String(j);
-                                    document.getElementsByClassName("day-button")[i].className += " next";
-                                    j += 1
-                                }
-
-                            }
-                            else{
-                                document.getElementsByClassName('day-button')[i].style.display = "none"
-                            }
-                        }
+                        document.getElementsByClassName("calendar-month-change")[0].style.display = "inline-block"
+                        document.getElementsByClassName("calendar-month-change")[1].style.display = "inline-block"
+                        loadDayPickerContainer()
                     }
                 }
                 xhr.send()
@@ -324,5 +276,107 @@ var year = ["2020"];
                     }
                 }
                 document.getElementsByClassName("calendar-year-title-button")[0].style.pointerEvents = "auto"
+                document.getElementsByClassName("calendar-month-change")[0].style.display = "none"
+                        document.getElementsByClassName("calendar-month-change")[1].style.display = "none"
                 xhr.send()
+            }
+
+            function loadDayPickerContainer(){
+                var _width = screen.width/7
+                var day = new Date('2020-'+month[0].toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})+'-01');
+                var dayName = day.getDay()
+                console.log("week: "+dayName)
+                var x = document.getElementsByClassName("day-row");
+                var week = ['Sun', 'Mon', 'Thu', 'Wed', 'Thr', 'Fri', 'Sat']
+                document.getElementsByClassName("calendar-day-picker-container")[0].style.gridTemplateRows = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px" + " 150px"
+                
+                for(var i=0;i<6;i++){
+                    for(var j=0;j<7;j++){
+                        x[i].insertAdjacentHTML("afterbegin", '<div class="day-box"><button onclick="sendFromDayPicker(this)" class="day-button '+ week[j] +'"></button></div> ')
+                    }
+                }
+
+                for(var i=0;i<6;i++){
+                    x[i].style.gridTemplateColumns = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px"
+                }
+
+                var j = 1;
+                var next = false;
+                if(month[0] < 12){
+                    var end = new Date('2020-'+(month[0]+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})+'-01');
+                    var endDay = end.getDay()
+                }
+
+                for(var i=0;i<document.getElementsByClassName("day-box").length;i++){
+                    if(i == dayName && j==1){
+                        document.getElementsByClassName("day-button")[i].innerHTML = String(j);
+                        j += 1
+                    }
+                    else if(j > 1){
+                        if(i%7 == endDay && j>=27 && !next){
+                            j = 1;
+                            var next = true;
+                        }
+                        else if(!next){
+                            document.getElementsByClassName("day-button")[i].innerHTML = String(j);
+                            j += 1
+                        }
+                        if(next){
+                            document.getElementsByClassName("day-button")[i].innerHTML = String(j);
+                            document.getElementsByClassName("day-button")[i].className += " next";
+                            j += 1
+                        }
+
+                    }
+                    else{
+                        document.getElementsByClassName('day-button')[i].style.display = "none"
+                    }
+                }
+            }
+
+            function removeElement(classOrIdName){
+                while(1){
+                    if(document.getElementsByClassName(classOrIdName)[0] != null){
+                        document.getElementsByClassName(classOrIdName)[0].remove()
+                    }
+                    else{
+                        break
+                    }
+                }
+            }
+
+            function sendFromDayPicker(ele){
+                console.log(ele.textContent)
+                console.log(ele.className.search("next"))
+                if(ele.className.search("next") > 0){
+                    var m = month[0]
+                    month.pop()
+                    month.push(m<12 ? m+1 :m = 12)
+                    console.log(month)
+                    document.getElementsByClassName("calendar-year-title-button")[0].innerHTML = year[0]+"년 "+month[0]+"월"
+                    removeElement("day-box")
+                    loadDayPickerContainer()
+                }
+
+            }
+
+            function moveLeftOrRight(ele){
+                if(ele.name == "calendar-month-change-left"){
+                    var m = month[0]
+                    month.pop()
+                    month.push(m>1 ? m-1 :m = 1)
+                    console.log(month)
+                    document.getElementsByClassName("calendar-year-title-button")[0].innerHTML = year[0]+"년 "+month[0]+"월"
+                    removeElement("day-box")
+                    loadDayPickerContainer()
+                }
+                else if(ele.name == "calendar-month-change-right"){
+                    var m = month[0]
+                    month.pop()
+                    month.push(m<12 ? m+1 :m = 12)
+                    console.log(month)
+                    document.getElementsByClassName("calendar-year-title-button")[0].innerHTML = year[0]+"년 "+month[0]+"월"
+                    removeElement("day-box")
+                    loadDayPickerContainer()
+                }
             }

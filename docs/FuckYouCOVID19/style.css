@@ -4,7 +4,7 @@ body {
     background-color: #1C2541
 }
 div {
-    border: 0px solid blue;
+    border: 2px solid blue;
 }
 span {
     border: 0px solid red;
@@ -272,7 +272,6 @@ span {
     }
     .calendar-year-title-button{
         height: 100%;
-        width: 100%;
         font-size: 30px;
         border: none;
         font-weight: 100;
@@ -351,7 +350,6 @@ span {
     .week{
         line-height: 30px;
         text-align: center;
-        border-left: 1px solid black;
     }
     .submit-day{
         padding-top: 20px;
@@ -397,6 +395,16 @@ span {
         position: relative;
         /* border: 2px solid pink; */
         margin-right: 40px;
+    }
+
+    .calendar-month-change{
+        display: none;
+        height: 100%;
+        width: 50px;
+        font-size: 30px;
+        border: none;
+        background-color: transparent;
+        outline: none;
     }
 }
 @media(min-width: 1001px){
