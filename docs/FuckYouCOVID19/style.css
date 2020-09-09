@@ -398,6 +398,7 @@ span {
     }
 
     .calendar-month-change{
+        text-align: center;
         display: none;
         height: 100%;
         width: 50px;
