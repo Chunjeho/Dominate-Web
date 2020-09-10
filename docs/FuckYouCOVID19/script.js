@@ -284,13 +284,13 @@ var year = ["2020"];
             }
 
             function loadDayPickerContainer(){
-                var _width = screen.width/7
+                var _width = window.innerWidth/7 + "px"
                 var day = new Date('2020-'+month[0].toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})+'-01');
                 var dayName = day.getDay()
                 console.log("week: "+dayName)
                 var x = document.getElementsByClassName("day-row");
                 var week = ['Sun', 'Mon', 'Thu', 'Wed', 'Thr', 'Fri', 'Sat']
-                document.getElementsByClassName("calendar-day-picker-container")[0].style.gridTemplateRows = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px" + " 150px"
+                document.getElementsByClassName("calendar-day-picker-container")[0].style.gridTemplateRows = (_width) + " " +(_width) + " " +(_width) + " " +(_width) + " " +(_width) + " " +(_width) + "" + " 150px"
                 
                 for(var i=0;i<6;i++){
                     for(var j=0;j<7;j++){
@@ -299,7 +299,7 @@ var year = ["2020"];
                 }
 
                 for(var i=0;i<6;i++){
-                    x[i].style.gridTemplateColumns = parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px " +parseInt(_width) + "px"
+                    x[i].style.gridTemplateColumns = (_width) + " " +(_width) + " " +(_width) + " " +(_width) + " " +(_width) + " " +(_width) + " " +(_width) + ""
                 }
 
                 var j = 1;

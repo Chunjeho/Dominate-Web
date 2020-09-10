@@ -4,7 +4,7 @@ body {
     background-color: #1C2541
 }
 div {
-    border: 0px solid blue;
+    border: 2px solid blue;
 }
 span {
     border: 0px solid red;
@@ -336,7 +336,8 @@ span {
         line-height: 50px;
     }
     .calendar-day-picker-container{
-        /* border: 2px solid green; */
+        width: 100%;
+        border: 2px solid green;
         display: grid;
         overflow-y: scroll;
         overflow-x: hidden;
