@@ -1,0 +1,60 @@
+div{
+    border: 0px solid red;
+}
+#title{
+    font-size: 60px;
+    font-weight: 100;
+    text-align: center;
+}
+#web-quotes{
+    text-align: center;
+    font-weight: bold;
+}
+#navigator{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 4fr 1fr 1fr 1fr;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.navigatior-button{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border: none;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    font-size: 18px;
+    border-right: 1px solid black;
+}
+
+.home-container button{
+    border-left: 1px solid black;
+}
+.login-container button{
+    border-left: 1px solid black;
+}
+
+.navigator-container{
+    text-align: center;
+}
+
+.navigator-search{
+    text-align: center;
+}
+.navigator-search input[type=text]{
+    position: relative;
+    height: 30px;
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 25px;
+}
+#content-container{
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+}

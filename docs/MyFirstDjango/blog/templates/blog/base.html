@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
         {% if title %}
             <title>Django Blog - {{ title }}</title>
         {% else %}
@@ -9,6 +11,33 @@
         {% endif %}
     </head>
     <body>
-        {% block content %}{% endblock content%}
+        <div id="title">Knowing Something</div>
+        <div id="web-quotes">"I learned very early the difference between knowing the name of something and knowing something."</div>
+        <div id="navigator">
+            <div></div>
+            <div class="navigator-container home-container">
+                <button class="navigatior-button">Home</button>
+            </div>
+            <div class="navigator-container about-container">
+                <button class="navigatior-button">About</button>
+            </div>
+            <div class="navigator-search">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="navigator-container login-container">
+                <button class="navigatior-button">Login</button>
+            </div>
+            <div class="navigator-container register-container">
+                <button class="navigatior-button">Register</button>
+            </div>
+            <div></div>
+        </div>
+        <div id="content-container">
+            <div></div>
+            <div>
+                {% block content %}{% endblock %}
+            </div>
+            <div></div>
+        </div>
     </body>
 </html>
